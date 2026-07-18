@@ -14,6 +14,7 @@
     "docs:build": "pnpm --filter docs build",
     "check:mobile-styles": "node scripts/check-mobile-styles.js",
     "check:exports": "node scripts/check-exports.js",
+    "icons:generate": "node scripts/generate-icons.mjs",
     "release:check": "pnpm build && pnpm check:mobile-styles && pnpm check:exports && pnpm docs:build",
     "clean": "pnpm -r run clean"
   },

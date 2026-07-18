@@ -25,18 +25,20 @@ function SizeDemo() {
 
 function CatalogDemo() {
   return (
-    <Space wrap size="lg">
-      {ICON_LIST.map(({ name, label }) => (
-        <Tag key={name} color="primary" variant="outlined">
-          <Icon name={name} size={16} bounce /> {label}
-        </Tag>
-      ))}
-    </Space>
+    <div style={{ maxHeight: 320, overflow: 'auto', paddingRight: 4 }}>
+      <Space wrap size="md">
+        {ICON_LIST.map(({ name, label }) => (
+          <Tag key={name} color="primary" variant="outlined">
+            <Icon name={name} size={16} /> {label}
+          </Tag>
+        ))}
+      </Space>
+    </div>
   )
 }
 
 export const demos: DemoItem[] = [
   { title: '基础用法', description: '原创 SVG + bounce 弹跳', component: BasicDemo },
   { title: '尺寸', description: 'size 可调', component: SizeDemo },
-  { title: '图标一览', description: 'ICON_LIST 全部图标', component: CatalogDemo },
+  { title: '图标一览', description: `${ICON_LIST.length} 个图标`, component: CatalogDemo },
 ]
