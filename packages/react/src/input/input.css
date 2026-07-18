@@ -127,6 +127,27 @@
   flex-shrink: 0;
 }
 
+.mochi-input__visibility,
+.mochi-input__search-btn {
+  border: none;
+  background: transparent;
+  color: #3d9ad4;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0 4px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.mochi-input__visibility:hover,
+.mochi-input__search-btn:hover:not(:disabled) {
+  color: #794f27;
+}
+.mochi-input__search-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .mochi-input-group {
   display: inline-flex;
   align-items: stretch;

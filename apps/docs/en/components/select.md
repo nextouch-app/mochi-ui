@@ -1,16 +1,23 @@
 # Select
 
-Capsule trigger with parchment dropdown. API aligns with common Ant Design props.
+Capsule trigger with parchment dropdown.
+
+
+## Examples
+
+<mochi-demos name="Select"></mochi-demos>
 
 ## API
 
 | Prop | Description | Type | Default |
 |------|-------------|------|---------|
 | options | Options | `SelectOption[]` | `[]` |
-| value / defaultValue | Value | `string \| number` | — |
+| mode | Mode | `multiple \| tags` | — |
+| value / defaultValue | Value | `string \| number \| Array<string \| number>` | — |
 | placeholder | Placeholder | `string` | `请选择` |
 | size | Size | `SizeAlias` | `md` |
 | status | Status | `error \| warning \| ''` | — |
+| maxTagCount | Max tags shown | `number \| responsive` | — |
 | allowClear | Allow clear | `boolean` | `false` |
 | showSearch | Searchable | `boolean` | `false` |
 | loading | Loading | `boolean` | `false` |
@@ -27,6 +34,8 @@ Capsule trigger with parchment dropdown. API aligns with common Ant Design props
 import { Select } from '@mochi-ui/react'
 
 <Select
+  mode="multiple"
+  maxTagCount={2}
   allowClear
   showSearch
   placeholder="Pick a flavor"

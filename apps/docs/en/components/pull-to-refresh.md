@@ -2,6 +2,11 @@
 
 适合移动端触控。
 
+
+## Examples
+
+<mochi-demos name="PullToRefresh"></mochi-demos>
+
 ```tsx
 import { PullToRefresh } from '@mochi-ui/react'
 

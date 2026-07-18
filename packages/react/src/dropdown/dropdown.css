@@ -51,6 +51,53 @@
   cursor: not-allowed;
 }
 
+.mochi-dropdown__item-icon {
+  margin-right: 8px;
+}
+
+.mochi-dropdown__item.has-children {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mochi-dropdown__item-label {
+  flex: 1;
+  text-align: left;
+}
+
+.mochi-dropdown__submenu {
+  position: relative;
+}
+
+.mochi-dropdown__submenu-arrow {
+  opacity: 0.55;
+  font-weight: 900;
+}
+
+.mochi-dropdown__submenu-panel {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 6px);
+  min-width: 140px;
+  padding: 6px;
+  background: #fff8e7;
+  border: 2.5px solid #c4b89e;
+  border-radius: 16px;
+  box-shadow: 0 5px 0 0 #d4c9b4;
+}
+
+.mochi-dropdown__submenu.is-open > .mochi-dropdown__item {
+  background: rgba(108, 180, 238, 0.22);
+}
+
+.mochi-dropdown__divider {
+  height: 0;
+  margin: 6px 8px;
+  border-top: 2px dashed #e0d6c0;
+}
+
 @keyframes mochi-dropdown-in {
   from {
     opacity: 0;

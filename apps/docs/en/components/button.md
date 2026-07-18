@@ -1,13 +1,18 @@
 # Button
 
-Capsule game button with a solid 3D block shadow, press sink, and striped loading. API aligns with common Ant Design props.
+Capsule game button with a solid 3D block shadow, press sink, and striped loading.
+
+
+## Examples
+
+<mochi-demos name="Button"></mochi-demos>
 
 ## API
 
 | Prop | Description | Type | Default |
 |------|-------------|------|---------|
 | type | Variant | `primary \| default \| dashed \| text \| link` | `default` |
-| size | Size (AntD aliases accepted) | `sm \| md \| lg \| small \| middle \| large` | `md` |
+| size | Size (`small` / `middle` / `large` also accepted) | `sm \| md \| lg \| small \| middle \| large` | `md` |
 | shape | Shape | `default \| circle \| round` | `default` |
 | danger | Danger style | `boolean` | `false` |
 | ghost | Ghost / transparent face | `boolean` | `false` |

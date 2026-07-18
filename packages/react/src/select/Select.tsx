@@ -8,7 +8,13 @@ function defaultFilter(input: string, option: SelectOption) {
   return label.toLowerCase().includes(input.trim().toLowerCase())
 }
 
+function toArray(value: string | number | Array<string | number> | undefined): Array<string | number> {
+  if (value == null) return []
+  return Array.isArray(value) ? value : [value]
+}
+
 export function Select({
+  mode,
   value,
   defaultValue,
   options = [],
@@ -19,6 +25,7 @@ export function Select({
   showSearch = false,
   size,
   status,
+  maxTagCount,
   open: openProp,
   defaultOpen = false,
   onDropdownVisibleChange,
@@ -33,12 +40,14 @@ export function Select({
 }: SelectProps) {
   const { size: ctxSize } = useConfig()
   const finalSize = normalizeSize(size ?? ctxSize)
-  const [inner, setInner] = useState(defaultValue)
+  const multiple = mode === 'multiple' || mode === 'tags'
+  const [inner, setInner] = useState<string | number | Array<string | number> | undefined>(defaultValue)
   const [innerOpen, setInnerOpen] = useState(defaultOpen)
   const [keyword, setKeyword] = useState('')
   const current = value ?? inner
   const open = openProp ?? innerOpen
-  const selected = options.find((o) => o.value === current)
+  const selectedValues = multiple ? toArray(current) : []
+  const selected = multiple ? null : options.find((o) => o.value === current)
   const ref = useRef<HTMLDivElement>(null)
 
   const setOpen = (next: boolean) => {
@@ -67,7 +76,46 @@ export function Select({
     return options.filter((o) => defaultFilter(keyword, o))
   }, [options, showSearch, keyword, filterOption])
 
-  const showClear = allowClear && !disabled && current != null && current !== ''
+  const hasValue = multiple ? selectedValues.length > 0 : current != null && current !== ''
+  const showClear = allowClear && !disabled && hasValue
+
+  const selectedOptions = multiple
+    ? selectedValues
+        .map((v) => options.find((o) => o.value === v))
+        .filter((o): o is SelectOption => o != null)
+    : []
+
+  const visibleTags =
+    maxTagCount === 'responsive' || maxTagCount == null
+      ? selectedOptions
+      : selectedOptions.slice(0, maxTagCount)
+  const hiddenCount =
+    maxTagCount != null && maxTagCount !== 'responsive'
+      ? Math.max(0, selectedOptions.length - maxTagCount)
+      : 0
+
+  const updateMultiple = (next: Array<string | number>) => {
+    if (value === undefined) setInner(next)
+    const nextOptions = next
+      .map((v) => options.find((o) => o.value === v))
+      .filter((o): o is SelectOption => o != null)
+    onChange?.(next, nextOptions)
+  }
+
+  const toggleOption = (opt: SelectOption) => {
+    if (multiple) {
+      const exists = selectedValues.includes(opt.value)
+      const next = exists ? selectedValues.filter((v) => v !== opt.value) : [...selectedValues, opt.value]
+      updateMultiple(next)
+      return
+    }
+    if (value === undefined) setInner(opt.value)
+    onChange?.(opt.value, opt)
+    setOpen(false)
+  }
+
+  const isSelected = (opt: SelectOption) =>
+    multiple ? selectedValues.includes(opt.value) : opt.value === current
 
   return (
     <div
@@ -75,6 +123,7 @@ export function Select({
       className={cn(
         'mochi-select',
         `mochi-select--${finalSize}`,
+        multiple && 'mochi-select--multiple',
         open && 'is-open',
         disabled && 'is-disabled',
         loading && 'is-loading',
@@ -94,9 +143,37 @@ export function Select({
           setOpen(!open)
         }}
       >
-        <span className={cn('mochi-select__value', !selected && 'is-placeholder')}>
-          {selected?.label ?? placeholder}
-        </span>
+        {multiple ? (
+          <span className={cn('mochi-select__tags', selectedOptions.length === 0 && 'is-placeholder')}>
+            {selectedOptions.length === 0 ? (
+              placeholder
+            ) : (
+              <>
+                {visibleTags.map((opt) => (
+                  <span key={String(opt.value)} className="mochi-select__tag">
+                    {opt.label}
+                    <span
+                      className="mochi-select__tag-close"
+                      role="button"
+                      aria-label="移除"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        updateMultiple(selectedValues.filter((v) => v !== opt.value))
+                      }}
+                    >
+                      ×
+                    </span>
+                  </span>
+                ))}
+                {hiddenCount > 0 ? <span className="mochi-select__tag-more">+{hiddenCount}</span> : null}
+              </>
+            )}
+          </span>
+        ) : (
+          <span className={cn('mochi-select__value', !selected && 'is-placeholder')}>
+            {selected?.label ?? placeholder}
+          </span>
+        )}
         <span className="mochi-select__suffix">
           {loading ? <span className="mochi-select__spinner" /> : null}
           {showClear ? (
@@ -107,8 +184,8 @@ export function Select({
               aria-label="清除"
               onClick={(e) => {
                 e.stopPropagation()
-                if (value === undefined) setInner(undefined)
-                onChange?.(undefined, undefined)
+                if (value === undefined) setInner(multiple ? [] : undefined)
+                onChange?.(multiple ? [] : undefined, multiple ? [] : undefined)
                 onClear?.()
               }}
             >
@@ -143,19 +220,21 @@ export function Select({
                 key={String(opt.value)}
                 type="button"
                 role="option"
-                aria-selected={opt.value === current}
+                aria-selected={isSelected(opt)}
                 disabled={opt.disabled}
                 className={cn(
                   'mochi-select__option',
-                  opt.value === current && 'is-active',
+                  isSelected(opt) && 'is-active',
                   opt.disabled && 'is-disabled',
                 )}
                 onClick={() => {
-                  if (value === undefined) setInner(opt.value)
-                  onChange?.(opt.value, opt)
-                  setOpen(false)
+                  if (opt.disabled) return
+                  toggleOption(opt)
                 }}
               >
+                {multiple ? (
+                  <span className="mochi-select__option-check">{isSelected(opt) ? '✓' : ''}</span>
+                ) : null}
                 {opt.label}
               </button>
             ))

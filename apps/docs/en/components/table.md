@@ -1,19 +1,55 @@
-# Table 表格
+# Table
 
-圆角羊皮纸表格。
+Rounded parchment-style table with sorting, column filters, and pagination.
 
-- **Web**：完整宽表展示
-- **Mobile**：横向滚动可用；复杂列表更推荐 `List`
+
+## Examples
+
+<mochi-demos name="Table"></mochi-demos>
+
+## API
+
+| Prop | Description | Type | Default |
+|------|-------------|------|---------|
+| columns | Column config | `TableColumn[]` | `[]` |
+| dataSource | Data rows | `T[]` | `[]` |
+| rowKey | Row key | `string \| (record, index) => string` | `key` |
+| loading | Loading state | `boolean` | `false` |
+| bordered | Border | `boolean` | `true` |
+| size | Size | `SizeAlias` | `md` |
+| rowSelection | Row selection | `{ selectedRowKeys?, type?, onChange?, getCheckboxProps? }` | — |
+| pagination | Pagination | `false \| PaginationProps` | — |
+| scroll | Scroll | `{ x?, y? }` | — |
+| onRow | Row props | `(record, index) => { onClick?, className? }` | — |
+
+### TableColumn
+
+| Prop | Description | Type |
+|------|-------------|------|
+| key / title / dataIndex | Column identity | — |
+| width / align / render | Width, align, custom cell | — |
+| sorter | Sorting | `boolean \| (a, b) => number` |
+| fixed | Fixed column | `left \| right` |
+| ellipsis | Ellipsis | `boolean` |
+| filters | Filter options | `{ text, value }[]` |
+| onFilter | Filter predicate | `(value, record) => boolean` |
+| filteredValue | Controlled filter values | `Array<string \| number \| boolean> \| null` |
+
+Filter icon appears when `filters` is set. Selected values filter data before sort/pagination.
 
 ```tsx
 import { Table, Tag } from '@mochi-ui/react'
 
 <Table
   columns={[
-    { key: 'name', title: '名称', dataIndex: 'name' },
-    { key: 'tag', title: '标签', render: (_, r) => <Tag>{String(r.tag)}</Tag> },
+    {
+      key: 'tag',
+      title: 'Tag',
+      filters: [{ text: 'Seasonal', value: 'season' }],
+      onFilter: (value, record) => record.tag === value,
+      render: (_, r) => <Tag>{String(r.tag)}</Tag>,
+    },
   ]}
-  dataSource={[{ key: '1', name: '抹茶', tag: '季节' }]}
+  dataSource={[{ key: '1', tag: 'season' }]}
 />
 ```
-

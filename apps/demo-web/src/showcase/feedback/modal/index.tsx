@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Modal, Button, Space } from '@mochi-ui/react'
+import { Modal, Button, Space, Toast } from '@mochi-ui/react'
 import type { DemoItem } from '../../types'
 
 function BasicDemo() {
@@ -72,8 +72,35 @@ function FooterDemo() {
   )
 }
 
+function ConfirmDemo() {
+  return (
+    <Space wrap>
+      <Button
+        onClick={() =>
+          Modal.confirm({
+            title: '确认删除？',
+            content: '删除后无法恢复。',
+            okText: '删除',
+            okButtonProps: { danger: true },
+            onOk: () => Toast.show('已删除'),
+          })
+        }
+      >
+        Modal.confirm
+      </Button>
+      <Button onClick={() => Modal.success({ title: '成功', content: '操作已完成。' })}>
+        Modal.success
+      </Button>
+      <Button onClick={() => Modal.info({ title: '提示', content: '这是一条信息。' })}>
+        Modal.info
+      </Button>
+    </Space>
+  )
+}
+
 export const demos: DemoItem[] = [
   { title: '基础用法', description: '云朵对话框', component: BasicDemo },
   { title: '配置项', description: 'maskClosable / confirmLoading / width', component: ConfigDemo },
   { title: '自定义 Footer', description: 'footer 插槽', component: FooterDemo },
+  { title: '命令式', description: 'Modal.confirm / success / info', component: ConfirmDemo },
 ]

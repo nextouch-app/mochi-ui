@@ -2,13 +2,18 @@
 
 胶囊开关：底部色块阴影、弹跳滑块。
 
+
+## 代码演示
+
+<mochi-demos name="Switch"></mochi-demos>
+
 ## API
 
 | 属性 | 说明 | 类型 | 默认 |
 |------|------|------|------|
 | checked | 受控选中 | `boolean` | — |
 | defaultChecked | 默认选中 | `boolean` | `false` |
-| size | 尺寸（兼容 AntD 别名） | `sm \| md \| lg \| small \| middle \| large` | `md` |
+| size | 尺寸（亦支持 small / middle / large） | `sm \| md \| lg \| small \| middle \| large` | `md` |
 | checkedChildren | 选中时内容 | `ReactNode` | — |
 | unCheckedChildren | 非选中时内容 | `ReactNode` | — |
 | loading | 加载中 | `boolean` | `false` |

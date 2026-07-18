@@ -1,4 +1,4 @@
-﻿/* Mochi Input — pill capsule, game focus yellow */
+/* Mochi Input — pill capsule, game focus yellow */
 
 .mochi-input {
   display: inline-flex;
@@ -43,7 +43,6 @@
   box-shadow: none;
   background: transparent;
 }
-
 
 .mochi-input:focus-within {
   border-color: #e0b800;
@@ -112,12 +111,37 @@
   justify-content: center;
   padding: 0;
 }
+.mochi-input__clear:active {
+  color: #794f27;
+  border-color: #a89878;
+}
 
 .mochi-input__count {
   font-size: 12px;
   font-weight: 700;
   color: #9f927d;
   flex-shrink: 0;
+}
+
+.mochi-input__visibility,
+.mochi-input__search-btn {
+  border: none;
+  background: transparent;
+  color: #3d9ad4;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0 4px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.mochi-input__visibility:active,
+.mochi-input__search-btn:active:not(:disabled) {
+  color: #794f27;
+}
+.mochi-input__search-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .mochi-input-group {

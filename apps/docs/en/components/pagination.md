@@ -1,5 +1,10 @@
 # Pagination 分页
 
+
+## Examples
+
+<mochi-demos name="Pagination"></mochi-demos>
+
 ```tsx
 import { Pagination } from '@mochi-ui/react'
 

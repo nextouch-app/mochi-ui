@@ -1,8 +1,7 @@
-import { useState, type PointerEvent as ReactPointerEvent } from 'react'
+import { useState } from 'react'
 import { cn, type RateProps } from '@mochi-ui/core'
 import './rate.css'
 
-/** Mobile Rate：用 pointer 事件反馈，不依赖 :hover */
 export function Rate({
   value,
   defaultValue = 0,
@@ -10,14 +9,17 @@ export function Rate({
   allowHalf = false,
   allowClear = true,
   disabled = false,
+  character = '★',
+  tooltips,
   className,
   style,
   onChange,
+  onHoverChange,
 }: RateProps) {
   const [inner, setInner] = useState(defaultValue)
-  const [preview, setPreview] = useState<number | null>(null)
+  const [hover, setHover] = useState<number | null>(null)
   const current = value ?? inner
-  const display = preview ?? current
+  const display = hover ?? current
 
   const set = (next: number) => {
     if (disabled) return
@@ -26,11 +28,9 @@ export function Rate({
     onChange?.(cleared)
   }
 
-  const valueFromEvent = (e: ReactPointerEvent<HTMLButtonElement>, idx: number) => {
-    if (!allowHalf) return idx
-    const rect = e.currentTarget.getBoundingClientRect()
-    const isLeft = e.clientX - rect.left < rect.width / 2
-    return isLeft ? idx - 0.5 : idx
+  const setHoverValue = (next: number | null) => {
+    setHover(next)
+    if (next != null) onHoverChange?.(next)
   }
 
   return (
@@ -41,7 +41,7 @@ export function Rate({
       aria-valuenow={current}
       aria-valuemin={0}
       aria-valuemax={count}
-      onPointerLeave={() => setPreview(null)}
+      onMouseLeave={() => setHoverValue(null)}
     >
       {Array.from({ length: count }).map((_, i) => {
         const idx = i + 1
@@ -51,23 +51,21 @@ export function Rate({
           <button
             key={idx}
             type="button"
-            className={cn('mochi-rate__star', full && 'is-full', half && 'is-half', preview != null && 'is-preview')}
+            className={cn('mochi-rate__star', full && 'is-full', half && 'is-half')}
             disabled={disabled}
-            onPointerDown={(e) => {
-              e.currentTarget.setPointerCapture(e.pointerId)
-              setPreview(valueFromEvent(e, idx))
-            }}
-            onPointerMove={(e) => {
-              if (e.buttons === 0 && e.pointerType === 'mouse') return
-              if (preview == null && e.pointerType !== 'touch') return
-              setPreview(valueFromEvent(e, idx))
-            }}
-            onPointerUp={(e) => {
-              set(valueFromEvent(e, idx))
-              setPreview(null)
+            title={tooltips?.[i]}
+            onMouseEnter={() => setHoverValue(idx)}
+            onClick={(e) => {
+              if (allowHalf) {
+                const rect = (e.target as HTMLElement).getBoundingClientRect()
+                const isLeft = e.clientX - rect.left < rect.width / 2
+                set(isLeft ? idx - 0.5 : idx)
+              } else {
+                set(idx)
+              }
             }}
           >
-            ★
+            {character}
           </button>
         )
       })}

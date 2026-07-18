@@ -111,8 +111,6 @@
   transition: transform 120ms ease;
 }
 
-
-
 .mochi-modal__close:active {
   transform: translateY(2px);
   box-shadow: 0 1px 0 0 #bdaea0;
@@ -139,4 +137,27 @@
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 22px;
+}
+
+.mochi-modal-root.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.mochi-modal-confirm {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+.mochi-modal-confirm__icon {
+  font-size: 22px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.mochi-modal-confirm__content {
+  flex: 1;
+  min-width: 0;
 }

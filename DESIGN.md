@@ -1,12 +1,12 @@
 # Mochi UI Design Language
 
 **Mochi UI（麻薯 UI）** — 软糯卡通 React 组件库  
-Maintained by [Nextouch](https://gitlab.com/nextouch) · MIT License
+Maintained by [Nextouch](https://github.com/nextouch-app) · MIT License
 
 ## 定位
 
 游戏菜单式界面语言：羊皮纸底、胶囊按钮、底部 3D 色块按压、有机圆角贴纸卡片、云朵装饰。  
-组件 API 贴近 Ant Design 习惯；视觉以天空蓝麻薯建立品牌识别。
+API 命名清晰、Props 两端一致；视觉以天空蓝麻薯建立品牌识别。
 
 ### 辨识符号
 

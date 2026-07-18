@@ -1,5 +1,10 @@
 # Popconfirm 气泡确认
 
+
+## Examples
+
+<mochi-demos name="Popconfirm"></mochi-demos>
+
 ```tsx
 import { Popconfirm, Button } from '@mochi-ui/react'
 

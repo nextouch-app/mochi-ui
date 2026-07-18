@@ -10,6 +10,27 @@ function sameDay(a: Date, b: Date) {
   return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate()
 }
 
+function normalizeRange(start: Date | null | undefined, end: Date | null | undefined) {
+  if (!start || !end) return { start, end }
+  const s = startOfDay(start)
+  const e = startOfDay(end)
+  return s.getTime() <= e.getTime() ? { start: s, end: e } : { start: e, end: s }
+}
+
+function inRange(
+  d: Date,
+  start: Date | null | undefined,
+  end: Date | null | undefined,
+  hover?: Date | null,
+) {
+  const normalized = normalizeRange(start, end ?? hover)
+  if (!normalized.start) return false
+  const endDate = normalized.end ?? hover
+  if (!endDate) return sameDay(d, normalized.start)
+  const t = startOfDay(d).getTime()
+  return t >= startOfDay(normalized.start).getTime() && t <= startOfDay(endDate).getTime()
+}
+
 export function Calendar({
   value,
   defaultValue,
@@ -17,10 +38,15 @@ export function Calendar({
   style,
   onChange,
   disabledDate,
+  rangeStart,
+  rangeEnd,
+  hoverDate,
+  onHoverDate,
 }: CalendarProps) {
   const [inner, setInner] = useState(defaultValue ?? new Date())
   const selected = value ?? inner
   const [view, setView] = useState(new Date(selected.getFullYear(), selected.getMonth(), 1))
+  const [pressedDay, setPressedDay] = useState<string | null>(null)
 
   const days = useMemo(() => {
     const year = view.getFullYear()
@@ -41,6 +67,8 @@ export function Calendar({
     if (value === undefined) setInner(next)
     onChange?.(next)
   }
+
+  const range = normalizeRange(rangeStart, rangeEnd)
 
   return (
     <div className={cn('mochi-calendar', className)} style={style}>
@@ -64,18 +92,31 @@ export function Calendar({
         {days.map((d) => {
           const outside = d.getMonth() !== view.getMonth()
           const disabled = !!disabledDate?.(d)
+          const key = d.toISOString()
+          const isStart = range.start ? sameDay(d, range.start) : false
+          const isEnd = range.end ? sameDay(d, range.end) : false
+          const isInRange = inRange(d, rangeStart, rangeEnd, hoverDate)
           return (
             <button
-              key={d.toISOString()}
+              key={key}
               type="button"
               disabled={disabled}
               className={cn(
                 'mochi-calendar__cell',
                 outside && 'is-outside',
-                sameDay(d, selected) && 'is-selected',
+                sameDay(d, selected) && !rangeStart && !rangeEnd && 'is-selected',
                 sameDay(d, new Date()) && 'is-today',
+                isInRange && 'is-in-range',
+                isStart && 'is-range-start',
+                isEnd && 'is-range-end',
+                pressedDay === key && 'is-pressed',
               )}
               onClick={() => pick(d)}
+              onTouchStart={() => {
+                setPressedDay(key)
+                onHoverDate?.(d)
+              }}
+              onTouchEnd={() => setPressedDay(null)}
             >
               {d.getDate()}
             </button>

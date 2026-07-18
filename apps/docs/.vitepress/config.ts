@@ -1,4 +1,9 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
+import react from '@vitejs/plugin-react'
+import { resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const root = resolve(fileURLToPath(new URL('.', import.meta.url)), '../../..')
 
 function nav(prefix: '' | '/en', labels: { guide: string; components: string; resources: string }): DefaultTheme.NavItem[] {
   return [
@@ -75,6 +80,7 @@ function componentsSidebar(
         { text: 'Rate', link: `${prefix}/components/rate` },
         { text: 'Upload', link: `${prefix}/components/upload` },
         { text: 'DatePicker', link: `${prefix}/components/date-picker` },
+        { text: 'Cascader', link: `${prefix}/components/cascader` },
         { text: 'Picker', link: `${prefix}/components/picker` },
       ],
     },
@@ -123,6 +129,8 @@ function resourcesSidebar(
   ]
 }
 
+const githubRepo = 'https://github.com/nextouch-app/mochi-ui'
+
 /** GitHub/GitLab Pages 子路径部署时由 CI 注入，例如 `/mochi-ui/` */
 const docsBase = process.env.DOCS_BASE || '/'
 
@@ -132,6 +140,33 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
   ignoreDeadLinks: true,
+
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => tag.startsWith('mochi-'),
+      },
+    },
+  },
+
+  vite: {
+    plugins: [react()],
+    resolve: {
+      alias: {
+        '@mochi-ui/react': resolve(root, 'packages/react/src'),
+        '@mochi-ui/core': resolve(root, 'packages/core/src'),
+        '@mochi-ui/icons': resolve(root, 'packages/icons/src/index.ts'),
+        '@mochi-ui/tokens/tokens.css': resolve(root, 'packages/tokens/src/tokens.css'),
+        '@mochi-ui/tokens': resolve(root, 'packages/tokens/src'),
+      },
+    },
+    ssr: {
+      noExternal: ['@mochi-ui/react', '@mochi-ui/core', '@mochi-ui/icons', '@mochi-ui/tokens'],
+    },
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react/jsx-runtime'],
+    },
+  },
 
   locales: {
     root: {
@@ -171,7 +206,7 @@ export default defineConfig({
         lightModeSwitchTitle: '切换到浅色',
         darkModeSwitchTitle: '切换到深色',
         langMenuLabel: '切换语言',
-        socialLinks: [{ icon: 'gitlab', link: 'https://gitlab.com/nextouch/mochi-ui' }],
+        socialLinks: [{ icon: 'github', link: githubRepo }],
         footer: {
           message: '基于 MIT 协议发布。',
           copyright: 'Copyright © 2026 Nextouch',
@@ -216,7 +251,7 @@ export default defineConfig({
         lightModeSwitchTitle: 'Switch to light',
         darkModeSwitchTitle: 'Switch to dark',
         langMenuLabel: 'Change language',
-        socialLinks: [{ icon: 'gitlab', link: 'https://gitlab.com/nextouch/mochi-ui' }],
+        socialLinks: [{ icon: 'github', link: githubRepo }],
         footer: {
           message: 'Released under the MIT License.',
           copyright: 'Copyright © 2026 Nextouch',

@@ -9,13 +9,13 @@
 } from 'react'
 
 export type SizeType = 'sm' | 'md' | 'lg'
-/** Ant Design 兼容别名：small→sm / middle→md / large→lg */
+/** 尺寸别名：small→sm / middle→md / large→lg */
 export type SizeAlias = SizeType | 'small' | 'middle' | 'large'
 
 export type ButtonType = 'primary' | 'default' | 'text' | 'dashed' | 'link'
 export type ButtonShape = 'default' | 'circle' | 'round'
 export type ButtonIconPlacement = 'start' | 'end'
-export type ButtonLoading = boolean | { delay?: number }
+export type ButtonLoading = boolean | { delay?: number; icon?: ReactNode }
 
 export interface BaseProps {
   className?: string
@@ -81,6 +81,18 @@ export interface InputProps {
   onBlur?: (e: FocusEvent<HTMLInputElement>) => void
 }
 
+export type NamePath = string | Array<string | number>
+
+export interface InputPasswordProps extends Omit<InputProps, 'type'> {
+  visibilityToggle?: boolean
+}
+
+export interface InputSearchProps extends InputProps {
+  enterButton?: ReactNode | boolean
+  loading?: boolean
+  onSearch?: (value: string, e?: unknown) => void
+}
+
 export type CardVariant = 'default' | 'dashed' | 'pink' | 'mint' | 'lavender' | 'peach'
 export type CardSize = SizeAlias | 'default'
 
@@ -121,6 +133,10 @@ export interface TagProps extends BaseProps {
   variant?: TagVariant
   color?: TagColor
   size?: SizeType
+  closable?: boolean
+  onClose?: (e: MouseEvent) => void
+  icon?: ReactNode
+  bordered?: boolean
 }
 
 export type DividerType = 'solid' | 'dashed' | 'wave'
@@ -214,6 +230,22 @@ export interface ModalProps extends BaseProps {
   zIndex?: number
   /** 键盘 Esc 关闭 */
   keyboard?: boolean
+  getContainer?: HTMLElement | false | (() => HTMLElement)
+}
+
+export interface ModalFuncProps {
+  title?: ReactNode
+  content?: ReactNode
+  okText?: string
+  cancelText?: string
+  onOk?: () => void | Promise<void>
+  onCancel?: () => void
+  okButtonProps?: Partial<ButtonProps>
+  cancelButtonProps?: Partial<ButtonProps>
+  width?: number | string
+  centered?: boolean
+  type?: 'info' | 'success' | 'error' | 'warning' | 'confirm'
+  icon?: ReactNode
 }
 
 export interface ToastOptions {
@@ -324,8 +356,9 @@ export interface SelectOption {
 export interface SelectProps {
   className?: string
   style?: CSSProperties
-  value?: string | number
-  defaultValue?: string | number
+  mode?: 'multiple' | 'tags'
+  value?: string | number | Array<string | number>
+  defaultValue?: string | number | Array<string | number>
   options?: SelectOption[]
   placeholder?: string
   disabled?: boolean
@@ -334,11 +367,15 @@ export interface SelectProps {
   showSearch?: boolean
   size?: SizeAlias
   status?: InputStatus
+  maxTagCount?: number | 'responsive'
   /** 下拉挂载是否打开（受控） */
   open?: boolean
   defaultOpen?: boolean
   onDropdownVisibleChange?: (open: boolean) => void
-  onChange?: (value: string | number | undefined, option?: SelectOption) => void
+  onChange?: (
+    value: string | number | Array<string | number> | undefined,
+    option?: SelectOption | SelectOption[],
+  ) => void
   onClear?: () => void
   onSearch?: (keyword: string) => void
   filterOption?: boolean | ((input: string, option: SelectOption) => boolean)
@@ -378,6 +415,25 @@ export interface SearchBarProps {
 export type FormLayout = 'vertical' | 'horizontal' | 'inline'
 export type FormValidateStatus = 'success' | 'warning' | 'error' | 'validating' | ''
 
+export interface FormRule {
+  required?: boolean
+  message?: string
+  min?: number
+  max?: number
+  pattern?: RegExp
+  validator?: (value: unknown) => void | Promise<void> | string | Promise<string>
+}
+
+export interface FormInstance {
+  getFieldValue: (name: NamePath) => unknown
+  getFieldsValue: () => Record<string, unknown>
+  setFieldValue: (name: NamePath, value: unknown) => void
+  setFieldsValue: (values: Record<string, unknown>) => void
+  resetFields: (names?: NamePath[]) => void
+  validateFields: (names?: NamePath[]) => Promise<Record<string, unknown>>
+  submit: () => void
+}
+
 export interface FormItemProps extends BaseProps {
   label?: ReactNode
   required?: boolean
@@ -385,7 +441,7 @@ export interface FormItemProps extends BaseProps {
   error?: ReactNode
   help?: ReactNode
   extra?: ReactNode
-  name?: string
+  name?: NamePath
   htmlFor?: string
   validateStatus?: FormValidateStatus
   /** label 占比，仅 horizontal */
@@ -393,6 +449,30 @@ export interface FormItemProps extends BaseProps {
   wrapperCol?: number
   /** 隐藏必填星号但仍标记 required */
   hideRequiredMark?: boolean
+  rules?: FormRule[]
+  /** 子组件 value 属性名，Switch 为 `checked` */
+  valuePropName?: string
+  /** 收集值的回调名 */
+  trigger?: string
+  /** 触发校验的事件 */
+  validateTrigger?: string | string[]
+}
+
+export interface FormListFieldData {
+  name: number
+  key: number
+}
+
+export interface FormListOperation {
+  add: (defaultValue?: unknown, insertIndex?: number) => void
+  remove: (index: number | number[]) => void
+  move: (from: number, to: number) => void
+}
+
+export interface FormListProps {
+  name: string
+  children: (fields: FormListFieldData[], operation: FormListOperation, meta: { errors: string[] }) => ReactNode
+  initialValue?: unknown[]
 }
 
 export interface FormProps extends BaseProps {
@@ -403,6 +483,10 @@ export interface FormProps extends BaseProps {
   colon?: boolean
   requiredMark?: boolean | 'optional'
   labelAlign?: 'left' | 'right'
+  form?: FormInstance
+  initialValues?: Record<string, unknown>
+  name?: string
+  scrollToFirstError?: boolean
   onSubmit?: (e: FormEvent) => void
   onFinish?: (values: Record<string, unknown>) => void
   onFinishFailed?: (errorInfo: { values: Record<string, unknown>; errors: string[] }) => void
@@ -456,6 +540,12 @@ export interface TableColumn<T = Record<string, unknown>> {
   width?: number | string
   align?: 'left' | 'center' | 'right'
   render?: (value: unknown, record: T, index: number) => ReactNode
+  sorter?: boolean | ((a: T, b: T) => number)
+  fixed?: 'left' | 'right'
+  ellipsis?: boolean
+  filters?: { text: ReactNode; value: string | number | boolean }[]
+  onFilter?: (value: string | number | boolean, record: T) => boolean
+  filteredValue?: Array<string | number | boolean> | null
 }
 
 export interface TableProps<T = Record<string, unknown>> extends BaseProps {
@@ -466,6 +556,16 @@ export interface TableProps<T = Record<string, unknown>> extends BaseProps {
   emptyText?: ReactNode
   bordered?: boolean
   size?: SizeAlias
+  rowSelection?: {
+    selectedRowKeys?: Array<string | number>
+    defaultSelectedRowKeys?: Array<string | number>
+    type?: 'checkbox' | 'radio'
+    onChange?: (selectedRowKeys: Array<string | number>, selectedRows: T[]) => void
+    getCheckboxProps?: (record: T) => { disabled?: boolean }
+  }
+  pagination?: false | PaginationProps
+  scroll?: { x?: number | string; y?: number | string }
+  onRow?: (record: T, index: number) => { onClick?: () => void; className?: string }
 }
 
 export interface PaginationProps {
@@ -490,14 +590,33 @@ export interface SkeletonProps extends BaseProps {
 
 export interface MessageOptions {
   content: ReactNode
-  type?: 'info' | 'success' | 'warning' | 'error'
+  type?: 'info' | 'success' | 'warning' | 'error' | 'loading'
   duration?: number
+  key?: string | number
+  onClose?: () => void
+  icon?: ReactNode
+}
+
+export interface MessageConfig {
+  maxCount?: number
+  duration?: number
+  top?: number
 }
 
 export interface NotificationOptions {
   title?: ReactNode
   description?: ReactNode
   type?: 'info' | 'success' | 'warning' | 'error'
+  duration?: number
+  placement?: 'topRight' | 'topLeft' | 'bottomRight' | 'bottomLeft'
+  key?: string | number
+  onClose?: () => void
+  btn?: ReactNode
+  icon?: ReactNode
+}
+
+export interface NotificationConfig {
+  maxCount?: number
   duration?: number
   placement?: 'topRight' | 'topLeft' | 'bottomRight' | 'bottomLeft'
 }
@@ -511,7 +630,10 @@ export interface RateProps {
   allowHalf?: boolean
   allowClear?: boolean
   disabled?: boolean
+  character?: ReactNode
+  tooltips?: string[]
   onChange?: (value: number) => void
+  onHoverChange?: (value: number) => void
 }
 
 export interface UploadFile {
@@ -519,6 +641,9 @@ export interface UploadFile {
   name: string
   status?: 'uploading' | 'done' | 'error'
   url?: string
+  percent?: number
+  response?: unknown
+  originFileObj?: File
 }
 
 export interface UploadProps extends BaseProps {
@@ -528,8 +653,20 @@ export interface UploadProps extends BaseProps {
   fileList?: UploadFile[]
   defaultFileList?: UploadFile[]
   maxCount?: number
+  action?: string
+  headers?: Record<string, string>
+  data?: Record<string, string | Blob> | ((file: File) => Record<string, string | Blob>)
+  customRequest?: (options: {
+    file: File
+    onSuccess: (body?: unknown) => void
+    onError: (e: Error) => void
+    onProgress?: (e: { percent: number }) => void
+  }) => void
+  listType?: 'text' | 'picture' | 'picture-card'
+  showUploadList?: boolean
   onChange?: (info: { file: UploadFile; fileList: UploadFile[] }) => void
   onRemove?: (file: UploadFile) => void | boolean
+  onPreview?: (file: UploadFile) => void
   beforeUpload?: (file: File) => boolean | void
 }
 
@@ -538,6 +675,9 @@ export interface DropdownItem {
   label: ReactNode
   disabled?: boolean
   danger?: boolean
+  icon?: ReactNode
+  type?: 'item' | 'divider'
+  children?: DropdownItem[]
   onClick?: () => void
 }
 
@@ -546,6 +686,8 @@ export interface DropdownProps extends BaseProps {
   trigger?: 'click' | 'hover'
   disabled?: boolean
   placement?: 'bottomLeft' | 'bottomRight'
+  open?: boolean
+  defaultOpen?: boolean
   onOpenChange?: (open: boolean) => void
 }
 
@@ -586,6 +728,10 @@ export interface CalendarProps {
   defaultValue?: Date
   onChange?: (date: Date) => void
   disabledDate?: (date: Date) => boolean
+  rangeStart?: Date | null
+  rangeEnd?: Date | null
+  hoverDate?: Date | null
+  onHoverDate?: (date: Date | null) => void
 }
 
 export interface DatePickerProps {
@@ -596,8 +742,58 @@ export interface DatePickerProps {
   placeholder?: string
   disabled?: boolean
   allowClear?: boolean
-  format?: (date: Date) => string
+  open?: boolean
+  defaultOpen?: boolean
+  disabledDate?: (date: Date) => boolean
+  status?: InputStatus
+  size?: SizeAlias
+  format?: string | ((date: Date) => string)
+  showTime?: boolean
+  picker?: 'date' | 'week' | 'month' | 'year'
   onChange?: (date: Date | null) => void
+  onOpenChange?: (open: boolean) => void
+}
+
+export type RangeValue = [Date | null, Date | null] | null
+
+export interface RangePickerProps {
+  className?: string
+  style?: CSSProperties
+  value?: RangeValue
+  defaultValue?: RangeValue
+  placeholder?: [string, string]
+  disabled?: boolean
+  allowClear?: boolean
+  disabledDate?: (date: Date) => boolean
+  status?: InputStatus
+  size?: SizeAlias
+  format?: string | ((date: Date) => string)
+  showTime?: boolean
+  onChange?: (dates: RangeValue) => void
+}
+
+export interface CascaderOption {
+  value: string | number
+  label: ReactNode
+  disabled?: boolean
+  children?: CascaderOption[]
+}
+
+export interface CascaderProps {
+  className?: string
+  style?: CSSProperties
+  options?: CascaderOption[]
+  value?: Array<string | number>
+  defaultValue?: Array<string | number>
+  placeholder?: string
+  disabled?: boolean
+  allowClear?: boolean
+  changeOnSelect?: boolean
+  expandTrigger?: 'click' | 'hover'
+  size?: SizeAlias
+  status?: InputStatus
+  displayRender?: (labels: ReactNode[], selectedOptions?: CascaderOption[]) => ReactNode
+  onChange?: (value: Array<string | number>, selectedOptions: CascaderOption[]) => void
 }
 
 export interface PickerColumnOption {

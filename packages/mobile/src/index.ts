@@ -13,12 +13,12 @@ export { Switch } from './switch/Switch'
 export { Checkbox } from './checkbox/Checkbox'
 export { Radio, RadioGroup } from './radio/Radio'
 export { TextArea } from './textarea/TextArea'
-export { Form, FormItem } from './form/Form'
+export { Form, FormItem, useForm } from './form/Form'
 export { SearchBar } from './search-bar/SearchBar'
 export { Tabs } from './tabs/Tabs'
 export { TabBar } from './tab-bar/TabBar'
 export { NavBar } from './nav-bar/NavBar'
-export { Modal } from './modal/Modal'
+export { Modal } from './modal'
 export { Toast } from './toast/Toast'
 export { ActionSheet } from './action-sheet/ActionSheet'
 export { Collapse } from './collapse/Collapse'
@@ -49,8 +49,40 @@ export { Popover } from './popover/Popover'
 export { Popconfirm } from './popconfirm/Popconfirm'
 export { Swiper } from './swiper/Swiper'
 export { Calendar } from './calendar/Calendar'
-export { DatePicker } from './date-picker/DatePicker'
+export { DatePicker, RangePicker } from './date-picker'
+export { Cascader } from './cascader/Cascader'
 export { Picker } from './picker/Picker'
 export { PullToRefresh } from './pull-to-refresh/PullToRefresh'
+
+export type {
+  ButtonProps,
+  InputProps,
+  InputPasswordProps,
+  InputSearchProps,
+  FormProps,
+  FormItemProps,
+  FormInstance,
+  FormRule,
+  FormListProps,
+  FormListFieldData,
+  FormListOperation,
+  NamePath,
+  ModalProps,
+  ModalFuncProps,
+  SelectProps,
+  TableProps,
+  TableColumn,
+  MessageOptions,
+  NotificationOptions,
+  UploadProps,
+  TagProps,
+  DropdownProps,
+  RateProps,
+  DatePickerProps,
+  RangePickerProps,
+  RangeValue,
+  CascaderProps,
+  CascaderOption,
+} from '@mochi-ui/core'
 
 import './styles/index.css'

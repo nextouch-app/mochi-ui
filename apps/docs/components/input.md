@@ -1,8 +1,13 @@
 # Input 输入框
 
-胶囊输入框，focus 使用黄色光晕。
+胶囊输入框，focus 使用黄色光晕。支持 `Input.Password`、`Input.Search` 子组件。
 
-## API
+
+## 代码演示
+
+<mochi-demos name="Input"></mochi-demos>
+
+## Input API
 
 | 属性 | 说明 | 类型 | 默认 |
 |------|------|------|------|
@@ -18,6 +23,24 @@
 | onPressEnter | 回车回调 | `(e) => void` | — |
 | onClear | 清除回调 | `() => void` | — |
 
+## Input.Password API
+
+| 属性 | 说明 | 类型 | 默认 |
+|------|------|------|------|
+| visibilityToggle | 是否显示密码可见切换 | `boolean` | `true` |
+
+继承 `Input` 属性（不含 `type`）。
+
+## Input.Search API
+
+| 属性 | 说明 | 类型 | 默认 |
+|------|------|------|------|
+| enterButton | 搜索按钮；`true` 为后置按钮，`ReactNode` 为自定义 | `boolean \| ReactNode` | `false` |
+| loading | 搜索按钮 loading | `boolean` | `false` |
+| onSearch | 点击搜索或回车时触发 | `(value, e?) => void` | — |
+
+继承 `Input` 属性。
+
 ## 示例
 
 ```tsx
@@ -31,4 +54,7 @@ import { Input, Icon } from '@mochi-ui/react'
   maxLength={20}
   status="error"
 />
+
+<Input.Password placeholder="密码" />
+<Input.Search placeholder="搜索" onSearch={(v) => console.log(v)} enterButton />
 ```

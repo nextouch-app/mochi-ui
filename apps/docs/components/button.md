@@ -2,18 +2,23 @@
 
 胶囊按钮：底部 3D 色块阴影、按压下沉、斜纹 loading。
 
+
+## 代码演示
+
+<mochi-demos name="Button"></mochi-demos>
+
 ## API
 
 | 属性 | 说明 | 类型 | 默认 |
 |------|------|------|------|
 | type | 类型 | `primary \| default \| dashed \| text \| link` | `default` |
-| size | 尺寸（兼容 AntD 别名） | `sm \| md \| lg \| small \| middle \| large` | `md` |
+| size | 尺寸（亦支持 small / middle / large） | `sm \| md \| lg \| small \| middle \| large` | `md` |
 | shape | 形状 | `default \| circle \| round` | `default` |
 | danger | 危险按钮 | `boolean` | `false` |
 | ghost | 幽灵按钮（透明底） | `boolean` | `false` |
 | icon | 图标 | `ReactNode` | — |
 | iconPlacement | 图标位置 | `start \| end` | `start` |
-| loading | 加载中 | `boolean \| { delay?: number }` | `false` |
+| loading | 加载中 | `boolean \| { delay?: number; icon?: ReactNode }` | `false` |
 | disabled | 禁用 | `boolean` | `false` |
 | block | 通栏 | `boolean` | `false` |
 | href | 链接地址（渲染为 a） | `string` | — |
