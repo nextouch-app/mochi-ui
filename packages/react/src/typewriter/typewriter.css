@@ -1,0 +1,17 @@
+.mochi-typewriter {
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  font-weight: 800;
+  color: #725d42;
+  white-space: pre-wrap;
+}
+
+.mochi-typewriter__cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: #6cb4ee;
+  animation: mochi-typewriter-blink 1s steps(1) infinite;
+}
+
+@keyframes mochi-typewriter-blink {
+  50% { opacity: 0; }
+}

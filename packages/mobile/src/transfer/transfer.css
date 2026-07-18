@@ -1,0 +1,99 @@
+.mochi-transfer {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 12px;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  color: #725d42;
+}
+
+.mochi-transfer__panel {
+  width: 220px;
+  border: 2.5px solid #c4b89e;
+  border-radius: 18px;
+  background: #fff8e7;
+  box-shadow: 0 4px 0 0 #d4c9b4;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.mochi-transfer__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: #f7f3df;
+  border-bottom: 2px dashed #e0d6c0;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.mochi-transfer__search {
+  margin: 8px 10px 0;
+  height: 34px;
+  border: 2px solid #c4b89e;
+  border-radius: 999px;
+  padding: 0 12px;
+  font: inherit;
+  background: #fff;
+}
+
+.mochi-transfer__list {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  max-height: 260px;
+  overflow: auto;
+  flex: 1;
+}
+
+.mochi-transfer__item {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 8px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.mochi-transfer__item.is-selected {
+  background: rgba(108, 180, 238, 0.18);
+}
+
+.mochi-transfer__item.is-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mochi-transfer__item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mochi-transfer__item-desc {
+  font-size: 12px;
+  font-weight: 600;
+  color: #a89878;
+}
+
+.mochi-transfer__empty {
+  padding: 24px 8px;
+  text-align: center;
+  color: #b8a88c;
+  font-weight: 700;
+}
+
+.mochi-transfer__ops {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mochi-transfer.is-disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}

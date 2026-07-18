@@ -1,14 +1,16 @@
 # ConfigProvider
 
-Provides global `size` and `theme` (CSS variable overrides).
-
+Global size and theme tokens / CSS variables.
 
 ## Examples
 
 <mochi-demos name="ConfigProvider"></mochi-demos>
 
 ```tsx
-<ConfigProvider size="lg" theme={{ 'color-primary': '#F8B4C4' }}>
+<ConfigProvider
+  size="lg"
+  theme={{ token: { colorPrimary: '#F8B4C4' } }}
+>
   <App />
 </ConfigProvider>
 ```

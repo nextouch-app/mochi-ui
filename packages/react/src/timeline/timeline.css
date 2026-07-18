@@ -1,0 +1,105 @@
+.mochi-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  color: #725d42;
+}
+
+.mochi-timeline__item {
+  position: relative;
+  padding-bottom: 20px;
+  padding-left: 28px;
+}
+
+.mochi-timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.mochi-timeline__tail {
+  position: absolute;
+  left: 7px;
+  top: 18px;
+  bottom: 0;
+  width: 2.5px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #d4c9b4 0 6px,
+    transparent 6px 12px
+  );
+}
+
+.mochi-timeline__item:last-child .mochi-timeline__tail {
+  display: none;
+}
+
+.mochi-timeline__dot {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6cb4ee;
+  border: 2.5px solid #3d9ad4;
+  box-shadow: 0 2px 0 #d4c9b4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #fff;
+}
+
+.mochi-timeline__item.is-color-success .mochi-timeline__dot {
+  background: #7ec8a8;
+  border-color: #4a9a78;
+}
+.mochi-timeline__item.is-color-warning .mochi-timeline__dot {
+  background: #ffcc00;
+  border-color: #e0b800;
+}
+.mochi-timeline__item.is-color-error .mochi-timeline__dot {
+  background: #e05a5a;
+  border-color: #c04040;
+}
+.mochi-timeline__item.is-color-gray .mochi-timeline__dot {
+  background: #d4c9b4;
+  border-color: #b8a88c;
+}
+
+.mochi-timeline__dot.is-pending-dot {
+  background: #fff8e7;
+  border-style: dashed;
+  animation: mochi-timeline-pulse 1.2s ease-in-out infinite;
+}
+
+.mochi-timeline__content {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.mochi-timeline__label-inline {
+  font-size: 12px;
+  color: #a89878;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.mochi-timeline--alternate .mochi-timeline__item:nth-child(odd) {
+  text-align: right;
+  padding-left: 0;
+  padding-right: 28px;
+}
+.mochi-timeline--alternate .mochi-timeline__item:nth-child(odd) .mochi-timeline__dot {
+  left: auto;
+  right: 0;
+}
+.mochi-timeline--alternate .mochi-timeline__item:nth-child(odd) .mochi-timeline__tail {
+  left: auto;
+  right: 7px;
+}
+
+@keyframes mochi-timeline-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.12); opacity: 0.7; }
+}

@@ -1,0 +1,125 @@
+.mochi-steps {
+  display: flex;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  color: #725d42;
+}
+
+.mochi-steps--horizontal {
+  flex-direction: row;
+  width: 100%;
+}
+
+.mochi-steps--vertical {
+  flex-direction: column;
+}
+
+.mochi-steps__item {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  min-width: 0;
+}
+
+.mochi-steps--vertical .mochi-steps__item {
+  flex: none;
+  padding-bottom: 18px;
+}
+
+.mochi-steps__item.is-clickable {
+  cursor: pointer;
+}
+
+.mochi-steps__item.is-disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.mochi-steps__head {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mochi-steps__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  border: 2.5px solid #c4b89e;
+  background: #fff8e7;
+  box-shadow: 0 2px 0 #d4c9b4;
+  z-index: 1;
+}
+
+.mochi-steps--sm .mochi-steps__icon {
+  width: 26px;
+  height: 26px;
+  font-size: 12px;
+}
+
+.mochi-steps__tail {
+  flex: 1;
+  width: 100%;
+  min-width: 24px;
+  height: 2.5px;
+  margin-top: -18px;
+  margin-left: 32px;
+  background: #d4c9b4;
+}
+
+.mochi-steps--horizontal .mochi-steps__head {
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.mochi-steps--vertical .mochi-steps__tail {
+  width: 2.5px;
+  height: 100%;
+  min-height: 28px;
+  margin: 4px 0 0;
+  margin-left: 0;
+}
+
+.mochi-steps__item.is-finish .mochi-steps__icon,
+.mochi-steps__item.is-process .mochi-steps__icon {
+  background: linear-gradient(180deg, #8fc8f2, #6cb4ee);
+  border-color: #3d9ad4;
+  color: #fff;
+}
+
+.mochi-steps__item.is-finish .mochi-steps__tail {
+  background: #6cb4ee;
+}
+
+.mochi-steps__item.is-error .mochi-steps__icon {
+  background: #e05a5a;
+  border-color: #c04040;
+  color: #fff;
+}
+
+.mochi-steps__main {
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.mochi-steps__title {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.mochi-steps__desc {
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #a89878;
+}
+
+.mochi-steps--label-vertical.mochi-steps--horizontal .mochi-steps__item {
+  flex-direction: column;
+  align-items: flex-start;
+}

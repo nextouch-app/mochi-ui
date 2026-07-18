@@ -1,0 +1,41 @@
+.mochi-spin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mochi-spin--nested {
+  position: relative;
+  display: block;
+  min-height: 40px;
+}
+
+.mochi-spin__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 248, 231, 0.55);
+  border-radius: inherit;
+}
+
+.mochi-spin__content.is-blurred {
+  opacity: 0.45;
+  pointer-events: none;
+  user-select: none;
+}
+
+.mochi-spin__tip {
+  margin-top: 6px;
+  font-weight: 800;
+  color: #725d42;
+}
+
+.mochi-spin--fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(255, 248, 231, 0.72);
+}

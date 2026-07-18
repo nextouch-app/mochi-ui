@@ -10,7 +10,7 @@ export { Loading } from './loading/Loading'
 export { Tag } from './tag/Tag'
 export { Divider } from './divider/Divider'
 export { Switch } from './switch/Switch'
-export { Checkbox } from './checkbox/Checkbox'
+export { Checkbox, CheckboxGroup } from './checkbox/Checkbox'
 export { Radio, RadioGroup } from './radio/Radio'
 export { TextArea } from './textarea/TextArea'
 export { Form, FormItem, useForm } from './form/Form'
@@ -51,6 +51,41 @@ export { Swiper } from './swiper/Swiper'
 export { Calendar } from './calendar/Calendar'
 export { DatePicker, RangePicker } from './date-picker'
 export { Cascader } from './cascader/Cascader'
+export { Transfer } from './transfer/Transfer'
+export { Tree } from './tree/Tree'
+export { TreeSelect } from './tree-select/TreeSelect'
+export { AutoComplete } from './auto-complete/AutoComplete'
+export { Mentions } from './mentions/Mentions'
+export { Timeline } from './timeline/Timeline'
+export { Steps } from './steps/Steps'
+export { Breadcrumb } from './breadcrumb/Breadcrumb'
+export { Anchor } from './anchor/Anchor'
+export { Affix } from './affix/Affix'
+export { Image } from './image/Image'
+export { Typewriter } from './typewriter/Typewriter'
+export { CodeBlock } from './code-block/CodeBlock'
+export { Footer } from './footer/Footer'
+export { Phone } from './phone/Phone'
+export { Wallet } from './wallet/Wallet'
+export { Time } from './time/Time'
+export { Cursor } from './cursor/Cursor'
+export { Statistic } from './statistic/Statistic'
+export { Descriptions } from './descriptions/Descriptions'
+export { Segmented } from './segmented/Segmented'
+export { Watermark } from './watermark/Watermark'
+export { FloatButton } from './float-button/FloatButton'
+export { ColorPicker } from './color-picker/ColorPicker'
+export { Typography } from './typography/Typography'
+export { Flex } from './flex/Flex'
+export { Row, Col } from './grid/Grid'
+export { Layout } from './layout/Layout'
+export { Menu } from './menu/Menu'
+export { InputNumber } from './input-number/InputNumber'
+export { QRCode } from './qr-code/QRCode'
+export { Tour } from './tour/Tour'
+export { Spin } from './spin/Spin'
+export { Splitter } from './splitter/Splitter'
+export { TimePicker } from './time-picker/TimePicker'
 export { Picker } from './picker/Picker'
 export { PullToRefresh } from './pull-to-refresh/PullToRefresh'
 
@@ -83,6 +118,64 @@ export type {
   RangeValue,
   CascaderProps,
   CascaderOption,
+  TransferProps,
+  TransferItem,
+  TreeProps,
+  TreeDataNode,
+  TreeSelectProps,
+  AutoCompleteProps,
+  AutoCompleteOption,
+  MentionsProps,
+  MentionsOption,
+  TimelineProps,
+  TimelineItem,
+  StepsProps,
+  StepItem,
+  BreadcrumbProps,
+  BreadcrumbItem,
+  AnchorProps,
+  AnchorLinkItem,
+  AffixProps,
+  ImageProps,
+  StatisticProps,
+  DescriptionsProps,
+  DescriptionsItemType,
+  SegmentedProps,
+  SegmentedOption,
+  WatermarkProps,
+  FloatButtonProps,
+  FloatButtonGroupProps,
+  ColorPickerProps,
+  TypographyTextProps,
+  TypographyTitleProps,
+  TypographyParagraphProps,
+  TypographyLinkProps,
+  FlexProps,
+  RowProps,
+  ColProps,
+  LayoutProps,
+  LayoutSiderProps,
+  MenuProps,
+  MenuItemType,
+  InputNumberProps,
+  CheckboxGroupProps,
+  QRCodeProps,
+  TourProps,
+  TourStep,
+  SpinProps,
+  SplitterProps,
+  SplitterPanelProps,
+  TimePickerProps,
+  ImagePreviewGroupProps,
+  ThemeConfig,
+  ThemeToken,
+  TypewriterProps,
+  CodeBlockProps,
+  FooterProps,
+  PhoneProps,
+  WalletProps,
+  TimeProps,
+  CursorProps,
 } from '@mochi-ui/core'
 
 import './styles/index.css'

@@ -1,0 +1,7 @@
+.mochi-affix {
+  display: block;
+}
+
+.mochi-affix__content.is-fixed {
+  z-index: 1000;
+}

@@ -1,0 +1,30 @@
+.mochi-progress--circle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mochi-progress__circle-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: #725d42;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+}
+
+.mochi-progress__stroke {
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.mochi-progress--active .mochi-progress__bar {
+  background-size: 28px 28px;
+  animation: mochi-stripe 0.8s linear infinite;
+}
+
+.mochi-progress--exception .mochi-progress__bar {
+  background: linear-gradient(90deg, #f29aaa, #e85d75);
+}

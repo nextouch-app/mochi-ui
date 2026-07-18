@@ -1,6 +1,6 @@
 {
   "name": "@mochi-ui/core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared types and utilities for Mochi UI",
   "license": "MIT",
   "type": "module",
@@ -13,10 +13,21 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
     "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextouch-app/mochi-ui.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://nextouch-app.github.io/mochi-ui/",
+  "bugs": {
+    "url": "https://github.com/nextouch-app/mochi-ui/issues"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",

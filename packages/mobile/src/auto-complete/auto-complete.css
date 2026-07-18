@@ -1,0 +1,107 @@
+.mochi-autocomplete {
+  position: relative;
+  display: inline-block;
+  min-width: 220px;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+}
+
+.mochi-autocomplete__control {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 14px;
+  background: #fff;
+  border: 2.5px solid #c4b89e;
+  border-radius: 999px;
+  box-shadow: 0 3px 0 0 #d4c9b4;
+}
+
+.mochi-autocomplete--sm .mochi-autocomplete__control {
+  height: 36px;
+}
+.mochi-autocomplete--lg .mochi-autocomplete__control {
+  height: 56px;
+}
+
+.mochi-autocomplete.is-open .mochi-autocomplete__control,
+.mochi-autocomplete__control:focus-within {
+  border-color: #e0b800;
+  box-shadow: 0 3px 0 0 #d4c9b4, 0 0 0 4px rgba(255, 204, 0, 0.28);
+}
+
+.mochi-autocomplete.is-error .mochi-autocomplete__control {
+  border-color: #e05a5a;
+}
+
+.mochi-autocomplete__input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-weight: 700;
+  color: #725d42;
+}
+
+.mochi-autocomplete__clear {
+  border: none;
+  background: #e8dfc8;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #725d42;
+  font-weight: 900;
+}
+
+.mochi-autocomplete__dropdown {
+  position: absolute;
+  z-index: 1050;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  max-height: 220px;
+  overflow: auto;
+  padding: 6px;
+  background: #fff8e7;
+  border: 2.5px solid #c4b89e;
+  border-radius: 16px;
+  box-shadow: 0 5px 0 0 #d4c9b4;
+}
+
+.mochi-autocomplete__option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 700;
+  color: #725d42;
+  cursor: pointer;
+}
+
+.mochi-autocomplete__option.is-active,
+.mochi-autocomplete__option.is-pressed {
+  background: rgba(108, 180, 238, 0.22);
+}
+
+.mochi-autocomplete__option:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mochi-autocomplete__empty {
+  padding: 16px;
+  text-align: center;
+  color: #b8a88c;
+  font-weight: 700;
+}
+
+.mochi-autocomplete.is-disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}

@@ -1,0 +1,77 @@
+.mochi-phone {
+  display: inline-block;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+}
+
+.mochi-phone__bezel {
+  width: 180px;
+  padding: 12px 10px 16px;
+  border-radius: 28px;
+  border: 3px solid #c4b89e;
+  background: linear-gradient(180deg, #fffdf4, #f0e6c8);
+  box-shadow: 0 6px 0 #c4b89e;
+  position: relative;
+}
+
+.mochi-phone--sky .mochi-phone__screen {
+  background: linear-gradient(160deg, #8fc8f2, #6cb4ee);
+}
+.mochi-phone--peach .mochi-phone__screen {
+  background: linear-gradient(160deg, #ffb4c8, #f28aaa);
+}
+.mochi-phone--mint .mochi-phone__screen {
+  background: linear-gradient(160deg, #a8e6cf, #7ed957);
+}
+.mochi-phone--lavender .mochi-phone__screen {
+  background: linear-gradient(160deg, #d4c4f0, #b39ddb);
+}
+
+.mochi-phone__notch {
+  width: 56px;
+  height: 8px;
+  margin: 0 auto 8px;
+  border-radius: 999px;
+  background: #725d42;
+  opacity: 0.35;
+}
+
+.mochi-phone__status {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px 6px;
+  font-size: 10px;
+  font-weight: 800;
+  color: rgba(255, 253, 244, 0.9);
+}
+
+.mochi-phone__screen {
+  min-height: 160px;
+  border-radius: 18px;
+  border: 2.5px solid rgba(255, 253, 244, 0.55);
+  padding: 20px 12px;
+  color: #fff;
+  text-align: center;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.35);
+}
+
+.mochi-phone__label {
+  font-size: 12px;
+  font-weight: 800;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.mochi-phone__number {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  word-break: break-all;
+}
+
+.mochi-phone__home {
+  width: 36px;
+  height: 5px;
+  margin: 12px auto 0;
+  border-radius: 999px;
+  background: #c4b89e;
+}

@@ -1,0 +1,45 @@
+.mochi-footer {
+  position: relative;
+  padding: 28px 20px 20px;
+  text-align: center;
+  color: #725d42;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  background: linear-gradient(180deg, #fff8e7, #f3ecd4);
+  border-top: 2.5px solid #c4b89e;
+}
+
+.mochi-footer__wave {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background:
+    radial-gradient(circle at 10px 12px, transparent 10px, #fff8e7 11px) 0 0 / 20px 12px repeat-x;
+}
+
+.mochi-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+  margin-bottom: 10px;
+}
+
+.mochi-footer__link {
+  border: none;
+  background: transparent;
+  color: #3d9ad4;
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.mochi-footer__copyright {
+  font-weight: 700;
+  color: #9a8768;
+  font-size: 13px;
+}
+

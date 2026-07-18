@@ -1,0 +1,65 @@
+.mochi-tree {
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  color: #725d42;
+  font-weight: 700;
+}
+
+.mochi-tree__content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.mochi-tree__content.is-selected,
+.mochi-tree__content.is-pressed {
+  background: rgba(108, 180, 238, 0.18);
+}
+
+.mochi-tree__content.is-disabled {
+  opacity: 0.45;
+}
+
+.mochi-tree__switcher {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: #fff8e7;
+  border: 2px solid #c4b89e;
+  border-radius: 8px;
+  color: #725d42;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.mochi-tree__switcher.is-open {
+  transform: rotate(90deg);
+}
+
+.mochi-tree__switcher-placeholder {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mochi-tree__switcher-placeholder.is-line::before {
+  content: '•';
+  color: #c4b89e;
+}
+
+.mochi-tree__title {
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+}
+
+.mochi-tree.is-disabled {
+  pointer-events: none;
+  opacity: 0.65;
+}

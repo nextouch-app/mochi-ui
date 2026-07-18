@@ -1,0 +1,41 @@
+.mochi-anchor {
+  position: relative;
+  padding-left: 14px;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+}
+
+.mochi-anchor.is-affix {
+  position: sticky;
+}
+
+.mochi-anchor__ink {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2.5px;
+  background: #e0d6c0;
+  border-radius: 2px;
+}
+
+.mochi-anchor__link {
+  display: block;
+  padding: 6px 10px;
+  margin-bottom: 2px;
+  border-radius: 10px;
+  color: #725d42;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.mochi-anchor__link:hover {
+  background: rgba(108, 180, 238, 0.16);
+  color: #3d9ad4;
+}
+
+.mochi-anchor__link.is-active {
+  background: rgba(108, 180, 238, 0.22);
+  color: #3d9ad4;
+  box-shadow: inset 3px 0 0 #6cb4ee;
+}

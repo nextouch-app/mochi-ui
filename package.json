@@ -1,6 +1,6 @@
 {
   "name": "mochi-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "Mochi UI — soft cartoon React component library by Nextouch",
@@ -13,6 +13,8 @@
     "docs:dev": "pnpm --filter docs dev",
     "docs:build": "pnpm --filter docs build",
     "check:mobile-styles": "node scripts/check-mobile-styles.js",
+    "check:exports": "node scripts/check-exports.js",
+    "release:check": "pnpm build && pnpm check:mobile-styles && pnpm check:exports && pnpm docs:build",
     "clean": "pnpm -r run clean"
   },
   "engines": {
