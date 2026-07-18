@@ -1,0 +1,98 @@
+.mochi-timepicker {
+  position: relative;
+  display: inline-block;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+}
+
+.mochi-timepicker__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 140px;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 2.5px solid #c4b89e;
+  border-radius: 999px;
+  background: #fffdf4;
+  color: #725d42;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #c4b89e;
+}
+
+.mochi-timepicker--sm .mochi-timepicker__trigger {
+  min-height: 32px;
+}
+
+.mochi-timepicker--lg .mochi-timepicker__trigger {
+  min-height: 48px;
+}
+
+.mochi-timepicker__value {
+  flex: 1;
+  text-align: left;
+}
+
+.mochi-timepicker__value.is-placeholder {
+  color: #9a8768;
+  font-weight: 700;
+}
+
+.mochi-timepicker__clear,
+.mochi-timepicker__clock {
+  color: #9a8768;
+}
+
+.mochi-timepicker__panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 1050;
+  min-width: 100%;
+  padding: 12px;
+  border: 2.5px solid #c4b89e;
+  border-radius: 16px;
+  background: #fffdf4;
+  box-shadow: 0 6px 0 #c4b89e;
+}
+
+.mochi-timepicker__cols {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  font-weight: 900;
+  color: #725d42;
+}
+
+.mochi-timepicker__select {
+  min-width: 56px;
+  padding: 6px 8px;
+  border: 2px solid #c4b89e;
+  border-radius: 10px;
+  background: #fff;
+  color: #725d42;
+  font: inherit;
+  font-weight: 800;
+}
+
+.mochi-timepicker__ok {
+  width: 100%;
+  min-height: 36px;
+  border: 2px solid #3d9ad4;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #8fc8f2, #6cb4ee);
+  color: #fff;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #3d9ad4;
+}
+
+.mochi-timepicker.is-disabled .mochi-timepicker__trigger {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+

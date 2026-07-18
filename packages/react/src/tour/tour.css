@@ -1,0 +1,95 @@
+.mochi-tour {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+}
+
+.mochi-tour__mask {
+  position: absolute;
+  inset: 0;
+  background: rgba(114, 93, 66, 0.35);
+  pointer-events: auto;
+}
+
+.mochi-tour__spotlight {
+  position: absolute;
+  border-radius: 14px;
+  box-shadow: 0 0 0 9999px rgba(114, 93, 66, 0.35);
+  background: transparent;
+  border: 2.5px solid #6cb4ee;
+  pointer-events: none;
+}
+
+.mochi-tour__panel {
+  position: absolute;
+  width: min(300px, calc(100vw - 24px));
+  padding: 16px;
+  border: 2.5px solid #c4b89e;
+  border-radius: 18px;
+  background: #fffdf4;
+  box-shadow: 0 6px 0 #c4b89e;
+  color: #725d42;
+  pointer-events: auto;
+}
+
+.mochi-tour__cover {
+  margin-bottom: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mochi-tour__title {
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.mochi-tour__desc {
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  color: #9a8768;
+}
+
+.mochi-tour__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.mochi-tour__indicator {
+  font-size: 12px;
+  font-weight: 800;
+  color: #9a8768;
+}
+
+.mochi-tour__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.mochi-tour__btn {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 2px solid #c4b89e;
+  border-radius: 999px;
+  background: #fffdf4;
+  color: #725d42;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #c4b89e;
+}
+
+.mochi-tour__btn--primary {
+  border-color: #3d9ad4;
+  background: linear-gradient(180deg, #8fc8f2, #6cb4ee);
+  color: #fff;
+  box-shadow: 0 2px 0 #3d9ad4;
+}
+
+.mochi-tour__btn:hover {
+  transform: translateY(-1px);
+}

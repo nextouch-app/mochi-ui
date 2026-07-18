@@ -1,0 +1,103 @@
+.mochi-input-number-group {
+  display: inline-flex;
+  align-items: stretch;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+}
+
+.mochi-input-number {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 4px 0 12px;
+  border: 2.5px solid #c4b89e;
+  border-radius: 999px;
+  background: #fffdf4;
+  box-shadow: 0 2px 0 #c4b89e;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  color: #725d42;
+}
+
+.mochi-input-number--sm { min-height: 32px; }
+.mochi-input-number--lg { min-height: 48px; }
+
+.mochi-input-number__prefix {
+  margin-right: 6px;
+  font-weight: 800;
+  color: #9a8768;
+}
+
+.mochi-input-number__field {
+  width: 88px;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 800;
+}
+
+.mochi-input-number__handlers {
+  display: inline-flex;
+  flex-direction: column;
+  margin-left: 4px;
+}
+
+.mochi-input-number__handlers button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 16px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #9a8768;
+  cursor: pointer;
+  font-size: 10px;
+  line-height: 1;
+}
+
+
+.mochi-input-number__handlers button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.mochi-input-number__addon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  border: 2.5px solid #c4b89e;
+  background: #f7f3df;
+  font-weight: 800;
+  color: #725d42;
+}
+
+.mochi-input-number-group > .mochi-input-number__addon:first-child {
+  border-right: none;
+  border-radius: 999px 0 0 999px;
+}
+
+.mochi-input-number-group > .mochi-input-number {
+  border-radius: 0;
+}
+
+.mochi-input-number-group > .mochi-input-number__addon:last-child {
+  border-left: none;
+  border-radius: 0 999px 999px 0;
+}
+
+.mochi-input-number-group > .mochi-input-number:first-child {
+  border-radius: 999px 0 0 999px;
+}
+
+.mochi-input-number-group > .mochi-input-number:last-child {
+  border-radius: 0 999px 999px 0;
+}
+
+.mochi-input-number.is-disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+

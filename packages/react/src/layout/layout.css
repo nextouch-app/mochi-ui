@@ -1,0 +1,74 @@
+.mochi-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: #fff8e7;
+  color: #725d42;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+}
+
+.mochi-layout--has-sider,
+.mochi-layout:has(> .mochi-layout-sider) {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.mochi-layout:has(> .mochi-layout-sider) > .mochi-layout,
+.mochi-layout--has-sider > .mochi-layout {
+  flex: 1;
+  min-width: 0;
+}
+
+.mochi-layout-header {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 20px;
+  background: linear-gradient(180deg, #fffdf4, #f7f3df);
+  border-bottom: 2.5px solid #c4b89e;
+  font-weight: 900;
+}
+
+.mochi-layout-content {
+  flex: 1;
+  min-width: 0;
+  padding: 20px;
+}
+
+.mochi-layout-footer {
+  padding: 14px 20px;
+  border-top: 2.5px solid #c4b89e;
+  background: #f7f3df;
+  text-align: center;
+  font-weight: 700;
+  color: #9a8768;
+}
+
+.mochi-layout-sider {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #fffdf4, #f3ecd4);
+  border-right: 2.5px solid #c4b89e;
+  transition: width 0.2s ease, flex-basis 0.2s ease;
+}
+
+.mochi-layout-sider__body {
+  flex: 1;
+  overflow: auto;
+  padding: 12px 8px;
+}
+
+.mochi-layout-sider__trigger {
+  height: 40px;
+  border: none;
+  border-top: 2px solid #c4b89e;
+  background: #f7f3df;
+  color: #725d42;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.mochi-layout-sider__trigger:hover {
+  background: #efe6c8;
+}

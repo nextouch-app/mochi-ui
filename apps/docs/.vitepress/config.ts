@@ -47,9 +47,11 @@ function componentsSidebar(
     overviewItem: string
     general: string
     layout: string
+    navigation: string
     dataEntry: string
     dataDisplay: string
     feedback: string
+    other: string
   },
 ): DefaultTheme.SidebarItem[] {
   return [
@@ -61,26 +63,54 @@ function componentsSidebar(
       text: labels.general,
       items: [
         { text: 'Button', link: `${prefix}/components/button` },
+        { text: 'FloatButton', link: `${prefix}/components/float-button` },
         { text: 'Icon', link: `${prefix}/components/icon` },
+        { text: 'Typography', link: `${prefix}/components/typography` },
         { text: 'Loading', link: `${prefix}/components/loading` },
+        { text: 'Spin', link: `${prefix}/components/spin` },
         { text: 'ConfigProvider', link: `${prefix}/components/config-provider` },
       ],
     },
     {
       text: labels.layout,
-      items: [{ text: 'Divider', link: `${prefix}/components/divider` }],
+      items: [
+        { text: 'Divider', link: `${prefix}/components/divider` },
+        { text: 'Flex', link: `${prefix}/components/flex` },
+        { text: 'Grid', link: `${prefix}/components/grid` },
+        { text: 'Layout', link: `${prefix}/components/layout` },
+        { text: 'Splitter', link: `${prefix}/components/splitter` },
+        { text: 'Affix', link: `${prefix}/components/affix` },
+        { text: 'Watermark', link: `${prefix}/components/watermark` },
+      ],
+    },
+    {
+      text: labels.navigation,
+      items: [
+        { text: 'Breadcrumb', link: `${prefix}/components/breadcrumb` },
+        { text: 'Menu', link: `${prefix}/components/menu` },
+        { text: 'Steps', link: `${prefix}/components/steps` },
+        { text: 'Anchor', link: `${prefix}/components/anchor` },
+      ],
     },
     {
       text: labels.dataEntry,
       items: [
         { text: 'Input', link: `${prefix}/components/input` },
+        { text: 'InputNumber', link: `${prefix}/components/input-number` },
         { text: 'Switch', link: `${prefix}/components/switch` },
         { text: 'Select', link: `${prefix}/components/select` },
         { text: 'Form', link: `${prefix}/components/form` },
         { text: 'Rate', link: `${prefix}/components/rate` },
         { text: 'Upload', link: `${prefix}/components/upload` },
         { text: 'DatePicker', link: `${prefix}/components/date-picker` },
+        { text: 'TimePicker', link: `${prefix}/components/time-picker` },
         { text: 'Cascader', link: `${prefix}/components/cascader` },
+        { text: 'Transfer', link: `${prefix}/components/transfer` },
+        { text: 'TreeSelect', link: `${prefix}/components/tree-select` },
+        { text: 'AutoComplete', link: `${prefix}/components/auto-complete` },
+        { text: 'Mentions', link: `${prefix}/components/mentions` },
+        { text: 'Segmented', link: `${prefix}/components/segmented` },
+        { text: 'ColorPicker', link: `${prefix}/components/color-picker` },
         { text: 'Picker', link: `${prefix}/components/picker` },
       ],
     },
@@ -90,22 +120,44 @@ function componentsSidebar(
         { text: 'Card', link: `${prefix}/components/card` },
         { text: 'Tag', link: `${prefix}/components/tag` },
         { text: 'Table', link: `${prefix}/components/table` },
+        { text: 'Tree', link: `${prefix}/components/tree` },
+        { text: 'Timeline', link: `${prefix}/components/timeline` },
+        { text: 'Image', link: `${prefix}/components/image` },
+        { text: 'Statistic', link: `${prefix}/components/statistic` },
+        { text: 'Descriptions', link: `${prefix}/components/descriptions` },
+        { text: 'Progress', link: `${prefix}/components/progress` },
+        { text: 'QRCode', link: `${prefix}/components/qr-code` },
         { text: 'Pagination', link: `${prefix}/components/pagination` },
         { text: 'Skeleton', link: `${prefix}/components/skeleton` },
         { text: 'Swiper', link: `${prefix}/components/swiper` },
         { text: 'Calendar', link: `${prefix}/components/calendar` },
+        { text: 'Typewriter', link: `${prefix}/components/typewriter` },
+        { text: 'CodeBlock', link: `${prefix}/components/code-block` },
       ],
     },
     {
       text: labels.feedback,
       items: [
         { text: 'Modal', link: `${prefix}/components/modal` },
+        { text: 'Drawer', link: `${prefix}/components/drawer` },
         { text: 'Message', link: `${prefix}/components/message` },
         { text: 'Notification', link: `${prefix}/components/notification` },
+        { text: 'Tour', link: `${prefix}/components/tour` },
         { text: 'Dropdown', link: `${prefix}/components/dropdown` },
         { text: 'Popover', link: `${prefix}/components/popover` },
         { text: 'Popconfirm', link: `${prefix}/components/popconfirm` },
         { text: 'PullToRefresh', link: `${prefix}/components/pull-to-refresh` },
+      ],
+    },
+    {
+      text: labels.other,
+      items: [
+        { text: 'Title', link: `${prefix}/components/title` },
+        { text: 'Phone', link: `${prefix}/components/phone` },
+        { text: 'Wallet', link: `${prefix}/components/wallet` },
+        { text: 'Time', link: `${prefix}/components/time` },
+        { text: 'Cursor', link: `${prefix}/components/cursor` },
+        { text: 'Footer', link: `${prefix}/components/footer` },
       ],
     },
   ]
@@ -191,9 +243,11 @@ export default defineConfig({
             overviewItem: '总览',
             general: '通用',
             layout: '布局',
+            navigation: '导航',
             dataEntry: '数据录入',
             dataDisplay: '数据展示',
             feedback: '反馈',
+            other: '其他',
           }),
           '/resources/': resourcesSidebar('', { resources: '资源' }),
         },
@@ -236,9 +290,11 @@ export default defineConfig({
             overviewItem: 'Overview',
             general: 'General',
             layout: 'Layout',
+            navigation: 'Navigation',
             dataEntry: 'Data Entry',
             dataDisplay: 'Data Display',
             feedback: 'Feedback',
+            other: 'Other',
           }),
           '/en/resources/': resourcesSidebar('/en', { resources: 'Resources' }),
         },

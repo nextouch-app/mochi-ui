@@ -1,0 +1,97 @@
+.mochi-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  background: #fffdf4;
+  border: 2.5px solid #c4b89e;
+  border-radius: 16px;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  box-shadow: 0 3px 0 #c4b89e;
+}
+
+.mochi-menu--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.mochi-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 40px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: #725d42;
+  font: inherit;
+  font-weight: 800;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mochi-menu--horizontal .mochi-menu__item {
+  width: auto;
+}
+
+.mochi-menu__item:hover:not(:disabled):not(.is-selected) {
+  background: rgba(108, 180, 238, 0.16);
+}
+
+.mochi-menu__item.is-selected {
+  background: linear-gradient(180deg, #8fc8f2, #6cb4ee);
+  color: #fff;
+  box-shadow: 0 2px 0 #3d9ad4;
+}
+
+.mochi-menu__item.is-danger {
+  color: #e85d75;
+}
+
+.mochi-menu__item.is-danger.is-selected {
+  background: linear-gradient(180deg, #f29aaa, #e85d75);
+  box-shadow: 0 2px 0 #c4455c;
+  color: #fff;
+}
+
+.mochi-menu__item:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mochi-menu__icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.mochi-menu__label {
+  flex: 1;
+}
+
+.mochi-menu__arrow {
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.mochi-menu__divider {
+  height: 0;
+  margin: 4px 8px;
+  border-top: 2px dashed #c4b89e;
+}
+
+.mochi-menu__group-title {
+  padding: 8px 12px 4px;
+  color: #9a8768;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mochi-menu__submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 2px;
+}

@@ -1,0 +1,49 @@
+.mochi-breadcrumb {
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  color: #725d42;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.mochi-breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mochi-breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mochi-breadcrumb__link {
+  color: #3d9ad4;
+  text-decoration: none;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.mochi-breadcrumb__link.is-pressed {
+  background: rgba(108, 180, 238, 0.18);
+}
+
+.mochi-breadcrumb__text {
+  padding: 2px 8px;
+}
+
+.mochi-breadcrumb__text.is-current {
+  color: #4a3420;
+  background: #fff8e7;
+  border: 2px solid #c4b89e;
+  border-radius: 999px;
+}
+
+.mochi-breadcrumb__sep {
+  color: #b8a88c;
+  font-weight: 600;
+}

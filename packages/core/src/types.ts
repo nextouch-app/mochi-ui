@@ -6,6 +6,7 @@
   FocusEvent,
   FormEvent,
   KeyboardEvent,
+  SyntheticEvent,
 } from 'react'
 
 export type SizeType = 'sm' | 'md' | 'lg'
@@ -147,10 +148,30 @@ export interface DividerProps extends BaseProps {
   children?: ReactNode
 }
 
+export interface ThemeToken {
+  colorPrimary?: string
+  colorSuccess?: string
+  colorWarning?: string
+  colorError?: string
+  colorText?: string
+  colorBgBase?: string
+  borderRadius?: string | number
+  fontFamily?: string
+  [key: string]: string | number | undefined
+}
+
+export interface ThemeConfig {
+  /** CSS 变量覆盖；也可用 token 快捷字段 */
+  token?: ThemeToken
+  /** 直接写入 CSS 变量（`--mochi-xxx` 或裸 key） */
+  cssVars?: Record<string, string>
+}
+
 export interface ConfigProviderProps {
   children?: ReactNode
   size?: SizeAlias
-  theme?: Record<string, string>
+  /** @deprecated 请使用 theme.cssVars 或 theme.token */
+  theme?: Record<string, string> | ThemeConfig
 }
 
 export interface SwitchProps {
@@ -176,6 +197,8 @@ export interface CheckboxProps {
   checked?: boolean
   defaultChecked?: boolean
   disabled?: boolean
+  /** 用于 Checkbox.Group */
+  value?: string | number
   children?: ReactNode
   onChange?: (checked: boolean) => void
 }
@@ -294,8 +317,14 @@ export interface ListItemProps extends BaseProps {
 
 export interface ProgressProps extends BaseProps {
   percent?: number
-  status?: 'normal' | 'success' | 'error'
+  status?: 'normal' | 'success' | 'exception' | 'active' | 'error'
   showInfo?: boolean
+  type?: 'line' | 'circle' | 'dashboard'
+  strokeColor?: string
+  trailColor?: string
+  strokeWidth?: number
+  size?: number | [number, number]
+  format?: (percent?: number) => ReactNode
 }
 
 export interface AlertProps extends BaseProps {
@@ -496,7 +525,17 @@ export interface DrawerProps extends BaseProps {
   open?: boolean
   title?: ReactNode
   placement?: 'left' | 'right' | 'bottom' | 'top'
+  width?: number | string
+  height?: number | string
+  mask?: boolean
+  maskClosable?: boolean
+  closable?: boolean
+  destroyOnClose?: boolean
+  footer?: ReactNode
+  extra?: ReactNode
+  zIndex?: number
   onClose?: () => void
+  afterOpenChange?: (open: boolean) => void
 }
 
 export interface ActionSheetAction {
@@ -823,4 +862,591 @@ export interface PullToRefreshProps extends BaseProps {
   disabled?: boolean
 }
 
+export interface TransferItem {
+  key: string
+  title: ReactNode
+  description?: ReactNode
+  disabled?: boolean
+}
+
+export interface TransferProps {
+  className?: string
+  style?: CSSProperties
+  dataSource?: TransferItem[]
+  targetKeys?: string[]
+  defaultTargetKeys?: string[]
+  selectedKeys?: string[]
+  defaultSelectedKeys?: string[]
+  titles?: [ReactNode, ReactNode]
+  operations?: [ReactNode, ReactNode]
+  showSearch?: boolean
+  disabled?: boolean
+  oneWay?: boolean
+  listStyle?: CSSProperties
+  filterOption?: (input: string, item: TransferItem) => boolean
+  render?: (item: TransferItem) => ReactNode
+  onChange?: (targetKeys: string[], direction: 'left' | 'right', moveKeys: string[]) => void
+  onSelectChange?: (sourceSelectedKeys: string[], targetSelectedKeys: string[]) => void
+  onSearch?: (direction: 'left' | 'right', value: string) => void
+}
+
+export interface TreeDataNode {
+  key: string
+  title: ReactNode
+  disabled?: boolean
+  disableCheckbox?: boolean
+  selectable?: boolean
+  checkable?: boolean
+  isLeaf?: boolean
+  children?: TreeDataNode[]
+}
+
+export interface TreeProps {
+  className?: string
+  style?: CSSProperties
+  treeData?: TreeDataNode[]
+  checkable?: boolean
+  selectable?: boolean
+  multiple?: boolean
+  defaultExpandAll?: boolean
+  defaultExpandedKeys?: string[]
+  expandedKeys?: string[]
+  defaultSelectedKeys?: string[]
+  selectedKeys?: string[]
+  defaultCheckedKeys?: string[]
+  checkedKeys?: string[] | { checked: string[]; halfChecked: string[] }
+  checkStrictly?: boolean
+  showLine?: boolean
+  disabled?: boolean
+  onExpand?: (expandedKeys: string[]) => void
+  onSelect?: (selectedKeys: string[], info: { node: TreeDataNode; selected: boolean }) => void
+  onCheck?: (
+    checkedKeys: string[] | { checked: string[]; halfChecked: string[] },
+    info: { node: TreeDataNode; checked: boolean },
+  ) => void
+}
+
+export interface AutoCompleteOption {
+  value: string
+  label?: ReactNode
+  disabled?: boolean
+}
+
+export interface AutoCompleteProps {
+  className?: string
+  style?: CSSProperties
+  value?: string
+  defaultValue?: string
+  options?: AutoCompleteOption[]
+  placeholder?: string
+  disabled?: boolean
+  allowClear?: boolean
+  status?: InputStatus
+  size?: SizeAlias
+  filterOption?: boolean | ((input: string, option: AutoCompleteOption) => boolean)
+  notFoundContent?: ReactNode
+  onChange?: (value: string) => void
+  onSelect?: (value: string, option: AutoCompleteOption) => void
+  onSearch?: (value: string) => void
+  onClear?: () => void
+}
+
+export interface MentionsOption {
+  value: string
+  label?: ReactNode
+  disabled?: boolean
+}
+
+export interface MentionsProps {
+  className?: string
+  style?: CSSProperties
+  value?: string
+  defaultValue?: string
+  options?: MentionsOption[]
+  prefix?: string | string[]
+  placeholder?: string
+  disabled?: boolean
+  rows?: number
+  status?: InputStatus
+  split?: string
+  filterOption?: boolean | ((input: string, option: MentionsOption) => boolean)
+  onChange?: (value: string) => void
+  onSelect?: (option: MentionsOption, prefix: string) => void
+  onSearch?: (text: string, prefix: string) => void
+}
+
+export interface TreeSelectProps {
+  className?: string
+  style?: CSSProperties
+  treeData?: TreeDataNode[]
+  value?: string | string[]
+  defaultValue?: string | string[]
+  placeholder?: string
+  disabled?: boolean
+  allowClear?: boolean
+  multiple?: boolean
+  treeCheckable?: boolean
+  treeDefaultExpandAll?: boolean
+  showSearch?: boolean
+  status?: InputStatus
+  size?: SizeAlias
+  onChange?: (value: string | string[] | undefined, labelList?: ReactNode[]) => void
+  onSearch?: (value: string) => void
+  onClear?: () => void
+}
+
+export interface TimelineItem {
+  key?: string
+  children?: ReactNode
+  label?: ReactNode
+  color?: 'primary' | 'success' | 'warning' | 'error' | 'gray' | string
+  dot?: ReactNode
+}
+
+export interface TimelineProps extends BaseProps {
+  items?: TimelineItem[]
+  mode?: 'left' | 'right' | 'alternate'
+  pending?: boolean | ReactNode
+  reverse?: boolean
+}
+
+export interface StepItem {
+  key?: string
+  title?: ReactNode
+  description?: ReactNode
+  icon?: ReactNode
+  status?: 'wait' | 'process' | 'finish' | 'error'
+  disabled?: boolean
+}
+
+export interface StepsProps extends BaseProps {
+  items?: StepItem[]
+  current?: number
+  status?: 'wait' | 'process' | 'finish' | 'error'
+  direction?: 'horizontal' | 'vertical'
+  size?: SizeAlias
+  labelPlacement?: 'horizontal' | 'vertical'
+  onChange?: (current: number) => void
+}
+
+export interface BreadcrumbItem {
+  key?: string
+  title: ReactNode
+  href?: string
+  onClick?: (e: MouseEvent) => void
+}
+
+export interface BreadcrumbProps extends BaseProps {
+  items?: BreadcrumbItem[]
+  separator?: ReactNode
+}
+
+export interface AnchorLinkItem {
+  key: string
+  href: string
+  title: ReactNode
+  children?: AnchorLinkItem[]
+}
+
+export interface AnchorProps extends BaseProps {
+  items?: AnchorLinkItem[]
+  affix?: boolean
+  offsetTop?: number
+  bounds?: number
+  getContainer?: () => HTMLElement | Window
+  onClick?: (e: MouseEvent, link: { href: string; title: ReactNode }) => void
+  onChange?: (activeLink: string) => void
+}
+
+export interface AffixProps extends BaseProps {
+  offsetTop?: number
+  offsetBottom?: number
+  target?: () => HTMLElement | Window | null
+  onChange?: (affixed: boolean) => void
+}
+
+export interface ImagePreviewType {
+  src?: string
+  visible?: boolean
+  onVisibleChange?: (visible: boolean) => void
+}
+
+export interface ImageProps {
+  className?: string
+  style?: CSSProperties
+  src?: string
+  alt?: string
+  width?: number | string
+  height?: number | string
+  preview?: boolean | ImagePreviewType
+  fallback?: string
+  placeholder?: ReactNode
+  onClick?: (e: MouseEvent) => void
+  onError?: (e: SyntheticEvent) => void
+  onLoad?: (e: SyntheticEvent) => void
+}
+
+export interface ImagePreviewGroupProps extends BaseProps {
+  items?: Array<string | { src: string; alt?: string }>
+  preview?: boolean | { visible?: boolean; current?: number; onChange?: (current: number) => void; onVisibleChange?: (visible: boolean) => void }
+}
+
+export interface StatisticProps extends BaseProps {
+  title?: ReactNode
+  value?: string | number
+  precision?: number
+  prefix?: ReactNode
+  suffix?: ReactNode
+  loading?: boolean
+  valueStyle?: CSSProperties
+}
+
+export interface DescriptionsItemType {
+  key?: string
+  label?: ReactNode
+  children?: ReactNode
+  span?: number
+}
+
+export interface DescriptionsProps extends BaseProps {
+  title?: ReactNode
+  extra?: ReactNode
+  items?: DescriptionsItemType[]
+  column?: number
+  layout?: 'horizontal' | 'vertical'
+  bordered?: boolean
+  size?: SizeAlias
+}
+
+export interface SegmentedOption {
+  label: ReactNode
+  value: string | number
+  disabled?: boolean
+  icon?: ReactNode
+}
+
+export interface SegmentedProps {
+  className?: string
+  style?: CSSProperties
+  options?: Array<string | number | SegmentedOption>
+  value?: string | number
+  defaultValue?: string | number
+  disabled?: boolean
+  size?: SizeAlias
+  block?: boolean
+  onChange?: (value: string | number) => void
+}
+
+export interface WatermarkProps extends BaseProps {
+  content?: string | string[]
+  width?: number
+  height?: number
+  rotate?: number
+  gap?: [number, number]
+  offset?: [number, number]
+  font?: {
+    color?: string
+    fontSize?: number
+    fontWeight?: string | number
+    fontFamily?: string
+  }
+  zIndex?: number
+  inherit?: boolean
+}
+
+export interface FloatButtonProps extends BaseProps {
+  icon?: ReactNode
+  description?: ReactNode
+  type?: 'default' | 'primary'
+  shape?: 'circle' | 'square'
+  href?: string
+  target?: string
+  tooltip?: ReactNode
+  onClick?: (e: MouseEvent) => void
+}
+
+export interface FloatButtonGroupProps extends BaseProps {
+  trigger?: 'click' | 'hover'
+  open?: boolean
+  defaultOpen?: boolean
+  shape?: 'circle' | 'square'
+  type?: 'default' | 'primary'
+  icon?: ReactNode
+  onOpenChange?: (open: boolean) => void
+}
+
+export interface ColorPickerProps {
+  className?: string
+  style?: CSSProperties
+  value?: string
+  defaultValue?: string
+  disabled?: boolean
+  showText?: boolean
+  size?: SizeAlias
+  presets?: Array<{ label: ReactNode; colors: string[] }>
+  onChange?: (color: string) => void
+  onChangeComplete?: (color: string) => void
+}
+
+export type TypographyType = 'secondary' | 'success' | 'warning' | 'danger'
+
+export interface TypographyTextProps extends BaseProps {
+  type?: TypographyType
+  strong?: boolean
+  italic?: boolean
+  underline?: boolean
+  delete?: boolean
+  code?: boolean
+  mark?: boolean
+  disabled?: boolean
+  ellipsis?: boolean
+  copyable?: boolean | { text?: string; onCopy?: () => void }
+}
+
+export interface TypographyTitleProps extends BaseProps {
+  level?: 1 | 2 | 3 | 4 | 5
+  type?: TypographyType
+  ellipsis?: boolean
+}
+
+export interface TypographyParagraphProps extends TypographyTextProps {}
+
+export interface TypographyLinkProps extends BaseProps {
+  href?: string
+  target?: string
+  type?: TypographyType
+  disabled?: boolean
+  onClick?: (e: MouseEvent) => void
+}
+
+export interface FlexProps extends BaseProps {
+  vertical?: boolean
+  wrap?: boolean | 'wrap' | 'nowrap' | 'wrap-reverse'
+  justify?: CSSProperties['justifyContent']
+  align?: CSSProperties['alignItems']
+  gap?: SizeType | number | [number, number]
+  flex?: CSSProperties['flex']
+  component?: keyof HTMLElementTagNameMap
+}
+
+export interface RowProps extends BaseProps {
+  gutter?: number | [number, number]
+  align?: 'top' | 'middle' | 'bottom' | 'stretch'
+  justify?: 'start' | 'end' | 'center' | 'space-around' | 'space-between' | 'space-evenly'
+  wrap?: boolean
+}
+
+export interface ColProps extends BaseProps {
+  span?: number
+  offset?: number
+  order?: number
+  flex?: string | number
+}
+
+export interface LayoutProps extends BaseProps {
+  hasSider?: boolean
+}
+
+export interface LayoutSiderProps extends BaseProps {
+  width?: number | string
+  collapsed?: boolean
+  collapsedWidth?: number | string
+  collapsible?: boolean
+  onCollapse?: (collapsed: boolean) => void
+}
+
+export interface MenuItemType {
+  key: string
+  label?: ReactNode
+  icon?: ReactNode
+  disabled?: boolean
+  danger?: boolean
+  type?: 'item' | 'divider' | 'group'
+  children?: MenuItemType[]
+}
+
+export interface MenuProps extends BaseProps {
+  mode?: 'vertical' | 'horizontal' | 'inline'
+  items?: MenuItemType[]
+  selectedKeys?: string[]
+  defaultSelectedKeys?: string[]
+  openKeys?: string[]
+  defaultOpenKeys?: string[]
+  onClick?: (info: { key: string }) => void
+  onSelect?: (info: { key: string; selectedKeys: string[] }) => void
+  onOpenChange?: (openKeys: string[]) => void
+}
+
+export interface InputNumberProps {
+  className?: string
+  style?: CSSProperties
+  value?: number | null
+  defaultValue?: number
+  min?: number
+  max?: number
+  step?: number
+  precision?: number
+  disabled?: boolean
+  controls?: boolean
+  size?: SizeAlias
+  prefix?: ReactNode
+  addonBefore?: ReactNode
+  addonAfter?: ReactNode
+  placeholder?: string
+  onChange?: (value: number | null) => void
+  onStep?: (value: number, info: { offset: number; type: 'up' | 'down' }) => void
+}
+
+export interface CheckboxGroupProps {
+  className?: string
+  style?: CSSProperties
+  value?: Array<string | number>
+  defaultValue?: Array<string | number>
+  disabled?: boolean
+  options?: Array<string | number | { label: ReactNode; value: string | number; disabled?: boolean }>
+  children?: ReactNode
+  onChange?: (checkedValue: Array<string | number>) => void
+}
+
+export interface QRCodeProps extends BaseProps {
+  value?: string
+  size?: number
+  color?: string
+  bgColor?: string
+  bordered?: boolean
+  status?: 'active' | 'expired' | 'loading' | 'scanned'
+  errorLevel?: 'L' | 'M' | 'Q' | 'H'
+  icon?: string
+  iconSize?: number | { width: number; height: number }
+  onRefresh?: () => void
+}
+
+export interface TourStep {
+  title?: ReactNode
+  description?: ReactNode
+  target?: () => HTMLElement | null | undefined
+  cover?: ReactNode
+  nextButtonProps?: { children?: ReactNode }
+  prevButtonProps?: { children?: ReactNode }
+}
+
+export interface TourProps {
+  className?: string
+  style?: CSSProperties
+  open?: boolean
+  defaultOpen?: boolean
+  current?: number
+  defaultCurrent?: number
+  steps?: TourStep[]
+  mask?: boolean
+  zIndex?: number
+  onClose?: (current: number) => void
+  onFinish?: () => void
+  onChange?: (current: number) => void
+}
+
+export interface SpinProps extends BaseProps {
+  spinning?: boolean
+  size?: SizeType
+  tip?: ReactNode
+  delay?: number
+  fullscreen?: boolean
+}
+
+export interface SplitterPanelProps extends BaseProps {
+  defaultSize?: number | string
+  size?: number | string
+  min?: number | string
+  max?: number | string
+  resizable?: boolean
+}
+
+export interface SplitterProps extends BaseProps {
+  layout?: 'horizontal' | 'vertical'
+  lazy?: boolean
+  onResize?: (sizes: number[]) => void
+  onResizeEnd?: (sizes: number[]) => void
+}
+
+export interface TimePickerProps {
+  className?: string
+  style?: CSSProperties
+  value?: Date | null
+  defaultValue?: Date | null
+  placeholder?: string
+  disabled?: boolean
+  allowClear?: boolean
+  open?: boolean
+  defaultOpen?: boolean
+  format?: string | ((date: Date) => string)
+  size?: SizeAlias
+  hourStep?: number
+  minuteStep?: number
+  secondStep?: number
+  showSecond?: boolean
+  use12Hours?: boolean
+  onChange?: (date: Date | null, timeString: string) => void
+  onOpenChange?: (open: boolean) => void
+}
+
+export interface TypewriterProps extends BaseProps {
+  text?: string | string[]
+  speed?: number
+  loop?: boolean
+  cursor?: boolean | string
+  deleteSpeed?: number
+  pause?: number
+  onComplete?: () => void
+}
+
+export interface CodeBlockProps extends BaseProps {
+  code?: string
+  language?: string
+  showCopy?: boolean
+  title?: ReactNode
+}
+
+export interface FooterProps extends BaseProps {
+  copyright?: ReactNode
+  links?: Array<{ key?: string; title: ReactNode; href?: string; onClick?: () => void }>
+}
+
+export interface PhoneProps extends BaseProps {
+  /** 展示用号码或文案 */
+  number?: ReactNode
+  label?: ReactNode
+  /** 外壳色调 */
+  tone?: 'sky' | 'peach' | 'mint' | 'lavender'
+  statusBar?: boolean
+  time?: string
+}
+
+export interface WalletProps extends BaseProps {
+  title?: ReactNode
+  balance?: ReactNode
+  currency?: ReactNode
+  subtitle?: ReactNode
+  tone?: 'sky' | 'peach' | 'mint' | 'gold'
+  actions?: ReactNode
+}
+
+export interface TimeProps extends BaseProps {
+  value?: Date | number | string
+  format?: string | ((value: Date) => string)
+  /** 实时刷新 */
+  live?: boolean
+  showDate?: boolean
+  showSeconds?: boolean
+  label?: ReactNode
+}
+
+export interface CursorProps extends BaseProps {
+  /** 跟随鼠标（Web） */
+  follow?: boolean
+  size?: 'sm' | 'md' | 'lg'
+  color?: string
+  label?: ReactNode
+  /** 隐藏系统光标（仅 follow 时） */
+  hideNative?: boolean
+}
 

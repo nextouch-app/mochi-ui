@@ -1,6 +1,6 @@
 {
   "name": "@mochi-ui/icons",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Original SVG icons for Mochi UI",
   "license": "MIT",
   "type": "module",
@@ -14,10 +14,22 @@
     },
     "./svg/*": "./src/svg/*"
   },
-  "files": ["dist", "src/svg"],
+  "files": [
+    "dist",
+    "src/svg"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --external react --clean && node ../../scripts/copy-icon-svgs.js",
     "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextouch-app/mochi-ui.git",
+    "directory": "packages/icons"
+  },
+  "homepage": "https://nextouch-app.github.io/mochi-ui/",
+  "bugs": {
+    "url": "https://github.com/nextouch-app/mochi-ui/issues"
   },
   "peerDependencies": {
     "react": ">=18"

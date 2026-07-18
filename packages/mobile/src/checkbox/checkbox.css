@@ -1,0 +1,7 @@
+.mochi-checkbox-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  align-items: center;
+}
+

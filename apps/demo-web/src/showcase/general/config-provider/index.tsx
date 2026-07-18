@@ -14,7 +14,12 @@ function BasicDemo() {
 
 function VariantDemo() {
   return (
-    <ConfigProvider theme={{ 'color-primary': '#F8B4C4', 'color-primary-dark': '#E898A8' }}>
+    <ConfigProvider
+      theme={{
+        token: { colorPrimary: '#F8B4C4' },
+        cssVars: { 'color-primary-dark': '#E898A8' },
+      }}
+    >
       <Button type="primary">主题粉</Button>
     </ConfigProvider>
   )

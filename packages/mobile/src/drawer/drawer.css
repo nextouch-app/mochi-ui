@@ -1,0 +1,15 @@
+.mochi-drawer__header-extra {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mochi-drawer__footer {
+  padding: 12px 16px;
+  border-top: 2px solid #c4b89e;
+  background: #f7f3df;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+

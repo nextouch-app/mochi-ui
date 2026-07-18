@@ -1,0 +1,44 @@
+.mochi-statistic {
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  color: #725d42;
+}
+
+.mochi-statistic__title {
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #a89878;
+}
+
+.mochi-statistic__content {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.mochi-statistic__value {
+  font-size: 28px;
+  color: #4a3420;
+}
+
+.mochi-statistic__prefix,
+.mochi-statistic__suffix {
+  font-size: 16px;
+  color: #6cb4ee;
+}
+
+.mochi-statistic__skeleton {
+  display: inline-block;
+  width: 96px;
+  height: 28px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #f0e6c8, #fff8e7, #f0e6c8);
+  background-size: 200% 100%;
+  animation: mochi-stat-shine 1.2s linear infinite;
+}
+
+@keyframes mochi-stat-shine {
+  to { background-position: -200% 0; }
+}

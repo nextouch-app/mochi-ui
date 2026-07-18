@@ -1,6 +1,6 @@
 {
   "name": "@mochi-ui/tokens",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Design tokens for Mochi UI",
   "license": "MIT",
   "type": "module",
@@ -15,10 +15,22 @@
     "./tokens.css": "./src/tokens.css",
     "./tokens.json": "./src/tokens.json"
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
     "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextouch-app/mochi-ui.git",
+    "directory": "packages/tokens"
+  },
+  "homepage": "https://nextouch-app.github.io/mochi-ui/",
+  "bugs": {
+    "url": "https://github.com/nextouch-app/mochi-ui/issues"
   },
   "devDependencies": {
     "rimraf": "^6.0.1",

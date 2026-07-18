@@ -1,6 +1,6 @@
 {
   "name": "@mochi-ui/mobile",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Mochi UI React components for Mobile / H5 (restricted CSS)",
   "license": "MIT",
   "type": "module",
@@ -14,11 +14,24 @@
     },
     "./style.css": "./dist/index.css"
   },
-  "files": ["dist"],
-  "sideEffects": ["**/*.css"],
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly --declaration --outDir dist",
     "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextouch-app/mochi-ui.git",
+    "directory": "packages/mobile"
+  },
+  "homepage": "https://nextouch-app.github.io/mochi-ui/",
+  "bugs": {
+    "url": "https://github.com/nextouch-app/mochi-ui/issues"
   },
   "peerDependencies": {
     "react": ">=18",
@@ -27,9 +40,11 @@
   "dependencies": {
     "@mochi-ui/core": "workspace:*",
     "@mochi-ui/icons": "workspace:*",
-    "@mochi-ui/tokens": "workspace:*"
+    "@mochi-ui/tokens": "workspace:*",
+    "qrcode": "^1.5.4"
   },
   "devDependencies": {
+    "@types/qrcode": "^1.5.6",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",

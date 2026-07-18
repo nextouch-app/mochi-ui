@@ -1,0 +1,79 @@
+.mochi-mentions {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 420px;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+}
+
+.mochi-mentions__textarea {
+  width: 100%;
+  min-height: 96px;
+  resize: vertical;
+  padding: 12px 14px;
+  border: 2.5px solid #c4b89e;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 3px 0 0 #d4c9b4;
+  font: inherit;
+  font-weight: 700;
+  color: #725d42;
+  outline: none;
+}
+
+.mochi-mentions.is-open .mochi-mentions__textarea,
+.mochi-mentions__textarea:focus {
+  border-color: #e0b800;
+  box-shadow: 0 3px 0 0 #d4c9b4, 0 0 0 4px rgba(255, 204, 0, 0.28);
+}
+
+.mochi-mentions.is-error .mochi-mentions__textarea {
+  border-color: #e05a5a;
+}
+
+.mochi-mentions__dropdown {
+  position: absolute;
+  z-index: 1050;
+  left: 12px;
+  right: 12px;
+  top: 100%;
+  margin-top: 6px;
+  max-height: 180px;
+  overflow: auto;
+  padding: 6px;
+  background: #fff8e7;
+  border: 2.5px solid #c4b89e;
+  border-radius: 14px;
+  box-shadow: 0 5px 0 0 #d4c9b4;
+}
+
+.mochi-mentions__option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 700;
+  color: #725d42;
+  cursor: pointer;
+}
+
+.mochi-mentions__option:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mochi-mentions__empty {
+  padding: 12px;
+  text-align: center;
+  color: #b8a88c;
+  font-weight: 700;
+}
+
+.mochi-mentions.is-disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
