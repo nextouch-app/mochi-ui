@@ -74,6 +74,34 @@
   box-shadow: 0 2px 0 0 #3d9ad4;
 }
 
+.mochi-calendar__cell.is-pressed:not(:disabled) {
+  background: rgba(108, 180, 238, 0.2);
+}
+
+.mochi-calendar__cell.is-in-range {
+  background: rgba(108, 180, 238, 0.18);
+  border-radius: 0;
+}
+
+.mochi-calendar__cell.is-range-start,
+.mochi-calendar__cell.is-range-end {
+  background: #6cb4ee;
+  color: #fff;
+  box-shadow: 0 2px 0 0 #3d9ad4;
+}
+
+.mochi-calendar__cell.is-range-start {
+  border-radius: 50% 0 0 50%;
+}
+
+.mochi-calendar__cell.is-range-end {
+  border-radius: 0 50% 50% 0;
+}
+
+.mochi-calendar__cell.is-range-start.is-range-end {
+  border-radius: 50%;
+}
+
 .mochi-calendar__cell:disabled {
   opacity: 0.3;
   cursor: not-allowed;

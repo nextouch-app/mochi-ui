@@ -102,6 +102,6 @@ function StateDemo() {
 export const demos: DemoItem[] = [
   { title: '类型 type', description: 'primary / default / dashed / text / link', component: BasicDemo },
   { title: '图标 icon', description: 'icon / iconPlacement / shape', component: IconDemo },
-  { title: '尺寸 size', description: '兼容 AntD small / middle / large', component: SizeDemo },
+  { title: '尺寸 size', description: 'small / middle / large 或 sm / md / lg', component: SizeDemo },
   { title: '状态与变体', description: 'loading / disabled / danger / ghost / block', component: StateDemo },
 ]

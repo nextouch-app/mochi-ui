@@ -2,12 +2,17 @@
 
 贴纸式有机圆角卡片，可带云朵装饰。
 
+
+## 代码演示
+
+<mochi-demos name="Card"></mochi-demos>
+
 ## API
 
 | 属性 | 说明 | 类型 | 默认 |
 |------|------|------|------|
 | variant | 贴纸色变体 | `default \| dashed \| pink \| mint \| lavender \| peach` | `default` |
-| type | 兼容 AntD | `default \| inner` | `default` |
+| type | 卡片类型 | `default \| inner` | `default` |
 | size | 尺寸 | `sm \| md \| lg \| small \| middle \| large` | `md` |
 | title / extra | 标题区 | `ReactNode` | — |
 | cover | 封面 | `ReactNode` | — |

@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
-import { cn, type DatePickerProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type DatePickerProps } from '@mochi-ui/core'
+import { useConfig } from '../config-provider/ConfigProvider'
 import { Calendar } from '../calendar/Calendar'
 import { Button } from '../button/Button'
+import { MonthPanel, YearPanel } from './PickerPanels'
+import { TimePickerRow } from './TimePickerRow'
+import { defaultFormatPattern, formatDate, startOfWeek } from './utils'
 import './date-picker.css'
-
-const defaultFormat = (d: Date) =>
-  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
 
 /**
  * Mobile DatePicker：底部抽屉内嵌 Calendar（非桌面锚定浮层）。
- * Web 端请用 `@mochi-ui/react` 的下拉面板版。
  */
 export function DatePicker({
   value,
@@ -17,15 +17,34 @@ export function DatePicker({
   placeholder = '选择日期',
   disabled = false,
   allowClear = true,
-  format = defaultFormat,
+  open: openProp,
+  defaultOpen = false,
+  disabledDate,
+  status,
+  size,
+  format = defaultFormatPattern,
+  showTime = false,
+  picker = 'date',
   className,
   style,
   onChange,
+  onOpenChange,
 }: DatePickerProps) {
+  const { size: ctxSize } = useConfig()
+  const finalSize = normalizeSize(size ?? ctxSize)
   const [inner, setInner] = useState<Date | null>(defaultValue)
-  const [open, setOpen] = useState(false)
+  const [innerOpen, setInnerOpen] = useState(defaultOpen)
   const [draft, setDraft] = useState<Date | null>(defaultValue)
+  const [viewYear, setViewYear] = useState((defaultValue ?? new Date()).getFullYear())
+  const [yearStart, setYearStart] = useState(Math.floor((defaultValue ?? new Date()).getFullYear() / 12) * 12)
   const current = value !== undefined ? value : inner
+  const open = openProp ?? innerOpen
+  const needsConfirm = showTime || picker !== 'date'
+
+  const setOpen = (next: boolean) => {
+    if (openProp === undefined) setInnerOpen(next)
+    onOpenChange?.(next)
+  }
 
   useEffect(() => {
     if (open) setDraft(current)
@@ -40,15 +59,71 @@ export function DatePicker({
     }
   }, [open])
 
+  const commit = (date: Date | null) => {
+    if (date) {
+      if (value === undefined) setInner(date)
+      onChange?.(date)
+    }
+    setOpen(false)
+  }
+
+  const handlePick = (date: Date) => {
+    setDraft(date)
+    if (!needsConfirm) commit(date)
+  }
+
+  const panel = (() => {
+    if (picker === 'month') {
+      return (
+        <MonthPanel
+          viewYear={viewYear}
+          selected={draft}
+          disabledDate={disabledDate}
+          onViewYearChange={setViewYear}
+          onSelect={handlePick}
+        />
+      )
+    }
+    if (picker === 'year') {
+      return (
+        <YearPanel
+          viewStart={yearStart}
+          selected={draft}
+          onViewStartChange={setYearStart}
+          onSelect={handlePick}
+        />
+      )
+    }
+    return (
+      <Calendar
+        value={draft ?? undefined}
+        disabledDate={disabledDate}
+        onChange={picker === 'week' ? (d) => handlePick(startOfWeek(d)) : handlePick}
+      />
+    )
+  })()
+
   return (
-    <div className={cn('mochi-datepicker', open && 'is-open', disabled && 'is-disabled', className)} style={style}>
+    <div
+      className={cn(
+        'mochi-datepicker',
+        `mochi-datepicker--${finalSize}`,
+        open && 'is-open',
+        disabled && 'is-disabled',
+        status && `is-${status}`,
+        className,
+      )}
+      style={style}
+    >
       <button
         type="button"
         className="mochi-datepicker__trigger"
         disabled={disabled}
         onClick={() => !disabled && setOpen(true)}
       >
-        <span className={cn(!current && 'is-placeholder')}>{current ? format(current) : placeholder}</span>
+        <span className={cn(!current && 'is-placeholder')}>
+          {current ? formatDate(current, format) : placeholder}
+        </span>
         {allowClear && current ? (
           <span
             className="mochi-datepicker__clear"
@@ -74,22 +149,13 @@ export function DatePicker({
                 取消
               </button>
               <div className="mochi-datepicker-sheet__title">选择日期</div>
-              <Button
-                type="primary"
-                size="small"
-                onClick={() => {
-                  if (draft) {
-                    if (value === undefined) setInner(draft)
-                    onChange?.(draft)
-                  }
-                  setOpen(false)
-                }}
-              >
+              <Button type="primary" size="small" onClick={() => draft && commit(draft)} disabled={!draft}>
                 确定
               </Button>
             </div>
             <div className="mochi-datepicker-sheet__body">
-              <Calendar value={draft ?? undefined} onChange={setDraft} />
+              {panel}
+              {showTime && draft ? <TimePickerRow date={draft} onChange={setDraft} /> : null}
             </div>
           </div>
         </div>

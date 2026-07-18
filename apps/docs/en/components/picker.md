@@ -2,6 +2,11 @@
 
 底部弹出多列选择，适合移动端。
 
+
+## Examples
+
+<mochi-demos name="Picker"></mochi-demos>
+
 ```tsx
 import { Picker, Button } from '@mochi-ui/react'
 

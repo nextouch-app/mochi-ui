@@ -2,13 +2,16 @@
 
 **麻薯 UI** — 软糯卡通 React 组件库 · Sky blue & soft
 
-Maintained by [Nextouch](https://gitlab.com/nextouch) · [MIT License](./LICENSE)
+Maintained by [Nextouch](https://github.com/nextouch-app) · [MIT License](./LICENSE)
+
+文档站：https://nextouch-app.github.io/mochi-ui/  
+仓库：https://github.com/nextouch-app/mochi-ui
 
 ## 特性
 
 - 卡通可爱：大圆角、粉彩、纸感背景、3D 色块阴影
 - 双运行时：`@mochi-ui/react`（Web）与 `@mochi-ui/mobile`（H5 / 轻量端）
-- API 对齐 Ant Design 习惯，Props 两端一致
+- Props 两端一致，常用尺寸别名（`small` / `middle` / `large`）可用
 - MIT 可商用，原创图标与样式
 
 ## 安装

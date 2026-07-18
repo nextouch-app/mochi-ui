@@ -47,3 +47,106 @@
   padding: 16px 18px;
   font-size: 16px;
 }
+
+.mochi-table__selection-col {
+  width: 44px;
+  text-align: center;
+}
+
+.mochi-table th.is-sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.mochi-table__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mochi-table__sorter {
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.mochi-table__filter {
+  position: relative;
+  display: inline-flex;
+}
+
+.mochi-table__filter-trigger {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  opacity: 0.55;
+  padding: 0 2px;
+}
+
+.mochi-table__filter-trigger.is-active {
+  opacity: 1;
+  color: #3d9ad4;
+}
+
+.mochi-table__filter-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 20;
+  min-width: 120px;
+  padding: 8px;
+  background: #fff8e7;
+  border: 2.5px solid #c4b89e;
+  border-radius: 12px;
+  box-shadow: 0 5px 0 0 #d4c9b4;
+}
+
+.mochi-table__filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 4px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mochi-table__filter-reset {
+  width: 100%;
+  margin-top: 6px;
+  border: none;
+  background: #efe6d2;
+  border-radius: 10px;
+  padding: 6px 8px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  color: #725d42;
+}
+
+.mochi-table td.is-ellipsis,
+.mochi-table th.is-ellipsis {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mochi-table .is-fixed-left {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: #fff8e7;
+}
+
+.mochi-table .is-fixed-right {
+  position: sticky;
+  right: 0;
+  z-index: 1;
+  background: #fff8e7;
+}
+
+.mochi-table-wrap .mochi-pagination {
+  padding: 12px 14px;
+  border-top: 2px dashed #e0d6c0;
+}

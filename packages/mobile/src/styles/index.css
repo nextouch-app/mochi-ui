@@ -416,7 +416,28 @@
   border-style: dashed;
   border-color: var(--mochi-color-border);
 }
-
+.mochi-tag.is-bordered {
+  border-width: 2px;
+  border-style: solid;
+}
+.mochi-tag.is-closable {
+  gap: 4px;
+  padding-right: 6px;
+}
+.mochi-tag__icon {
+  display: inline-flex;
+  margin-right: 2px;
+}
+.mochi-tag__close {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0.7;
+  padding: 0 2px;
+}
 /* ========== Divider ========== */
 .mochi-divider {
   display: flex;

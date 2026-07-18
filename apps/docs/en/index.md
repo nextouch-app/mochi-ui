@@ -13,8 +13,8 @@ hero:
       text: Components
       link: /en/components/
     - theme: alt
-      text: GitLab
-      link: https://gitlab.com/nextouch/mochi-ui
+      text: GitHub
+      link: https://github.com/nextouch-app/mochi-ui
 
 features:
   - title: Cozy & playful

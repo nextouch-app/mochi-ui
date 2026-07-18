@@ -2,15 +2,22 @@
 
 胶囊触发器 + 羊皮纸下拉。
 
+
+## 代码演示
+
+<mochi-demos name="Select"></mochi-demos>
+
 ## API
 
 | 属性 | 说明 | 类型 | 默认 |
 |------|------|------|------|
 | options | 选项 | `SelectOption[]` | `[]` |
-| value / defaultValue | 值 | `string \| number` | — |
+| mode | 模式 | `multiple \| tags` | — |
+| value / defaultValue | 值 | `string \| number \| Array<string \| number>` | — |
 | placeholder | 占位 | `string` | `请选择` |
 | size | 尺寸 | `SizeAlias` | `md` |
 | status | 状态 | `error \| warning \| ''` | — |
+| maxTagCount | 最多展示 tag 数 | `number \| responsive` | — |
 | allowClear | 可清除 | `boolean` | `false` |
 | showSearch | 可搜索 | `boolean` | `false` |
 | loading | 加载中 | `boolean` | `false` |
@@ -27,6 +34,8 @@
 import { Select } from '@mochi-ui/react'
 
 <Select
+  mode="multiple"
+  maxTagCount={2}
   allowClear
   showSearch
   placeholder="选择口味"

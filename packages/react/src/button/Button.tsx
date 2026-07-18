@@ -79,16 +79,22 @@ export function Button({
     className,
   )
 
+  const loadingIcon =
+    typeof loading === 'object' && loading.icon != null ? loading.icon : null
+
   const content = (
     <>
-      {isLoading ? <span className="mochi-btn__stripes" aria-hidden /> : null}
-      {icon && iconPlacement === 'start' ? (
+      {isLoading && !loadingIcon ? <span className="mochi-btn__stripes" aria-hidden /> : null}
+      {isLoading && loadingIcon ? (
+        <span className="mochi-btn__icon mochi-btn__icon--loading">{loadingIcon}</span>
+      ) : null}
+      {!isLoading && icon && iconPlacement === 'start' ? (
         <span className="mochi-btn__icon">{icon}</span>
       ) : null}
       {children != null && children !== false ? (
         <span className="mochi-btn__label">{children}</span>
       ) : null}
-      {icon && iconPlacement === 'end' ? (
+      {!isLoading && icon && iconPlacement === 'end' ? (
         <span className="mochi-btn__icon">{icon}</span>
       ) : null}
     </>

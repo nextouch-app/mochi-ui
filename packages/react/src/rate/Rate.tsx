@@ -9,9 +9,12 @@ export function Rate({
   allowHalf = false,
   allowClear = true,
   disabled = false,
+  character = '★',
+  tooltips,
   className,
   style,
   onChange,
+  onHoverChange,
 }: RateProps) {
   const [inner, setInner] = useState(defaultValue)
   const [hover, setHover] = useState<number | null>(null)
@@ -25,6 +28,11 @@ export function Rate({
     onChange?.(cleared)
   }
 
+  const setHoverValue = (next: number | null) => {
+    setHover(next)
+    if (next != null) onHoverChange?.(next)
+  }
+
   return (
     <div
       className={cn('mochi-rate', disabled && 'is-disabled', className)}
@@ -33,7 +41,7 @@ export function Rate({
       aria-valuenow={current}
       aria-valuemin={0}
       aria-valuemax={count}
-      onMouseLeave={() => setHover(null)}
+      onMouseLeave={() => setHoverValue(null)}
     >
       {Array.from({ length: count }).map((_, i) => {
         const idx = i + 1
@@ -45,7 +53,8 @@ export function Rate({
             type="button"
             className={cn('mochi-rate__star', full && 'is-full', half && 'is-half')}
             disabled={disabled}
-            onMouseEnter={() => setHover(idx)}
+            title={tooltips?.[i]}
+            onMouseEnter={() => setHoverValue(idx)}
             onClick={(e) => {
               if (allowHalf) {
                 const rect = (e.target as HTMLElement).getBoundingClientRect()
@@ -56,7 +65,7 @@ export function Rate({
               }
             }}
           >
-            ★
+            {character}
           </button>
         )
       })}

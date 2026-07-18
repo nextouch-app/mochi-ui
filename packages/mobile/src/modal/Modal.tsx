@@ -1,10 +1,19 @@
 import { useEffect, useRef, type CSSProperties } from 'react'
+import { createPortal } from 'react-dom'
 import { cn, type ModalProps } from '@mochi-ui/core'
 import { Button } from '../button/Button'
 import './modal.css'
 
+function resolveContainer(getContainer?: ModalProps['getContainer']): HTMLElement | null {
+  if (typeof document === 'undefined') return null
+  if (getContainer === false) return null
+  if (typeof getContainer === 'function') return getContainer()
+  if (getContainer instanceof HTMLElement) return getContainer
+  return document.body
+}
+
 /** Cloud-shaped dialog panel */
-export function Modal({
+export function ModalBase({
   open = false,
   title,
   onClose,
@@ -21,10 +30,11 @@ export function Modal({
   mask = true,
   width,
   centered = true,
-  destroyOnClose: _destroyOnClose = false,
+  destroyOnClose = false,
   afterClose,
   zIndex,
   keyboard = true,
+  getContainer,
   className,
   style,
   children,
@@ -53,18 +63,20 @@ export function Modal({
     wasOpen.current = open
   }, [open, afterClose])
 
-  if (!open) return null
+  if (!open && destroyOnClose) return null
 
+  const hidden = !open
   const panelStyle: CSSProperties = {
     ...style,
     ...(width != null ? { width: typeof width === 'number' ? `${width}px` : width } : null),
   }
 
-  return (
+  const node = (
     <div
-      className={cn('mochi-modal-root', centered && 'is-centered')}
+      className={cn('mochi-modal-root', centered && 'is-centered', hidden && 'is-hidden')}
       role="dialog"
-      aria-modal="true"
+      aria-modal={!hidden}
+      aria-hidden={hidden}
       style={zIndex != null ? { zIndex } : undefined}
     >
       <svg className="mochi-modal__defs" width="0" height="0" aria-hidden>
@@ -78,7 +90,7 @@ export function Modal({
         <div
           className="mochi-modal__mask"
           onClick={() => {
-            if (maskClosable) handleClose()
+            if (maskClosable && !hidden) handleClose()
           }}
         />
       ) : null}
@@ -86,7 +98,13 @@ export function Modal({
         <span className="mochi-modal__cloud mochi-modal__cloud--l" aria-hidden />
         <span className="mochi-modal__cloud mochi-modal__cloud--r" aria-hidden />
         {closable ? (
-          <button type="button" className="mochi-modal__close" aria-label="关闭" onClick={handleClose}>
+          <button
+            type="button"
+            className="mochi-modal__close"
+            aria-label="关闭"
+            onClick={handleClose}
+            tabIndex={hidden ? -1 : 0}
+          >
             ×
           </button>
         ) : null}
@@ -109,4 +127,8 @@ export function Modal({
       </div>
     </div>
   )
+
+  const mountNode = resolveContainer(getContainer)
+  if (mountNode) return createPortal(node, mountNode)
+  return node
 }

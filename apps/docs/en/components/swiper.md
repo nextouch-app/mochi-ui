@@ -1,5 +1,10 @@
 # Swiper 轮播
 
+
+## Examples
+
+<mochi-demos name="Swiper"></mochi-demos>
+
 ```tsx
 import { Swiper } from '@mochi-ui/react'
 

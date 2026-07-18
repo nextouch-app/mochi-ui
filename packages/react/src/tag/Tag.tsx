@@ -4,9 +4,13 @@ export function Tag({
   variant = 'solid',
   color = 'primary',
   size = 'md',
+  closable = false,
+  icon,
+  bordered = false,
   className,
   style,
   children,
+  onClose,
 }: TagProps) {
   return (
     <span
@@ -15,11 +19,24 @@ export function Tag({
         `mochi-tag--${variant}`,
         `mochi-tag--${color}`,
         `mochi-tag--${size}`,
+        bordered && 'is-bordered',
+        closable && 'is-closable',
         className,
       )}
       style={style}
     >
-      {children}
+      {icon ? <span className="mochi-tag__icon">{icon}</span> : null}
+      <span className="mochi-tag__content">{children}</span>
+      {closable ? (
+        <button
+          type="button"
+          className="mochi-tag__close"
+          aria-label="关闭"
+          onClick={(e) => onClose?.(e)}
+        >
+          ×
+        </button>
+      ) : null}
     </span>
   )
 }

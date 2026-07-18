@@ -7,12 +7,15 @@ import {
 } from 'react'
 import { cn, normalizeSize, type InputProps } from '@mochi-ui/core'
 import { useConfig } from '../config-provider/ConfigProvider'
+import { TextArea } from '../textarea/TextArea'
+import { Password } from './Password'
+import { Search } from './Search'
 import './input.css'
 
-export const Input = forwardRef<
+export const InternalInput = forwardRef<
   HTMLInputElement,
   InputProps & Omit<InputHTMLAttributes<HTMLInputElement>, keyof InputProps | 'size' | 'prefix'>
->(function Input(
+>(function InternalInput(
   {
     size,
     disabled = false,
@@ -118,4 +121,10 @@ export const Input = forwardRef<
   }
 
   return control
+})
+
+export const Input = Object.assign(InternalInput, {
+  Password,
+  Search,
+  TextArea,
 })

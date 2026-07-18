@@ -52,9 +52,38 @@ function EnterDemo() {
   )
 }
 
+function PasswordDemo() {
+  return (
+    <Space direction="vertical" size="md">
+      <Input.Password placeholder="请输入密码" style={{ width: 280 }} />
+      <Input.Password placeholder="无切换按钮" visibilityToggle={false} style={{ width: 280 }} />
+    </Space>
+  )
+}
+
+function SearchDemo() {
+  return (
+    <Space direction="vertical" size="md">
+      <Input.Search
+        placeholder="后缀搜索按钮"
+        style={{ width: 280 }}
+        onSearch={(v) => alert(`搜索: ${v}`)}
+      />
+      <Input.Search
+        placeholder="后置搜索按钮"
+        enterButton
+        style={{ width: 320 }}
+        onSearch={(v) => alert(`搜索: ${v}`)}
+      />
+    </Space>
+  )
+}
+
 export const demos: DemoItem[] = [
   { title: '基础用法', description: 'pill 输入框 + prefix', component: BasicDemo },
   { title: '配置项', description: 'allowClear / showCount / addon / status / variant', component: ConfigDemo },
   { title: '尺寸', description: 'small / middle / large', component: SizeDemo },
   { title: '回车回调', description: 'onPressEnter', component: EnterDemo },
+  { title: 'Password', description: 'Input.Password 密码可见切换', component: PasswordDemo },
+  { title: 'Search', description: 'Input.Search 搜索框', component: SearchDemo },
 ]

@@ -19,7 +19,7 @@ Mobile 端将 `@mochi-ui/react` 换成 `@mochi-ui/mobile` 即可。
 - 按钮：胶囊形 + 底部实色阴影
 - 卡片：大圆角贴纸感，可选云朵装饰
 
-完整规范见仓库根目录 [DESIGN.md](https://gitlab.com/nextouch/mochi-ui/-/blob/main/DESIGN.md)。
+完整规范见仓库根目录 [DESIGN.md](https://github.com/nextouch-app/mochi-ui/blob/main/DESIGN.md)。
 
 ## Mobile 注意
 

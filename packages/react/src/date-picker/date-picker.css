@@ -60,3 +60,107 @@
   opacity: 0.55;
   cursor: not-allowed;
 }
+
+.mochi-rangepicker .mochi-datepicker__trigger {
+  min-width: 280px;
+}
+
+.mochi-datepicker__time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px 0;
+  border-top: 2px dashed #e0d6c0;
+  margin-top: 8px;
+}
+
+.mochi-datepicker__time-label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #a89878;
+  min-width: 32px;
+}
+
+.mochi-datepicker__time-select {
+  border: 2px solid #c4b89e;
+  border-radius: 10px;
+  padding: 6px 8px;
+  font: inherit;
+  font-weight: 700;
+  color: #725d42;
+  background: #fff;
+}
+
+.mochi-datepicker__time-sep {
+  font-weight: 900;
+}
+
+.mochi-datepicker__footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 14px 14px;
+}
+
+.mochi-datepicker__picker-panel {
+  width: 300px;
+  padding: 14px;
+  background: #fff8e7;
+  border: 2.5px solid #c4b89e;
+  border-radius: 18px;
+  box-shadow: 0 5px 0 0 #d4c9b4;
+}
+
+.mochi-datepicker__picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.mochi-datepicker__picker-title {
+  font-weight: 900;
+  color: #5a4632;
+}
+
+.mochi-datepicker__picker-nav {
+  width: 32px;
+  height: 32px;
+  border: 2.5px solid #c4b89e;
+  border-radius: 50%;
+  background: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 0 0 #bdaea0;
+}
+
+.mochi-datepicker__month-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.mochi-datepicker__month-cell {
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: #725d42;
+}
+
+.mochi-datepicker__month-cell:hover:not(:disabled) {
+  background: rgba(108, 180, 238, 0.2);
+}
+
+.mochi-datepicker__month-cell.is-selected {
+  background: #6cb4ee;
+  color: #fff;
+  box-shadow: 0 2px 0 0 #3d9ad4;
+}
+
+.mochi-datepicker__month-cell:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

@@ -1,25 +1,87 @@
 import { useEffect, useRef, useState, cloneElement, isValidElement, type MouseEvent as ReactMouseEvent, type ReactElement } from 'react'
-import { cn, type DropdownProps } from '@mochi-ui/core'
+import { cn, type DropdownItem, type DropdownProps } from '@mochi-ui/core'
 import './dropdown.css'
+
+function MobileAccordionItem({
+  item,
+  onPick,
+  itemClass,
+}: {
+  item: DropdownItem
+  onPick: () => void
+  itemClass: string
+}) {
+  const [expanded, setExpanded] = useState(false)
+
+  return (
+    <div className={cn('mochi-dropdown-sheet__group', expanded && 'is-expanded')}>
+      <button
+        type="button"
+        role="menuitem"
+        disabled={item.disabled}
+        className={cn(itemClass, item.danger && 'is-danger', item.disabled && 'is-disabled', 'has-children')}
+        onClick={() => setExpanded(!expanded)}
+      >
+        {item.icon ? <span className="mochi-dropdown__item-icon">{item.icon}</span> : null}
+        <span className="mochi-dropdown-sheet__item-label">{item.label}</span>
+        <span className="mochi-dropdown-sheet__item-arrow">{expanded ? '▾' : '▸'}</span>
+      </button>
+      {expanded ? (
+        <div className="mochi-dropdown-sheet__submenu">
+          {renderItems(item.children ?? [], onPick, itemClass)}
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
+function renderItems(items: DropdownItem[], onPick: () => void, itemClass: string) {
+  return items.map((item) => {
+    if (item.type === 'divider') {
+      return <div key={item.key} className="mochi-dropdown-sheet__divider" role="separator" />
+    }
+    if (item.children?.length) {
+      return <MobileAccordionItem key={item.key} item={item} onPick={onPick} itemClass={itemClass} />
+    }
+    return (
+      <button
+        key={item.key}
+        type="button"
+        role="menuitem"
+        disabled={item.disabled}
+        className={cn(itemClass, item.danger && 'is-danger', item.disabled && 'is-disabled')}
+        onClick={() => {
+          item.onClick?.()
+          onPick()
+        }}
+      >
+        {item.icon ? <span className="mochi-dropdown__item-icon">{item.icon}</span> : null}
+        {item.label}
+      </button>
+    )
+  })
+}
 
 /**
  * Mobile Dropdown：仅支持点击触发，菜单以底部面板呈现（不使用 hover）。
- * Web 端请用 `@mochi-ui/react` 的悬浮下拉菜单。
  */
 export function Dropdown({
   items = [],
   disabled = false,
+  open: openProp,
+  defaultOpen = false,
   className,
   style,
   children,
   onOpenChange,
 }: DropdownProps) {
-  const [open, setOpen] = useState(false)
+  const [innerOpen, setInnerOpen] = useState(defaultOpen)
+  const open = openProp ?? innerOpen
   const ref = useRef<HTMLDivElement>(null)
 
   const set = (next: boolean) => {
     if (disabled) return
-    setOpen(next)
+    if (openProp === undefined) setInnerOpen(next)
     onOpenChange?.(next)
   }
 
@@ -52,21 +114,7 @@ export function Dropdown({
         <div className="mochi-dropdown-sheet" role="dialog" aria-modal="true">
           <div className="mochi-dropdown-sheet__mask" onClick={() => set(false)} />
           <div className="mochi-dropdown-sheet__panel" role="menu">
-            {items.map((item) => (
-              <button
-                key={item.key}
-                type="button"
-                role="menuitem"
-                disabled={item.disabled}
-                className={cn('mochi-dropdown-sheet__item', item.danger && 'is-danger', item.disabled && 'is-disabled')}
-                onClick={() => {
-                  item.onClick?.()
-                  set(false)
-                }}
-              >
-                {item.label}
-              </button>
-            ))}
+            {renderItems(items, () => set(false), 'mochi-dropdown-sheet__item')}
             <button type="button" className="mochi-dropdown-sheet__cancel" onClick={() => set(false)}>
               取消
             </button>

@@ -1,6 +1,11 @@
 # Switch
 
-Soft capsule toggle with block shadow and a bouncy thumb. API aligns with common Ant Design props.
+Soft capsule toggle with block shadow and a bouncy thumb.
+
+
+## Examples
+
+<mochi-demos name="Switch"></mochi-demos>
 
 ## API
 
@@ -8,7 +13,7 @@ Soft capsule toggle with block shadow and a bouncy thumb. API aligns with common
 |------|-------------|------|---------|
 | checked | Controlled checked | `boolean` | — |
 | defaultChecked | Default checked | `boolean` | `false` |
-| size | Size (AntD aliases accepted) | `sm \| md \| lg \| small \| middle \| large` | `md` |
+| size | Size (`small` / `middle` / `large` also accepted) | `sm \| md \| lg \| small \| middle \| large` | `md` |
 | checkedChildren | Content when checked | `ReactNode` | — |
 | unCheckedChildren | Content when unchecked | `ReactNode` | — |
 | loading | Loading | `boolean` | `false` |

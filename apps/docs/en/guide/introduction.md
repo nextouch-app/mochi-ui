@@ -1,10 +1,10 @@
 # Introduction
 
-**Mochi UI** is an MIT-licensed, commercial-friendly React component library maintained by [Nextouch](https://gitlab.com/nextouch).
+**Mochi UI** is an MIT-licensed, commercial-friendly React component library maintained by [Nextouch](https://github.com/nextouch-app).
 
 Visual keywords: **cartoon, cute, soft, anime-panel** — sky-blue primary, cream paper background, solid block shadows, and bouncy press feedback.
 
-Information architecture follows Ant Design categories; mobile interaction patterns follow Ant Design Mobile.
+Components are organized by General / Layout / Data Entry / Display / Navigation / Feedback. Web and Mobile share props; mobile lean toward touch-first patterns.
 
 ## Packages
 
@@ -18,4 +18,4 @@ Information architecture follows Ant Design categories; mobile interaction patte
 
 Install with npm / yarn / pnpm / bun — see [Installation](./installation).
 
-See [DESIGN.md](https://gitlab.com/nextouch/mochi-ui/-/blob/main/DESIGN.md) in the repo root.
+See [DESIGN.md](https://github.com/nextouch-app/mochi-ui/blob/main/DESIGN.md) in the repo root.

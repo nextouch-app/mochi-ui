@@ -19,7 +19,7 @@ For Mobile, swap `@mochi-ui/react` for `@mochi-ui/mobile`.
 - Buttons: pill shape with solid bottom block shadow
 - Cards: large organic radius; optional cloud accents
 
-Full language: [DESIGN.md](https://gitlab.com/nextouch/mochi-ui/-/blob/main/DESIGN.md) in the repository root.
+Full language: [DESIGN.md](https://github.com/nextouch-app/mochi-ui/blob/main/DESIGN.md) in the repository root.
 
 ## Mobile notes
 

@@ -49,6 +49,32 @@
   background: #e8f5fc;
 }
 
+.mochi-message--loading {
+  border-color: #c4b89e;
+}
+
+.mochi-message__icon {
+  margin-right: 8px;
+}
+
+.mochi-message__spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  border: 2px solid #d4c9b4;
+  border-top-color: #6cb4ee;
+  border-radius: 50%;
+  animation: mochi-message-spin 0.7s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes mochi-message-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes mochi-message-in {
   from {
     opacity: 0;
