@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { cn, normalizeSize, type ColorPickerProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type ColorPickerProps } from '@nextouch-app/mochi-core'
 import './color-picker.css'
 
 const PRESETS = [

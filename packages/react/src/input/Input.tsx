@@ -5,7 +5,7 @@ import {
   type InputHTMLAttributes,
   type KeyboardEvent,
 } from 'react'
-import { cn, normalizeSize, type InputProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type InputProps } from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import { TextArea } from '../textarea/TextArea'
 import { Password } from './Password'

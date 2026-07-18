@@ -1,5 +1,5 @@
 import { useState, cloneElement, isValidElement, type MouseEvent as ReactMouseEvent, type ReactElement } from 'react'
-import { cn, type PopconfirmProps } from '@mochi-ui/core'
+import { cn, type PopconfirmProps } from '@nextouch-app/mochi-core'
 import { Button } from '../button/Button'
 import { Popover } from '../popover/Popover'
 import './popconfirm.css'

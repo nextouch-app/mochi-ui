@@ -20,7 +20,7 @@
 | onHoverChange | 悬停变化 | `(value) => void` | — |
 
 ```tsx
-import { Rate } from '@mochi-ui/react'
+import { Rate } from '@nextouch-app/mochi-react'
 
 <Rate defaultValue={3} allowHalf tooltips={['差', '一般', '好', '很好', '极好']} />
 ```

@@ -19,7 +19,7 @@
 | component | 根节点标签 | `keyof HTMLElementTagNameMap` | `'div'` |
 
 ```tsx
-import { Flex, Button } from '@mochi-ui/react'
+import { Flex, Button } from '@nextouch-app/mochi-react'
 
 <Flex gap="md" justify="space-between">
   <Button>左</Button>

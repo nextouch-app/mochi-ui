@@ -17,7 +17,7 @@ Panel that slides from the edge.
 | maskClosable / closable / destroyOnClose | Behavior | `boolean` | — |
 
 ```tsx
-import { Drawer } from '@mochi-ui/react'
+import { Drawer } from '@nextouch-app/mochi-react'
 
 <Drawer open={open} title="Details" onClose={...}>Content</Drawer>
 ```

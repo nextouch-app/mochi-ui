@@ -1,4 +1,4 @@
-import { cn, type SpaceProps } from '@mochi-ui/core'
+import { cn, type SpaceProps } from '@nextouch-app/mochi-core'
 
 const sizeMap = { sm: 8, md: 12, lg: 16 }
 

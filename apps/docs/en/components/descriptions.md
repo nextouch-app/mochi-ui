@@ -18,7 +18,7 @@ Display a group of read-only fields.
 | size | Size | `SizeAlias` | — |
 
 ```tsx
-import { Descriptions } from '@mochi-ui/react'
+import { Descriptions } from '@nextouch-app/mochi-react'
 
 <Descriptions
   title="Order"

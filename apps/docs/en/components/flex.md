@@ -18,7 +18,7 @@ Lightweight flexbox layout container.
 | component | Root tag | `keyof HTMLElementTagNameMap` | `'div'` |
 
 ```tsx
-import { Flex, Button } from '@mochi-ui/react'
+import { Flex, Button } from '@nextouch-app/mochi-react'
 
 <Flex gap="md" justify="space-between">
   <Button>Left</Button>

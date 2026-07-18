@@ -25,7 +25,7 @@ Soft capsule toggle with block shadow and a bouncy thumb.
 ## Web
 
 ```tsx
-import { Switch } from '@mochi-ui/react'
+import { Switch } from '@nextouch-app/mochi-react'
 
 <Switch defaultChecked checkedChildren="ON" unCheckedChildren="OFF" />
 <Switch loading size="large" />
@@ -34,6 +34,6 @@ import { Switch } from '@mochi-ui/react'
 ## Mobile
 
 ```tsx
-import { Switch } from '@mochi-ui/mobile'
+import { Switch } from '@nextouch-app/mochi-mobile'
 ;<Switch defaultChecked />
 ```

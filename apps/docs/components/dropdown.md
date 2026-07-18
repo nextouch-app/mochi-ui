@@ -34,7 +34,7 @@
 锚定悬浮菜单，支持 `trigger="click" | "hover"`。带 `children` 的项会渲染子菜单（`.mochi-dropdown__submenu`）。
 
 ```tsx
-import { Dropdown, Button } from '@mochi-ui/react'
+import { Dropdown, Button } from '@nextouch-app/mochi-react'
 
 <Dropdown
   items={[
@@ -59,7 +59,7 @@ import { Dropdown, Button } from '@mochi-ui/react'
 同一 API，交互为底部操作面板；含 `children` 的项在面板内手风琴展开。
 
 ```tsx
-import { Dropdown, Button } from '@mochi-ui/mobile'
+import { Dropdown, Button } from '@nextouch-app/mochi-mobile'
 
 <Dropdown items={[{ key: '1', label: '编辑' }, { key: '2', label: '删除', danger: true }]}>
   <Button>更多</Button>

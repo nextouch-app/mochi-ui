@@ -1,4 +1,4 @@
-import { cn, type BreadcrumbProps } from '@mochi-ui/core'
+import { cn, type BreadcrumbProps } from '@nextouch-app/mochi-core'
 import './breadcrumb.css'
 
 export function Breadcrumb({

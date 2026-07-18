@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { createRoot, type Root } from 'react-dom/client'
-import { cn, type MessageConfig, type MessageOptions } from '@mochi-ui/core'
+import { cn, type MessageConfig, type MessageOptions } from '@nextouch-app/mochi-core'
 import './message.css'
 
 let host: HTMLDivElement | null = null

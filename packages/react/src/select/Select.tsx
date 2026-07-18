@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { cn, normalizeSize, type SelectOption, type SelectProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type SelectOption, type SelectProps } from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import './select.css'
 

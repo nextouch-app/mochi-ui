@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Scan @mochi-ui/mobile CSS build output for forbidden selectors.
+ * Scan @nextouch-app/mochi-mobile CSS build output for forbidden selectors.
  * Forbidden: sibling combinator ~, :hover, :checked~ and similar.
  */
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs'

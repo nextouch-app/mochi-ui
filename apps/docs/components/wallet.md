@@ -18,7 +18,7 @@
 | actions | 操作区 | `ReactNode` | — |
 
 ```tsx
-import { Wallet, Button } from '@mochi-ui/react'
+import { Wallet, Button } from '@nextouch-app/mochi-react'
 
 <Wallet balance="88.00" actions={<Button size="sm">充值</Button>} />
 ```

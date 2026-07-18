@@ -19,7 +19,7 @@ Page structure: Header / Sider / Content / Footer.
 | onCollapse | Callback | `(collapsed) => void` | — |
 
 ```tsx
-import { Layout } from '@mochi-ui/react'
+import { Layout } from '@nextouch-app/mochi-react'
 
 <Layout>
   <Layout.Header>Mochi</Layout.Header>

@@ -1,4 +1,4 @@
-import { cn, normalizeSize, type StepsProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type StepsProps } from '@nextouch-app/mochi-core'
 import './steps.css'
 
 export function Steps({

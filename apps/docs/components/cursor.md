@@ -17,7 +17,7 @@
 | hideNative | 隐藏系统光标 | `boolean` | `false` |
 
 ```tsx
-import { Cursor } from '@mochi-ui/react'
+import { Cursor } from '@nextouch-app/mochi-react'
 
 <Cursor label="点击" />
 ```

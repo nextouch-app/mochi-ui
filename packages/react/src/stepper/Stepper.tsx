@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, type StepperProps } from '@mochi-ui/core'
+import { cn, type StepperProps } from '@nextouch-app/mochi-core'
 
 export function Stepper({
   value,

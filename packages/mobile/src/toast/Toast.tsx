@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { createRoot, type Root } from 'react-dom/client'
-import { cn, type ToastOptions } from '@mochi-ui/core'
+import { cn, type ToastOptions } from '@nextouch-app/mochi-core'
 
 let toastRoot: Root | null = null
 let host: HTMLDivElement | null = null

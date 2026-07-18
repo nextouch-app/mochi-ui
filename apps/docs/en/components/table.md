@@ -38,7 +38,7 @@ Rounded parchment-style table with sorting, column filters, and pagination.
 Filter icon appears when `filters` is set. Selected values filter data before sort/pagination.
 
 ```tsx
-import { Table, Tag } from '@mochi-ui/react'
+import { Table, Tag } from '@nextouch-app/mochi-react'
 
 <Table
   columns={[

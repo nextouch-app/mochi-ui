@@ -1,4 +1,4 @@
-import { Divider } from '@mochi-ui/react'
+import { Divider } from '@nextouch-app/mochi-react'
 import type { DemoItem } from '../../types'
 
 function BasicDemo() {

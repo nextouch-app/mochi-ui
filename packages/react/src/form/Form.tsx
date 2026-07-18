@@ -26,7 +26,7 @@ import {
   type FormRule,
   type NamePath,
   type SizeAlias,
-} from '@mochi-ui/core'
+} from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import './form.css'
 

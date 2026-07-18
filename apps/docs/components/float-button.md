@@ -30,7 +30,7 @@
 | onOpenChange | 展开回调 | `(open) => void` | — |
 
 ```tsx
-import { FloatButton } from '@mochi-ui/react'
+import { FloatButton } from '@nextouch-app/mochi-react'
 
 <FloatButton type="primary" icon="↑" />
 ```

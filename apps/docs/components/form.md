@@ -79,7 +79,7 @@
 ## Web
 
 ```tsx
-import { Form, Input, Button } from '@mochi-ui/react'
+import { Form, Input, Button } from '@nextouch-app/mochi-react'
 
 const [form] = Form.useForm()
 

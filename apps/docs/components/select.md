@@ -31,7 +31,7 @@
 ## Web
 
 ```tsx
-import { Select } from '@mochi-ui/react'
+import { Select } from '@nextouch-app/mochi-react'
 
 <Select
   mode="multiple"

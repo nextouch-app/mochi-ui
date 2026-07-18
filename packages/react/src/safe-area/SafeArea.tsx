@@ -1,4 +1,4 @@
-import { cn, type SafeAreaProps } from '@mochi-ui/core'
+import { cn, type SafeAreaProps } from '@nextouch-app/mochi-core'
 
 export function SafeArea({ position = 'top', className, style, children }: SafeAreaProps) {
   return (

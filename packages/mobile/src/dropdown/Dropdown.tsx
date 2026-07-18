@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, cloneElement, isValidElement, type MouseEvent as ReactMouseEvent, type ReactElement } from 'react'
-import { cn, type DropdownItem, type DropdownProps } from '@mochi-ui/core'
+import { cn, type DropdownItem, type DropdownProps } from '@nextouch-app/mochi-core'
 import './dropdown.css'
 
 function MobileAccordionItem({

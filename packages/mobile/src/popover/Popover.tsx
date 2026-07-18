@@ -1,10 +1,10 @@
 import { useEffect, useState, cloneElement, isValidElement, type MouseEvent as ReactMouseEvent, type ReactElement } from 'react'
-import { cn, type PopoverProps } from '@mochi-ui/core'
+import { cn, type PopoverProps } from '@nextouch-app/mochi-core'
 import './popover.css'
 
 /**
  * Mobile Popover：点击打开底部信息面板（无 hover）。
- * Web 端请用 `@mochi-ui/react` 的气泡定位版。
+ * Web 端请用 `@nextouch-app/mochi-react` 的气泡定位版。
  */
 export function Popover({
   content,

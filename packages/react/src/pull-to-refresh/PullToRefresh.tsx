@@ -1,5 +1,5 @@
 import { useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
-import { cn, type PullToRefreshProps } from '@mochi-ui/core'
+import { cn, type PullToRefreshProps } from '@nextouch-app/mochi-core'
 import './pull-to-refresh.css'
 
 /** 以 pointer 事件实现，触控与桌面拖拽均可；移动端场景更常用 */

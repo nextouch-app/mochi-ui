@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { cn, type PickerProps } from '@mochi-ui/core'
+import { cn, type PickerProps } from '@nextouch-app/mochi-core'
 import { Button } from '../button/Button'
 import './picker.css'
 

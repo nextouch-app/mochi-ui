@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { cn, normalizeSize, type DatePickerProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type DatePickerProps } from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import { Calendar } from '../calendar/Calendar'
 import { Button } from '../button/Button'

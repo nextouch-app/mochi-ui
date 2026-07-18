@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { cn, type CalendarProps } from '@mochi-ui/core'
+import { cn, type CalendarProps } from '@nextouch-app/mochi-core'
 import './calendar.css'
 
 function startOfDay(d: Date) {

@@ -17,7 +17,7 @@ Loading indicator with optional content wrap / fullscreen.
 | fullscreen | Fullscreen | `boolean` | `false` |
 
 ```tsx
-import { Spin } from '@mochi-ui/react'
+import { Spin } from '@nextouch-app/mochi-react'
 
 <Spin spinning tip="Loading…"><div>Content</div></Spin>
 ```

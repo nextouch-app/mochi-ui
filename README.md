@@ -10,7 +10,7 @@ Maintained by [Nextouch](https://github.com/nextouch-app) · [MIT License](./LIC
 ## 特性
 
 - 卡通可爱：大圆角、粉彩、纸感背景、3D 色块阴影
-- 双运行时：`@mochi-ui/react`（Web）与 `@mochi-ui/mobile`（H5 / 轻量端）
+- 双运行时：`@nextouch-app/mochi-react`（Web）与 `@nextouch-app/mochi-mobile`（H5 / 轻量端）
 - Props 两端一致，常用尺寸别名（`small` / `middle` / `large`）可用
 - MIT 可商用，原创图标与样式
 
@@ -22,38 +22,38 @@ Maintained by [Nextouch](https://github.com/nextouch-app) · [MIT License](./LIC
 
 ```bash
 # npm
-npm install @mochi-ui/react @mochi-ui/tokens
+npm install @nextouch-app/mochi-react @nextouch-app/mochi-tokens
 
 # yarn
-yarn add @mochi-ui/react @mochi-ui/tokens
+yarn add @nextouch-app/mochi-react @nextouch-app/mochi-tokens
 
 # pnpm
-pnpm add @mochi-ui/react @mochi-ui/tokens
+pnpm add @nextouch-app/mochi-react @nextouch-app/mochi-tokens
 
 # bun
-bun add @mochi-ui/react @mochi-ui/tokens
+bun add @nextouch-app/mochi-react @nextouch-app/mochi-tokens
 ```
 
 **Mobile**
 
 ```bash
 # npm
-npm install @mochi-ui/mobile @mochi-ui/tokens
+npm install @nextouch-app/mochi-mobile @nextouch-app/mochi-tokens
 
 # yarn
-yarn add @mochi-ui/mobile @mochi-ui/tokens
+yarn add @nextouch-app/mochi-mobile @nextouch-app/mochi-tokens
 
 # pnpm
-pnpm add @mochi-ui/mobile @mochi-ui/tokens
+pnpm add @nextouch-app/mochi-mobile @nextouch-app/mochi-tokens
 
 # bun
-bun add @mochi-ui/mobile @mochi-ui/tokens
+bun add @nextouch-app/mochi-mobile @nextouch-app/mochi-tokens
 ```
 
 ```tsx
-import '@mochi-ui/tokens/tokens.css'
-import { Button, ConfigProvider } from '@mochi-ui/react'
-import '@mochi-ui/react/style.css'
+import '@nextouch-app/mochi-tokens/tokens.css'
+import { Button, ConfigProvider } from '@nextouch-app/mochi-react'
+import '@nextouch-app/mochi-react/style.css'
 
 export default function App() {
   return (
@@ -117,6 +117,25 @@ Mobile 样式**禁止** `:hover`、`~` 兄弟选择器；状态用 `.is-pressed`
 
 见 [DESIGN.md](./DESIGN.md)。静态 mock：`docs/mock/index.html`。
 
-## 发布
+## 发布到 npm
 
-packages 均配置 `publishConfig.access: public`，scope 为 `@mochi-ui/*`。建议同一次 release 统一 bump 版本。
+发布目标为 [npmjs.org](https://www.npmjs.com/)（`registry.npmjs.org`）。国内镜像（如 npmmirror）一般会自动同步，**不要**把镜像当成发布地址。
+
+需发布权限的 scope：`@nextouch-app/mochi-tokens`、`@nextouch-app/mochi-icons`、`@nextouch-app/mochi-core`、`@nextouch-app/mochi-react`、`@nextouch-app/mochi-mobile`（均为 `publishConfig.access: public`）。
+
+```bash
+# 1) 登录（一次性）
+npm login
+
+# 2) 发布前校验
+pnpm release:check
+
+# 3) 按依赖顺序发布（workspace 包请在对应目录执行，或使用 pnpm -r publish）
+pnpm --filter @nextouch-app/mochi-tokens publish --access public --no-git-checks
+pnpm --filter @nextouch-app/mochi-icons publish --access public --no-git-checks
+pnpm --filter @nextouch-app/mochi-core publish --access public --no-git-checks
+pnpm --filter @nextouch-app/mochi-react publish --access public --no-git-checks
+pnpm --filter @nextouch-app/mochi-mobile publish --access public --no-git-checks
+```
+
+同一次 release 请保持五个包版本号一致（当前 **0.2.0**）。发布前请确认已打 tag / 更新 `CHANGELOG.md`。

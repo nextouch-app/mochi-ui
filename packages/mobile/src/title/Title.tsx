@@ -1,4 +1,4 @@
-import { cn, type BaseProps } from '@mochi-ui/core'
+import { cn, type BaseProps } from '@nextouch-app/mochi-core'
 
 /** Swallowtail ribbon title — game menu banner */
 export function Title({ className, style, children }: BaseProps) {

@@ -1,4 +1,4 @@
-import { cn, type AvatarProps } from '@mochi-ui/core'
+import { cn, type AvatarProps } from '@nextouch-app/mochi-core'
 
 export function Avatar({
   src,

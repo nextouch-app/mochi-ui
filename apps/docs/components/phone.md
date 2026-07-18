@@ -17,7 +17,7 @@
 | time | 状态栏时间 | `string` | `09:41` |
 
 ```tsx
-import { Phone } from '@mochi-ui/react'
+import { Phone } from '@nextouch-app/mochi-react'
 
 <Phone number="400-600-0000" tone="mint" />
 ```

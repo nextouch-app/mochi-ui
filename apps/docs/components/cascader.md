@@ -35,7 +35,7 @@
 触发器下方多列面板。
 
 ```tsx
-import { Cascader } from '@mochi-ui/react'
+import { Cascader } from '@nextouch-app/mochi-react'
 
 <Cascader
   options={[
@@ -57,7 +57,7 @@ import { Cascader } from '@mochi-ui/react'
 底部抽屉内横向滚动多列面板。
 
 ```tsx
-import { Cascader } from '@mochi-ui/mobile'
+import { Cascader } from '@nextouch-app/mochi-mobile'
 
 <Cascader options={[{ value: 'a', label: '选项 A', children: [{ value: 'a1', label: '子项' }] }]} />
 ```

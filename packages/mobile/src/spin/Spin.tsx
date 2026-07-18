@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react'
-import { cn, type SpinProps } from '@mochi-ui/core'
+import { cn, type SpinProps } from '@nextouch-app/mochi-core'
 import { Loading } from '../loading/Loading'
 import './spin.css'
 

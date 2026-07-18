@@ -7,7 +7,7 @@ Type text character by character.
 <mochi-demos name="Typewriter"></mochi-demos>
 
 ```tsx
-import { Typewriter } from '@mochi-ui/react'
+import { Typewriter } from '@nextouch-app/mochi-react'
 
 <Typewriter text={['Soft & round', 'Mochi UI']} loop />
 ```

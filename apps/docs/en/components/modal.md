@@ -58,7 +58,7 @@ Cloud-blob dialog with mask, Esc to close, confirm loading, and imperative API.
 ## Web
 
 ```tsx
-import { Modal, Button } from '@mochi-ui/react'
+import { Modal, Button } from '@nextouch-app/mochi-react'
 
 const [open, setOpen] = useState(false)
 
@@ -76,6 +76,6 @@ const [open, setOpen] = useState(false)
 ## Mobile
 
 ```tsx
-import { Modal } from '@mochi-ui/mobile'
+import { Modal } from '@nextouch-app/mochi-mobile'
 ;<Modal open title="Notice" onClose={() => {}}>Content</Modal>
 ```

@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from 'react'
-import { cn, type TourProps } from '@mochi-ui/core'
+import { cn, type TourProps } from '@nextouch-app/mochi-core'
 import './tour.css'
 
 export function Tour({

@@ -11,7 +11,7 @@
 继承 `className` / `style` / `children`。
 
 ```tsx
-import { Title } from '@mochi-ui/react'
+import { Title } from '@nextouch-app/mochi-react'
 
 <Title>麻薯菜单</Title>
 ```

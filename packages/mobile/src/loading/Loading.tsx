@@ -1,4 +1,4 @@
-import { cn, type LoadingProps } from '@mochi-ui/core'
+import { cn, type LoadingProps } from '@nextouch-app/mochi-core'
 
 /** Bouncing puff loader */
 export function Loading({

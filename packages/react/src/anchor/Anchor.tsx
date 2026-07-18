@@ -1,5 +1,5 @@
 import { useEffect, useState, type MouseEvent as ReactMouseEvent } from 'react'
-import { cn, type AnchorLinkItem, type AnchorProps } from '@mochi-ui/core'
+import { cn, type AnchorLinkItem, type AnchorProps } from '@nextouch-app/mochi-core'
 import './anchor.css'
 
 function flatten(items: AnchorLinkItem[]): AnchorLinkItem[] {

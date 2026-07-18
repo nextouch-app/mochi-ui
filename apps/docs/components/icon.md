@@ -1,6 +1,6 @@
 # Icon 图标
 
-`@mochi-ui/icons` 提供 **150** 个原创 SVG（线稿圆角风格）。命名与 Ant Design Icons 常用集合对齐，并补充云朵、小动物等岛风图标；路径均为原创，不复制第三方资源。
+`@nextouch-app/mochi-icons` 提供 **150** 个原创 SVG（线稿圆角风格）。命名与 Ant Design Icons 常用集合对齐，并补充云朵、小动物等岛风图标；路径均为原创，不复制第三方资源。
 
 ## 代码演示
 
@@ -9,8 +9,8 @@
 ## 用法
 
 ```tsx
-import { Icon } from '@mochi-ui/react'
-import { ICON_LIST, Search, Heart } from '@mochi-ui/icons'
+import { Icon } from '@nextouch-app/mochi-react'
+import { ICON_LIST, Search, Heart } from '@nextouch-app/mochi-icons'
 
 <Icon name="search" size={24} bounce />
 <Search size={24} color="#6cb4ee" />
@@ -18,7 +18,7 @@ import { ICON_LIST, Search, Heart } from '@mochi-ui/icons'
 
 ## API
 
-### Icon（@mochi-ui/react）
+### Icon（@nextouch-app/mochi-react）
 
 | 属性 | 说明 | 类型 | 默认 |
 |------|------|------|------|

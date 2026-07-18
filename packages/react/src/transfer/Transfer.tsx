@@ -1,5 +1,5 @@
 import { useMemo, useState, type ReactNode } from 'react'
-import { cn, type TransferItem, type TransferProps } from '@mochi-ui/core'
+import { cn, type TransferItem, type TransferProps } from '@nextouch-app/mochi-core'
 import { Button } from '../button/Button'
 import './transfer.css'
 

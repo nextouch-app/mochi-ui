@@ -1,4 +1,4 @@
-import { cn, type TagProps } from '@mochi-ui/core'
+import { cn, type TagProps } from '@nextouch-app/mochi-core'
 
 export function Tag({
   variant = 'solid',

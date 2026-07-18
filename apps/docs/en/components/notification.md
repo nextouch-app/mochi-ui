@@ -38,7 +38,7 @@ Returns: `() => void` close function.
 - `Notification.destroyAll()` — destroy all
 
 ```tsx
-import { Notification, Button } from '@mochi-ui/react'
+import { Notification, Button } from '@nextouch-app/mochi-react'
 
 <Button
   onClick={() =>

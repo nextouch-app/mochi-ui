@@ -32,7 +32,7 @@
 | disabled | 禁用 | `boolean` | — |
 
 ```tsx
-import { Typography } from '@mochi-ui/react'
+import { Typography } from '@nextouch-app/mochi-react'
 
 <Typography.Title level={3}>麻薯菜单</Typography.Title>
 <Typography.Paragraph>软糯圆润的组件库。</Typography.Paragraph>

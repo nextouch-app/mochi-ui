@@ -1,6 +1,6 @@
 # 移动端指南
 
-`@mochi-ui/mobile` 面向 **H5 / 轻量端** 等 CSS 能力受限的运行时。
+`@nextouch-app/mochi-mobile` 面向 **H5 / 轻量端** 等 CSS 能力受限的运行时。
 
 ## 硬性约束
 
@@ -24,7 +24,7 @@ CI 脚本 `pnpm check:mobile-styles` 会扫描构建产物。
 
 多数组件两端 API 一致，但交互形态会按平台调整：
 
-| 组件 | Web（`@mochi-ui/react`） | Mobile（`@mochi-ui/mobile`） |
+| 组件 | Web（`@nextouch-app/mochi-react`） | Mobile（`@nextouch-app/mochi-mobile`） |
 |------|--------------------------|-------------------------------|
 | Dropdown | 锚定悬浮菜单，支持 hover/click | 底部操作面板（仅点击） |
 | Popover | 气泡定位 | 底部信息面板（仅点击） |
@@ -36,6 +36,6 @@ CI 脚本 `pnpm check:mobile-styles` 会扫描构建产物。
 
 选择原则：
 
-- 电脑端页面 → `@mochi-ui/react`
-- H5 / 小程序 WebView / 触控壳 → `@mochi-ui/mobile`
+- 电脑端页面 → `@nextouch-app/mochi-react`
+- H5 / 小程序 WebView / 触控壳 → `@nextouch-app/mochi-mobile`
 - 同一产品双端：两边都装，Props 尽量对齐，个别组件交互不同属预期行为

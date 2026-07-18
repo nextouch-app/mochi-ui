@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, normalizeSize, type SegmentedOption, type SegmentedProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type SegmentedOption, type SegmentedProps } from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import './segmented.css'
 

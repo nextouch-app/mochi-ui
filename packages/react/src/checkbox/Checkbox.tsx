@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, type ReactNode } from 'react'
-import { cn, type CheckboxGroupProps, type CheckboxProps } from '@mochi-ui/core'
+import { cn, type CheckboxGroupProps, type CheckboxProps } from '@nextouch-app/mochi-core'
 import './checkbox.css'
 
 interface GroupCtx {

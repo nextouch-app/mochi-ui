@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { cn, type TypewriterProps } from '@mochi-ui/core'
+import { cn, type TypewriterProps } from '@nextouch-app/mochi-core'
 import './typewriter.css'
 
 export function Typewriter({

@@ -1,5 +1,5 @@
 import { createElement, type ReactElement } from 'react'
-import { cn, type FlexProps } from '@mochi-ui/core'
+import { cn, type FlexProps } from '@nextouch-app/mochi-core'
 import './flex.css'
 
 const gapMap = { sm: 8, md: 12, lg: 16 }

@@ -10,11 +10,11 @@ Components are organized by General / Layout / Data Entry / Display / Navigation
 
 | Package | Purpose |
 |---------|---------|
-| `@mochi-ui/tokens` | Design tokens (CSS variables) |
-| `@mochi-ui/core` | Shared types and utilities |
-| `@mochi-ui/icons` | Original SVG icons |
-| `@mochi-ui/react` | Web DOM components |
-| `@mochi-ui/mobile` | Mobile / H5 (constrained styles) |
+| `@nextouch-app/mochi-tokens` | Design tokens (CSS variables) |
+| `@nextouch-app/mochi-core` | Shared types and utilities |
+| `@nextouch-app/mochi-icons` | Original SVG icons |
+| `@nextouch-app/mochi-react` | Web DOM components |
+| `@nextouch-app/mochi-mobile` | Mobile / H5 (constrained styles) |
 
 Install with npm / yarn / pnpm / bun — see [Installation](./installation).
 

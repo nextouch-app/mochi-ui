@@ -17,7 +17,7 @@
 | onClick / onChange | 回调 | — | — |
 
 ```tsx
-import { Anchor } from '@mochi-ui/react'
+import { Anchor } from '@nextouch-app/mochi-react'
 
 <Anchor
   items={[

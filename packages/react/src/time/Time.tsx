@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { cn, type TimeProps } from '@mochi-ui/core'
+import { cn, type TimeProps } from '@nextouch-app/mochi-core'
 import './time.css'
 
 function toDate(value?: Date | number | string) {

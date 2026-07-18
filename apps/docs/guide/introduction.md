@@ -10,11 +10,11 @@
 
 | 包 | 用途 |
 |----|------|
-| `@mochi-ui/tokens` | Design Token（CSS 变量） |
-| `@mochi-ui/core` | 共享类型与工具 |
-| `@mochi-ui/icons` | 原创 SVG 图标 |
-| `@mochi-ui/react` | Web DOM 组件 |
-| `@mochi-ui/mobile` | 移动端 / H5（受限样式） |
+| `@nextouch-app/mochi-tokens` | Design Token（CSS 变量） |
+| `@nextouch-app/mochi-core` | 共享类型与工具 |
+| `@nextouch-app/mochi-icons` | 原创 SVG 图标 |
+| `@nextouch-app/mochi-react` | Web DOM 组件 |
+| `@nextouch-app/mochi-mobile` | 移动端 / H5（受限样式） |
 
 安装方式支持 npm / yarn / pnpm / bun，见 [安装](./installation)。
 

@@ -1,4 +1,4 @@
-import { Select, Space } from '@mochi-ui/react'
+import { Select, Space } from '@nextouch-app/mochi-react'
 import type { DemoItem } from '../../types'
 
 const flavors = [

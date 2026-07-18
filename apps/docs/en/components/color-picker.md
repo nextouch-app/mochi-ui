@@ -18,7 +18,7 @@ Pick a color with optional presets.
 | onChange / onChangeComplete | Handlers | `(color) => void` | — |
 
 ```tsx
-import { ColorPicker } from '@mochi-ui/react'
+import { ColorPicker } from '@nextouch-app/mochi-react'
 
 <ColorPicker defaultValue="#6cb4ee" showText />
 ```

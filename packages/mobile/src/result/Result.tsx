@@ -1,6 +1,6 @@
-import { cn, type ResultProps } from '@mochi-ui/core'
+import { cn, type ResultProps } from '@nextouch-app/mochi-core'
 import { Icon } from '../icon/Icon'
-import type { IconName } from '@mochi-ui/icons'
+import type { IconName } from '@nextouch-app/mochi-icons'
 
 const statusIcon: Record<string, IconName> = {
   success: 'check',

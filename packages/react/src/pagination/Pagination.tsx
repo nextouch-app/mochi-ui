@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, type PaginationProps } from '@mochi-ui/core'
+import { cn, type PaginationProps } from '@nextouch-app/mochi-core'
 import './pagination.css'
 
 export function Pagination({

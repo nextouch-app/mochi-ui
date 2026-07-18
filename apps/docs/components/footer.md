@@ -14,7 +14,7 @@
 | links | 链接 | `{ title, href?, onClick? }[]` | `[]` |
 
 ```tsx
-import { Footer } from '@mochi-ui/react'
+import { Footer } from '@nextouch-app/mochi-react'
 
 <Footer
   copyright="© 2026 Nextouch"

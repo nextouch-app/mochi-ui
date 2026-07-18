@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { cn, type DrawerProps } from '@mochi-ui/core'
+import { cn, type DrawerProps } from '@nextouch-app/mochi-core'
 import './drawer.css'
 
 export function Drawer({

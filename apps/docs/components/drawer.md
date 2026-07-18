@@ -19,7 +19,7 @@
 | onClose / afterOpenChange | 回调 | — | — |
 
 ```tsx
-import { Drawer, Button } from '@mochi-ui/react'
+import { Drawer, Button } from '@nextouch-app/mochi-react'
 
 <Drawer open={open} title="详情" footer={<Button type="primary">确定</Button>} onClose={...}>
   内容

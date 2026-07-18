@@ -1,4 +1,4 @@
-import { cn, normalizeSize, type CardProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type CardProps } from '@nextouch-app/mochi-core'
 import './card.css'
 
 /** Sticker-style card panel */

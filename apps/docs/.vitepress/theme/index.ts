@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
-import '@mochi-ui/tokens/tokens.css'
+import '@nextouch-app/mochi-tokens/tokens.css'
 import './custom.css'
 
 function registerMochiDemos() {

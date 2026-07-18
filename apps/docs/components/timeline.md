@@ -24,7 +24,7 @@
 | dot | 自定义圆点 | `ReactNode` |
 
 ```tsx
-import { Timeline } from '@mochi-ui/react'
+import { Timeline } from '@nextouch-app/mochi-react'
 
 <Timeline
   items={[

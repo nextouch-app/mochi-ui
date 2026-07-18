@@ -7,7 +7,7 @@ import {
   type ReactElement,
   type ReactNode,
 } from 'react'
-import { cn, type SplitterPanelProps, type SplitterProps } from '@mochi-ui/core'
+import { cn, type SplitterPanelProps, type SplitterProps } from '@nextouch-app/mochi-core'
 import './splitter.css'
 
 export function SplitterPanel({ className, style, children }: SplitterPanelProps) {

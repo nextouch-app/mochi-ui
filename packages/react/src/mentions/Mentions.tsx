@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { cn, type MentionsOption, type MentionsProps } from '@mochi-ui/core'
+import { cn, type MentionsOption, type MentionsProps } from '@nextouch-app/mochi-core'
 import './mentions.css'
 
 function defaultFilter(input: string, option: MentionsOption) {

@@ -1,6 +1,6 @@
 # Mobile Guide
 
-`@mochi-ui/mobile` targets **H5 / lightweight runtimes** with constrained CSS.
+`@nextouch-app/mochi-mobile` targets **H5 / lightweight runtimes** with constrained CSS.
 
 ## Hard constraints
 
@@ -24,7 +24,7 @@ CI runs `pnpm check:mobile-styles` against the build output.
 
 Most APIs match, but interaction shells differ by platform:
 
-| Component | Web (`@mochi-ui/react`) | Mobile (`@mochi-ui/mobile`) |
+| Component | Web (`@nextouch-app/mochi-react`) | Mobile (`@nextouch-app/mochi-mobile`) |
 |-----------|-------------------------|-----------------------------|
 | Dropdown | Anchored menu (hover/click) | Bottom action sheet (click only) |
 | Popover | Positioned bubble | Bottom info sheet (click only) |
@@ -34,4 +34,4 @@ Most APIs match, but interaction shells differ by platform:
 | Picker / PullToRefresh | Available | Preferred for touch apps |
 | TabBar / NavBar / SafeArea | Available | Recommended for app shells |
 
-Rule of thumb: desktop apps use `@mochi-ui/react`; touch / H5 shells use `@mochi-ui/mobile`.
+Rule of thumb: desktop apps use `@nextouch-app/mochi-react`; touch / H5 shells use `@nextouch-app/mochi-mobile`.

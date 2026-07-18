@@ -1,6 +1,6 @@
 import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import '@mochi-ui/tokens/tokens.css'
+import '@nextouch-app/mochi-tokens/tokens.css'
 import {
   Button,
   Card,
@@ -16,7 +16,7 @@ import {
   SafeArea,
   Toast,
   Tag,
-} from '@mochi-ui/mobile'
+} from '@nextouch-app/mochi-mobile'
 import './app.css'
 
 function App() {

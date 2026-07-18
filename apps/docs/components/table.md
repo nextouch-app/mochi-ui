@@ -41,7 +41,7 @@
 - **Mobile**：横向滚动可用；复杂列表更推荐 `List`
 
 ```tsx
-import { Table, Tag } from '@mochi-ui/react'
+import { Table, Tag } from '@nextouch-app/mochi-react'
 
 <Table
   rowSelection={{ type: 'checkbox' }}

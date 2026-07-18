@@ -17,7 +17,7 @@
 | fullscreen | 全屏 | `boolean` | `false` |
 
 ```tsx
-import { Spin } from '@mochi-ui/react'
+import { Spin } from '@nextouch-app/mochi-react'
 
 <Spin spinning tip="加载中">
   <div>内容</div>

@@ -18,7 +18,7 @@
 | onChange | 变化回调 | `(value) => void` | — |
 
 ```tsx
-import { Segmented } from '@mochi-ui/react'
+import { Segmented } from '@nextouch-app/mochi-react'
 
 <Segmented options={['日', '周', '月']} defaultValue="日" />
 ```

@@ -16,7 +16,7 @@ Line / circle progress.
 | strokeColor / trailColor | Colors | `string` | — |
 
 ```tsx
-import { Progress } from '@mochi-ui/react'
+import { Progress } from '@nextouch-app/mochi-react'
 
 <Progress type="circle" percent={75} />
 ```

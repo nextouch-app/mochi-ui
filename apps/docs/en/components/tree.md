@@ -34,7 +34,7 @@
 ## Web
 
 ```tsx
-import { Tree } from '@mochi-ui/react'
+import { Tree } from '@nextouch-app/mochi-react'
 
 <Tree
   checkable

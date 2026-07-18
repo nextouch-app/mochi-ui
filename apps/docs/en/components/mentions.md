@@ -22,7 +22,7 @@
 ## Web
 
 ```tsx
-import { Mentions } from '@mochi-ui/react'
+import { Mentions } from '@nextouch-app/mochi-react'
 
 <Mentions
   options={[

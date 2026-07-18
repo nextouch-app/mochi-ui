@@ -18,7 +18,7 @@
 | onClick / onLoad / onError | 回调 | — | — |
 
 ```tsx
-import { Image } from '@mochi-ui/react'
+import { Image } from '@nextouch-app/mochi-react'
 
 <Image
   width={200}

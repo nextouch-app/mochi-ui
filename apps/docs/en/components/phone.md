@@ -7,7 +7,7 @@ Cartoon phone frame for hotlines or info.
 <mochi-demos name="Phone"></mochi-demos>
 
 ```tsx
-import { Phone } from '@mochi-ui/react'
+import { Phone } from '@nextouch-app/mochi-react'
 
 <Phone number="400-600-0000" tone="mint" />
 ```

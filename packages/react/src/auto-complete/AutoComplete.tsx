@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { cn, normalizeSize, type AutoCompleteOption, type AutoCompleteProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type AutoCompleteOption, type AutoCompleteProps } from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import './auto-complete.css'
 

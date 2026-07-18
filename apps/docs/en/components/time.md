@@ -7,7 +7,7 @@ Date/time display with optional live clock.
 <mochi-demos name="Time"></mochi-demos>
 
 ```tsx
-import { Time } from '@mochi-ui/react'
+import { Time } from '@nextouch-app/mochi-react'
 
 <Time live showDate label="Server time" />
 ```

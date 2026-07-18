@@ -1,4 +1,4 @@
-import { Button, ConfigProvider, Space } from '@mochi-ui/react'
+import { Button, ConfigProvider, Space } from '@nextouch-app/mochi-react'
 import type { DemoItem } from '../../types'
 
 function BasicDemo() {

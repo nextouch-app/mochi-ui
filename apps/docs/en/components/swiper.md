@@ -6,7 +6,7 @@
 <mochi-demos name="Swiper"></mochi-demos>
 
 ```tsx
-import { Swiper } from '@mochi-ui/react'
+import { Swiper } from '@nextouch-app/mochi-react'
 
 <Swiper autoplay>
   <div>Slide 1</div>

@@ -7,7 +7,7 @@ Decorative cursor; can follow the pointer on Web.
 <mochi-demos name="Cursor"></mochi-demos>
 
 ```tsx
-import { Cursor } from '@mochi-ui/react'
+import { Cursor } from '@nextouch-app/mochi-react'
 
 <Cursor label="Click" />
 ```

@@ -5,12 +5,12 @@
 先加载 Design Token，再加载组件样式：
 
 ```tsx
-import '@mochi-ui/tokens/tokens.css'
-import { Button, ConfigProvider } from '@mochi-ui/react'
-import '@mochi-ui/react/style.css'
+import '@nextouch-app/mochi-tokens/tokens.css'
+import { Button, ConfigProvider } from '@nextouch-app/mochi-react'
+import '@nextouch-app/mochi-react/style.css'
 ```
 
-Mobile 端将 `@mochi-ui/react` 换成 `@mochi-ui/mobile` 即可。
+Mobile 端将 `@nextouch-app/mochi-react` 换成 `@nextouch-app/mochi-mobile` 即可。
 
 ## 视觉约定
 
@@ -23,7 +23,7 @@ Mobile 端将 `@mochi-ui/react` 换成 `@mochi-ui/mobile` 即可。
 
 ## Mobile 注意
 
-`@mochi-ui/mobile` 面向 CSS 能力受限的运行时，样式中不要使用 `:hover` 与 `~` 兄弟选择器；交互状态由组件 class（如 `.is-pressed`、`.is-checked`）驱动。
+`@nextouch-app/mochi-mobile` 面向 CSS 能力受限的运行时，样式中不要使用 `:hover` 与 `~` 兄弟选择器；交互状态由组件 class（如 `.is-pressed`、`.is-checked`）驱动。
 
 ## 资源与许可
 

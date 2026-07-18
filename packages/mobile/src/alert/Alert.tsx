@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, type AlertProps } from '@mochi-ui/core'
+import { cn, type AlertProps } from '@nextouch-app/mochi-core'
 
 export function Alert({
   type = 'info',

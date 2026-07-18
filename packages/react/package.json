@@ -1,5 +1,5 @@
 {
-  "name": "@mochi-ui/react",
+  "name": "@nextouch-app/mochi-react",
   "version": "0.2.0",
   "description": "Mochi UI React components for Web",
   "license": "MIT",
@@ -38,9 +38,9 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@mochi-ui/core": "workspace:*",
-    "@mochi-ui/icons": "workspace:*",
-    "@mochi-ui/tokens": "workspace:*",
+    "@nextouch-app/mochi-core": "workspace:*",
+    "@nextouch-app/mochi-icons": "workspace:*",
+    "@nextouch-app/mochi-tokens": "workspace:*",
     "qrcode": "^1.5.4"
   },
   "devDependencies": {

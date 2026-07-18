@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { createRoot, type Root } from 'react-dom/client'
-import { cn, type NotificationConfig, type NotificationOptions } from '@mochi-ui/core'
+import { cn, type NotificationConfig, type NotificationOptions } from '@nextouch-app/mochi-core'
 import './notification.css'
 
 let host: HTMLDivElement | null = null

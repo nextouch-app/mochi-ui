@@ -17,7 +17,7 @@ Pick hour / minute / second.
 | onChange | Callback | `(date, timeString) => void` | — |
 
 ```tsx
-import { TimePicker } from '@mochi-ui/react'
+import { TimePicker } from '@nextouch-app/mochi-react'
 
 <TimePicker showSecond={false} />
 ```

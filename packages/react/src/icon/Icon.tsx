@@ -2,8 +2,8 @@ import {
   icons,
   type IconName,
   type IconComponentProps as SvgIconProps,
-} from '@mochi-ui/icons'
-import { cn } from '@mochi-ui/core'
+} from '@nextouch-app/mochi-icons'
+import { cn } from '@nextouch-app/mochi-core'
 import './icon.css'
 
 export interface IconProps extends Omit<SvgIconProps, 'children'> {

@@ -1,4 +1,4 @@
-import { cn, normalizeSize, type DescriptionsProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type DescriptionsProps } from '@nextouch-app/mochi-core'
 import './descriptions.css'
 
 export function Descriptions({

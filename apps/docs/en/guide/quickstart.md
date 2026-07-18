@@ -5,19 +5,19 @@
 ::: code-group
 
 ```bash [npm]
-npm install @mochi-ui/react @mochi-ui/tokens
+npm install @nextouch-app/mochi-react @nextouch-app/mochi-tokens
 ```
 
 ```bash [yarn]
-yarn add @mochi-ui/react @mochi-ui/tokens
+yarn add @nextouch-app/mochi-react @nextouch-app/mochi-tokens
 ```
 
 ```bash [pnpm]
-pnpm add @mochi-ui/react @mochi-ui/tokens
+pnpm add @nextouch-app/mochi-react @nextouch-app/mochi-tokens
 ```
 
 ```bash [bun]
-bun add @mochi-ui/react @mochi-ui/tokens
+bun add @nextouch-app/mochi-react @nextouch-app/mochi-tokens
 ```
 
 :::
@@ -25,9 +25,9 @@ bun add @mochi-ui/react @mochi-ui/tokens
 ## Web
 
 ```tsx
-import '@mochi-ui/tokens/tokens.css'
-import { Button, ConfigProvider } from '@mochi-ui/react'
-import '@mochi-ui/react/style.css'
+import '@nextouch-app/mochi-tokens/tokens.css'
+import { Button, ConfigProvider } from '@nextouch-app/mochi-react'
+import '@nextouch-app/mochi-react/style.css'
 
 export default function App() {
   return (
@@ -40,12 +40,12 @@ export default function App() {
 
 ## Mobile
 
-Install `@mochi-ui/mobile` first (npm / yarn / pnpm / bun all work), then:
+Install `@nextouch-app/mochi-mobile` first (npm / yarn / pnpm / bun all work), then:
 
 ```tsx
-import '@mochi-ui/tokens/tokens.css'
-import { Button, ConfigProvider } from '@mochi-ui/mobile'
-import '@mochi-ui/mobile/style.css'
+import '@nextouch-app/mochi-tokens/tokens.css'
+import { Button, ConfigProvider } from '@nextouch-app/mochi-mobile'
+import '@nextouch-app/mochi-mobile/style.css'
 ```
 
 Props match the Web package — only the import path changes.

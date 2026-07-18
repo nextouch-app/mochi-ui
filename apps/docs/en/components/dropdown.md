@@ -34,7 +34,7 @@ Nested submenus: flyout to the right on Web, inline accordion in the mobile bott
 Anchored menu with `trigger="click" | "hover"`. Items with `children` render a submenu (`.mochi-dropdown__submenu`).
 
 ```tsx
-import { Dropdown, Button } from '@mochi-ui/react'
+import { Dropdown, Button } from '@nextouch-app/mochi-react'
 
 <Dropdown
   items={[
@@ -55,7 +55,7 @@ import { Dropdown, Button } from '@mochi-ui/react'
 Same API in a bottom action sheet. Items with `children` expand inline as an accordion.
 
 ```tsx
-import { Dropdown, Button } from '@mochi-ui/mobile'
+import { Dropdown, Button } from '@nextouch-app/mochi-mobile'
 
 <Dropdown items={[{ key: '1', label: 'Edit' }]}>
   <Button>Actions</Button>

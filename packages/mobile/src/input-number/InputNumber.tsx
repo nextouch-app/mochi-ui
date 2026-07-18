@@ -1,5 +1,5 @@
 import { useState, type ChangeEvent, type KeyboardEvent } from 'react'
-import { cn, normalizeSize, type InputNumberProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type InputNumberProps } from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import './input-number.css'
 

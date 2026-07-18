@@ -23,7 +23,7 @@
 ## Web
 
 ```tsx
-import { TreeSelect } from '@mochi-ui/react'
+import { TreeSelect } from '@nextouch-app/mochi-react'
 
 <TreeSelect
   showSearch

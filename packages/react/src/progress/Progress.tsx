@@ -1,4 +1,4 @@
-import { cn, type ProgressProps } from '@mochi-ui/core'
+import { cn, type ProgressProps } from '@nextouch-app/mochi-core'
 import './progress.css'
 
 function resolveStatus(status: ProgressProps['status'], percent: number) {

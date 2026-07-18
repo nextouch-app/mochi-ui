@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import '@mochi-ui/tokens/tokens.css'
+import '@nextouch-app/mochi-tokens/tokens.css'
 import App from './App'
 import './app.css'
 

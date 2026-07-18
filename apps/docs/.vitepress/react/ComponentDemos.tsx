@@ -1,5 +1,5 @@
 import type { ComponentType } from 'react'
-import { ConfigProvider } from '@mochi-ui/react'
+import { ConfigProvider } from '@nextouch-app/mochi-react'
 import { demosByName } from '../demo-map'
 
 export function ComponentDemos({ name }: { name: string }) {

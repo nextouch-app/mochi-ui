@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { cn, type UploadFile, type UploadProps } from '@mochi-ui/core'
+import { cn, type UploadFile, type UploadProps } from '@nextouch-app/mochi-core'
 import './upload.css'
 
 function toUploadFile(file: File): UploadFile {

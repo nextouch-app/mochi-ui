@@ -1,4 +1,4 @@
-import { cn, type DividerProps } from '@mochi-ui/core'
+import { cn, type DividerProps } from '@nextouch-app/mochi-core'
 
 function WaveSvg() {
   return (

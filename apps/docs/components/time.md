@@ -17,7 +17,7 @@
 | label | 标签 | `ReactNode` | — |
 
 ```tsx
-import { Time } from '@mochi-ui/react'
+import { Time } from '@nextouch-app/mochi-react'
 
 <Time live showDate label="服务器时间" />
 ```

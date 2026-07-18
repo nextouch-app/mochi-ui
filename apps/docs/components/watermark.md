@@ -18,7 +18,7 @@
 | zIndex | 层级 | `number` | `9` |
 
 ```tsx
-import { Watermark } from '@mochi-ui/react'
+import { Watermark } from '@nextouch-app/mochi-react'
 
 <Watermark content="Mochi UI">
   <div style={{ height: 160 }}>内容区</div>
