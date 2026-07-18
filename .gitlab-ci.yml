@@ -1,7 +1,7 @@
 # GitLab CI — 构建校验 + Pages 文档站
-# Pages 地址通常为：https://<group>.gitlab.io/<project>/
+# 默认分支：main
 
-image: node:20-bookworm
+image: node:22.16.0-bookworm
 
 variables:
   PNPM_HOME: /root/.local/share/pnpm
@@ -13,6 +13,11 @@ cache:
       - pnpm-lock.yaml
   paths:
     - .pnpm-store
+
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == "main"
 
 before_script:
   - corepack enable
@@ -27,11 +32,10 @@ stages:
 build:
   stage: test
   script:
+    - node -v
+    - pnpm -v
     - pnpm build
     - pnpm check:mobile-styles
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 pages:
   stage: deploy
@@ -45,4 +49,4 @@ pages:
     paths:
       - public
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH == "main"
