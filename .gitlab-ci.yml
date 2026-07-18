@@ -1,11 +1,13 @@
 # GitLab CI — 构建校验 + Pages 文档站
-# Pages 地址通常为：https://<group>.gitlab.io/<project>/
+# 默认分支：main
+#
+# 注意：不要在 variables 里覆盖 PATH，否则 docker+machine
+# 会报 gitlab-runner-build: not found
 
-image: node:20-bookworm
+image: node:22.16.0-bookworm
 
 variables:
   PNPM_HOME: /root/.local/share/pnpm
-  PATH: $PNPM_HOME:$PATH
 
 cache:
   key:
@@ -14,7 +16,13 @@ cache:
   paths:
     - .pnpm-store
 
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == "main"
+
 before_script:
+  - export PATH="$PNPM_HOME:$PATH"
   - corepack enable
   - corepack prepare pnpm@9.15.0 --activate
   - pnpm config set store-dir .pnpm-store
@@ -27,11 +35,10 @@ stages:
 build:
   stage: test
   script:
+    - node -v
+    - pnpm -v
     - pnpm build
     - pnpm check:mobile-styles
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 pages:
   stage: deploy
@@ -45,4 +52,4 @@ pages:
     paths:
       - public
   rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_BRANCH == "main"
