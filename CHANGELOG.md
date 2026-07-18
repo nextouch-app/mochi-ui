@@ -19,6 +19,7 @@
 - **Image.PreviewGroup**；**Progress** `circle` / `dashboard`；**Drawer** footer / width / maskClosable；**ConfigProvider** `theme.token`
 - **Typewriter / CodeBlock / Footer**（Plus）
 - **Phone / Wallet / Time / Cursor**（Plus）
+- **Icons**: 扩展至 **150** 个原创 SVG（方向 / 提示 / 编辑 / 应用 / 岛风），`pnpm icons:generate` 可再生成
 - **Message / Notification**: `destroy` / `destroyAll`、`config`、`key`、`loading`（Message）
 - **Upload**: `action`、`customRequest`、进度与 `listType`
 - **Tag**: `closable`、`icon`、`bordered`

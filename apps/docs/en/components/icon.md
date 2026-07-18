@@ -1,9 +1,6 @@
 # Icon
 
-Original SVGs from `@mochi-ui/icons`.
-
-Available names: `cloud` `star` `bubble` `raindrop` `clock` `sparkle` `leaf` `heart` `note` `check`
-
+`@mochi-ui/icons` ships **150** original SVGs (rounded stroke style). Names align with common Ant Design Icons; cozy extras (cloud, animals, etc.) are included. Paths are original — no third-party asset copies.
 
 ## Examples
 
@@ -11,5 +8,10 @@ Available names: `cloud` `star` `bubble` `raindrop` `clock` `sparkle` `leaf` `he
 
 ```tsx
 import { Icon } from '@mochi-ui/react'
-;<Icon name="cloud" size={24} color="var(--mochi-color-primary)" />
+import { Search } from '@mochi-ui/icons'
+
+<Icon name="search" size={24} bounce />
+<Search size={24} />
 ```
+
+Extend via `scripts/generate-icons.mjs` then `pnpm icons:generate`.
