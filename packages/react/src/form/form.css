@@ -1,0 +1,120 @@
+/* Mochi Form — cozy field stack */
+
+.mochi-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  color: #725d42;
+}
+
+.mochi-form__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
+  display: contents;
+}
+
+.mochi-form--inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px 20px;
+}
+
+.mochi-form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.mochi-form-item--horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.mochi-form-item--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.mochi-form-item__label {
+  display: block;
+  font-weight: 700;
+  color: #5a4632;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.mochi-form-item--horizontal .mochi-form-item__label {
+  margin-bottom: 0;
+  padding-top: 12px;
+  flex: 0 0 96px;
+  text-align: right;
+}
+
+.mochi-form-item--horizontal .mochi-form-item__label.is-align-left {
+  text-align: left;
+}
+
+.mochi-form-item--inline .mochi-form-item__label {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.mochi-form-item__required {
+  color: #e05a5a;
+  margin-right: 4px;
+  font-weight: 900;
+}
+
+.mochi-form-item__colon {
+  margin-left: 2px;
+}
+
+.mochi-form-item__optional {
+  margin-left: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #a89878;
+}
+
+.mochi-form-item__control {
+  flex: 1;
+  min-width: 0;
+}
+
+.mochi-form-item__help {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #a89878;
+  line-height: 1.4;
+}
+
+.mochi-form-item.is-error .mochi-form-item__help {
+  color: #e05a5a;
+}
+
+.mochi-form-item.is-success .mochi-form-item__help {
+  color: #5a9e1e;
+}
+
+.mochi-form-item.is-warning .mochi-form-item__help {
+  color: #d4a017;
+}
+
+.mochi-form-item.is-validating .mochi-form-item__help {
+  color: #6cb4ee;
+}
+
+.mochi-form-item__extra {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #a89878;
+}

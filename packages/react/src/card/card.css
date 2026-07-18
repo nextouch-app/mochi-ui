@@ -1,0 +1,175 @@
+/* Mochi Card — organic sticker panel */
+
+.mochi-card {
+  position: relative;
+  background: #f7f3df;
+  border: 2.5px solid #c4b89e;
+  border-radius: 40px 35px 45px 38px / 38px 45px 35px 40px;
+  color: #725d42;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  overflow: visible;
+}
+
+.mochi-card--sm { padding: 14px 16px; }
+.mochi-card--md { padding: 20px 22px; }
+.mochi-card--lg { padding: 26px 28px; }
+
+.mochi-card--inner {
+  background: #f8f8f0;
+  border-radius: 20px;
+}
+.mochi-card--borderless {
+  border-color: transparent;
+}
+.mochi-card--hoverable {
+  cursor: pointer;
+  transition: transform 180ms cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+.mochi-card--hoverable:hover {
+  transform: translateY(-3px);
+}
+
+.mochi-card__cloud {
+  position: absolute;
+  width: 28px;
+  height: 18px;
+  background: #a8d4f0;
+  border: 2px solid #3d9ad4;
+  border-radius: 50% 50% 45% 45%;
+  box-shadow: 0 2px 0 #3d9ad4;
+  z-index: 1;
+}
+.mochi-card__cloud--tl { top: -8px; left: 18px; }
+.mochi-card__cloud--tr {
+  top: -6px;
+  right: 22px;
+  width: 22px;
+  height: 14px;
+  background: #fff;
+  border-color: #c4b89e;
+  box-shadow: 0 2px 0 #bdaea0;
+}
+.mochi-card__star {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  color: #f5c31c;
+  font-size: 12px;
+  z-index: 1;
+}
+
+.mochi-card--dashed {
+  border-style: dashed;
+  background:
+    repeating-linear-gradient(
+      -8deg,
+      #f7f3df,
+      #f7f3df 12px,
+      #f0ead2 12px,
+      #f0ead2 24px
+    );
+}
+.mochi-card--pink {
+  background: linear-gradient(165deg, #fff5f8, #ffe8ef);
+  border-color: #f7b6c8;
+}
+.mochi-card--pink .mochi-card__cloud--tl {
+  background: #f7b6c8;
+  border-color: #e090a8;
+  box-shadow: 0 2px 0 #e090a8;
+}
+.mochi-card--mint {
+  background: linear-gradient(165deg, #f2fcf8, #dff5ec);
+  border-color: #9ee0c8;
+}
+.mochi-card--mint .mochi-card__cloud--tl {
+  background: #9ee0c8;
+  border-color: #6fba9a;
+  box-shadow: 0 2px 0 #6fba9a;
+}
+.mochi-card--lavender {
+  background: linear-gradient(165deg, #f8f4ff, #ebe4f8);
+  border-color: #c8b8e8;
+}
+.mochi-card--peach {
+  background: linear-gradient(165deg, #fff7f0, #ffe9d8);
+  border-color: #f5c9a8;
+}
+
+.mochi-card__cover {
+  margin: -20px -22px 16px;
+  border-radius: 36px 32px 0 0;
+  overflow: hidden;
+}
+.mochi-card--sm .mochi-card__cover { margin: -14px -16px 12px; }
+.mochi-card--lg .mochi-card__cover { margin: -26px -28px 18px; }
+.mochi-card__cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mochi-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-right: 18px;
+}
+.mochi-card__title {
+  font-weight: 800;
+  font-size: 18px;
+  color: #794f27;
+}
+.mochi-card--sm .mochi-card__title { font-size: 15px; }
+.mochi-card--lg .mochi-card__title { font-size: 22px; }
+.mochi-card__extra {
+  color: #3d9ad4;
+  font-weight: 700;
+  font-size: 13px;
+}
+.mochi-card__body {
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.mochi-card__skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mochi-card__skeleton span {
+  display: block;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #efe9d4, #f8f8f0, #efe9d4);
+  background-size: 200% 100%;
+  animation: mochi-card-shimmer 1.2s ease infinite;
+}
+.mochi-card__skeleton span:nth-child(2) { width: 80%; }
+.mochi-card__skeleton span:nth-child(3) { width: 60%; }
+
+@keyframes mochi-card-shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+.mochi-card__actions {
+  display: flex;
+  margin: 16px -22px -20px;
+  border-top: 2px dashed #c4b89e;
+}
+.mochi-card--sm .mochi-card__actions { margin: 12px -16px -14px; }
+.mochi-card--lg .mochi-card__actions { margin: 18px -28px -26px; }
+.mochi-card__action {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  border-right: 2px dashed #c4b89e;
+  color: #3d9ad4;
+  font-weight: 700;
+}
+.mochi-card__action:last-child { border-right: none; }

@@ -1,0 +1,48 @@
+# GitLab CI — 构建校验 + Pages 文档站
+# Pages 地址通常为：https://<group>.gitlab.io/<project>/
+
+image: node:20-bookworm
+
+variables:
+  PNPM_HOME: /root/.local/share/pnpm
+  PATH: $PNPM_HOME:$PATH
+
+cache:
+  key:
+    files:
+      - pnpm-lock.yaml
+  paths:
+    - .pnpm-store
+
+before_script:
+  - corepack enable
+  - corepack prepare pnpm@9.15.0 --activate
+  - pnpm config set store-dir .pnpm-store
+  - pnpm install
+
+stages:
+  - test
+  - deploy
+
+build:
+  stage: test
+  script:
+    - pnpm build
+    - pnpm check:mobile-styles
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+pages:
+  stage: deploy
+  script:
+    - export DOCS_BASE="/${CI_PROJECT_NAME}/"
+    - pnpm docs:build
+    - rm -rf public
+    - mkdir -p public
+    - cp -r apps/docs/.vitepress/dist/. public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

@@ -1,0 +1,268 @@
+﻿/* Mochi Button */
+
+@keyframes mochi-btn-stripe {
+  to {
+    background-position: 32px 0;
+  }
+}
+
+.mochi-btn {
+  --mochi-btn-face: #f8f8f0;
+  --mochi-btn-ink: #794f27;
+  --mochi-btn-line: #c4b89e;
+  --mochi-btn-block: #bdaea0;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  border: 3px solid var(--mochi-btn-line);
+  border-radius: 50px;
+  background: var(--mochi-btn-face);
+  color: var(--mochi-btn-ink);
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  vertical-align: middle;
+  box-shadow: 0 5px 0 0 var(--mochi-btn-block);
+  transform: translateY(0);
+  transition:
+    transform 100ms ease,
+    box-shadow 100ms ease,
+    background 120ms ease,
+    color 120ms ease,
+    filter 120ms ease,
+    border-color 120ms ease;
+}
+
+.mochi-btn::before {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 3px;
+  height: 42%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mochi-btn--sm {
+  height: 36px;
+  min-width: 72px;
+  padding: 0 16px;
+  font-size: 13px;
+  box-shadow: 0 4px 0 0 var(--mochi-btn-block);
+}
+.mochi-btn--md {
+  height: 48px;
+  min-width: 96px;
+  padding: 0 28px;
+  font-size: 16px;
+}
+.mochi-btn--lg {
+  height: 58px;
+  min-width: 120px;
+  padding: 0 36px;
+  font-size: 18px;
+  box-shadow: 0 6px 0 0 var(--mochi-btn-block);
+}
+.mochi-btn--block {
+  display: flex;
+  width: 100%;
+}
+
+.mochi-btn--icon-only {
+  min-width: 0;
+  padding: 0;
+}
+.mochi-btn--icon-only.mochi-btn--sm { width: 36px; }
+.mochi-btn--icon-only.mochi-btn--md { width: 48px; }
+.mochi-btn--icon-only.mochi-btn--lg { width: 58px; }
+
+.mochi-btn--shape-round {
+  border-radius: 999px;
+}
+.mochi-btn--shape-circle {
+  border-radius: 50%;
+  min-width: 0;
+  padding: 0;
+}
+.mochi-btn--shape-circle.mochi-btn--sm { width: 36px; height: 36px; }
+.mochi-btn--shape-circle.mochi-btn--md { width: 48px; height: 48px; }
+.mochi-btn--shape-circle.mochi-btn--lg { width: 58px; height: 58px; }
+
+/* types */
+.mochi-btn--primary {
+  --mochi-btn-face: #6cb4ee;
+  --mochi-btn-ink: #ffffff;
+  --mochi-btn-line: #3d9ad4;
+  --mochi-btn-block: #3d9ad4;
+  background: linear-gradient(180deg, #9ed4f6 0%, #6cb4ee 48%, #4aa0dc 100%);
+  text-shadow: 0 1px 0 rgba(45, 120, 180, 0.35);
+}
+
+.mochi-btn--default {
+  --mochi-btn-face: #f8f8f0;
+  --mochi-btn-ink: #794f27;
+  --mochi-btn-line: #c4b89e;
+  --mochi-btn-block: #bdaea0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f8f0 55%, #efe9d4 100%);
+}
+
+.mochi-btn--dashed {
+  --mochi-btn-face: #f7f3df;
+  --mochi-btn-ink: #794f27;
+  --mochi-btn-line: #9f927d;
+  --mochi-btn-block: #bdaea0;
+  border-style: dashed;
+  background: #f7f3df;
+}
+
+.mochi-btn--text,
+.mochi-btn--link {
+  --mochi-btn-block: transparent;
+  height: auto;
+  min-width: 0;
+  padding: 8px 14px;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  color: #3d9ad4;
+  text-shadow: none;
+}
+.mochi-btn--text::before,
+.mochi-btn--link::before {
+  display: none;
+}
+.mochi-btn--link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* danger */
+.mochi-btn--danger.mochi-btn--primary,
+.mochi-btn--danger:not(.mochi-btn--text):not(.mochi-btn--link):not(.mochi-btn--default):not(.mochi-btn--dashed) {
+  --mochi-btn-face: #e05a5a;
+  --mochi-btn-ink: #ffffff;
+  --mochi-btn-line: #c94444;
+  --mochi-btn-block: #c94444;
+  background: linear-gradient(180deg, #f08080 0%, #e05a5a 50%, #d04545 100%);
+  text-shadow: 0 1px 0 rgba(160, 40, 40, 0.35);
+}
+.mochi-btn--danger.mochi-btn--default,
+.mochi-btn--danger.mochi-btn--dashed {
+  --mochi-btn-ink: #c94444;
+  --mochi-btn-line: #e05a5a;
+  --mochi-btn-block: #e05a5a;
+  color: #c94444;
+}
+.mochi-btn--danger.mochi-btn--text,
+.mochi-btn--danger.mochi-btn--link {
+  color: #e05a5a;
+}
+
+/* ghost */
+.mochi-btn--ghost {
+  background: transparent !important;
+  text-shadow: none;
+}
+.mochi-btn--ghost.mochi-btn--primary {
+  color: #3d9ad4;
+  border-color: #3d9ad4;
+  --mochi-btn-block: #3d9ad4;
+}
+.mochi-btn--ghost.mochi-btn--default,
+.mochi-btn--ghost.mochi-btn--dashed {
+  color: #794f27;
+  border-color: #c4b89e;
+}
+.mochi-btn--ghost.mochi-btn--danger {
+  color: #e05a5a;
+  border-color: #e05a5a;
+  --mochi-btn-block: #e05a5a;
+}
+
+/* hover */
+
+/* press */
+.mochi-btn:active:not(:disabled):not(.is-disabled):not(.mochi-btn--text):not(.mochi-btn--link),
+.mochi-btn.is-pressed:not(.is-disabled):not(.mochi-btn--text):not(.mochi-btn--link) {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 0 var(--mochi-btn-block);
+  filter: none;
+}
+.mochi-btn--sm:active:not(:disabled):not(.is-disabled):not(.mochi-btn--text):not(.mochi-btn--link),
+.mochi-btn--sm.is-pressed:not(.is-disabled):not(.mochi-btn--text):not(.mochi-btn--link) {
+  transform: translateY(3px);
+}
+.mochi-btn--lg:active:not(:disabled):not(.is-disabled):not(.mochi-btn--text):not(.mochi-btn--link),
+.mochi-btn--lg.is-pressed:not(.is-disabled):not(.mochi-btn--text):not(.mochi-btn--link) {
+  transform: translateY(5px);
+}
+
+.mochi-btn.is-disabled,
+.mochi-btn:disabled,
+a.mochi-btn.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  filter: grayscale(0.35);
+  transform: none !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+.mochi-btn.is-loading {
+  cursor: wait;
+  pointer-events: none;
+}
+.mochi-btn.is-loading .mochi-btn__label,
+.mochi-btn.is-loading .mochi-btn__icon {
+  opacity: 0.28;
+}
+
+.mochi-btn__stripes {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.42) 0 12px,
+    rgba(255, 255, 255, 0.08) 12px 24px
+  );
+  background-size: 32px 32px;
+  animation: mochi-btn-stripe 0.5s linear infinite;
+  pointer-events: none;
+}
+.mochi-btn--default.is-loading .mochi-btn__stripes,
+.mochi-btn--dashed.is-loading .mochi-btn__stripes,
+.mochi-btn--ghost.is-loading .mochi-btn__stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(121, 79, 39, 0.18) 0 12px,
+    rgba(121, 79, 39, 0.04) 12px 24px
+  );
+  background-size: 32px 32px;
+}
+
+.mochi-btn__icon,
+.mochi-btn__label {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+}
+.mochi-btn__icon {
+  font-size: 1.1em;
+  line-height: 0;
+}

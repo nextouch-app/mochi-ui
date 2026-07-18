@@ -1,0 +1,23 @@
+{
+  "name": "mochi-ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Mochi UI — soft cartoon React component library by Nextouch",
+  "license": "MIT",
+  "scripts": {
+    "build": "pnpm -r --filter \"@mochi-ui/*\" run build",
+    "build:apps": "pnpm --filter demo-web build && pnpm --filter demo-mobile build",
+    "dev": "pnpm --filter demo-web dev",
+    "dev:mobile": "pnpm --filter demo-mobile dev",
+    "docs:dev": "pnpm --filter docs dev",
+    "docs:build": "pnpm --filter docs build",
+    "check:mobile-styles": "node scripts/check-mobile-styles.js",
+    "clean": "pnpm -r run clean"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

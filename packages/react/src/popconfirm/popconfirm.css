@@ -1,0 +1,19 @@
+.mochi-popconfirm__title {
+  font-weight: 900;
+  color: #5a4632;
+  margin-bottom: 6px;
+}
+
+.mochi-popconfirm__desc {
+  font-size: 13px;
+  font-weight: 600;
+  color: #725d42;
+  margin-bottom: 12px;
+  line-height: 1.45;
+}
+
+.mochi-popconfirm__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}

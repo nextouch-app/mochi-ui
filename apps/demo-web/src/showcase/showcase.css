@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+.showcase {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+  font-family: var(--mochi-font-family);
+  color: var(--mochi-color-text);
+  background-color: #7ec8a8;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.18), transparent 28%),
+    radial-gradient(circle at 88% 12%, rgba(108, 180, 238, 0.25), transparent 30%),
+    radial-gradient(circle at 70% 80%, rgba(255, 182, 200, 0.2), transparent 32%);
+}
+.showcase__sidebar {
+  background: rgba(248, 248, 240, 0.94);
+  border-right: 3px solid #c4b89e;
+  padding: 16px 12px 32px;
+  overflow: auto;
+}
+.showcase__brand p {
+  margin: -4px 0 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--mochi-color-text-secondary);
+  text-align: center;
+}
+.showcase__cat {
+  font-size: 11px;
+  font-weight: 800;
+  color: #794f27;
+  margin: 14px 8px 6px;
+  letter-spacing: 0.06em;
+}
+.showcase__nav {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 9px 12px;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--mochi-color-text);
+  margin-bottom: 2px;
+}
+.showcase__nav:hover { background: #d6dff0; }
+.showcase__nav.is-active {
+  background: #b7c6e5;
+  color: #794f27;
+  box-shadow: inset 0 -2px 0 rgba(121, 79, 39, 0.12);
+}
+.showcase__main {
+  padding: 28px 32px 64px;
+  overflow: auto;
+  background: rgba(247, 243, 223, 0.55);
+}
+.showcase__heading {
+  margin: 0 0 6px;
+  font-size: 30px;
+  font-weight: 900;
+  color: #794f27;
+}
+.showcase__heading::after {
+  content: ' ✦';
+  color: #ffcc00;
+  font-size: 0.5em;
+  vertical-align: super;
+}
+.showcase__demo { margin-bottom: 20px; }
+.showcase__desc {
+  margin: 0 0 14px;
+  color: var(--mochi-color-text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+}
+.showcase__preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .showcase { grid-template-columns: 1fr; }
+  .showcase__sidebar {
+    border-right: none;
+    border-bottom: 3px solid #c4b89e;
+    max-height: 220px;
+  }
+}

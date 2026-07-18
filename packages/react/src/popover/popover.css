@@ -1,0 +1,62 @@
+.mochi-popover {
+  position: relative;
+  display: inline-flex;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+}
+
+.mochi-popover__panel {
+  position: absolute;
+  z-index: 1060;
+  min-width: 160px;
+  max-width: 280px;
+  padding: 12px 14px;
+  background: #fff8e7;
+  border: 2.5px solid #c4b89e;
+  border-radius: 16px;
+  box-shadow: 0 5px 0 0 #d4c9b4;
+  color: #725d42;
+  animation: mochi-popover-in 0.2s cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+
+.mochi-popover__panel--top {
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mochi-popover__panel--bottom {
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mochi-popover__panel--left {
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.mochi-popover__panel--right {
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mochi-popover__title {
+  font-weight: 900;
+  margin-bottom: 6px;
+  color: #5a4632;
+}
+
+.mochi-popover__content {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+@keyframes mochi-popover-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+  to {
+    opacity: 1;
+  }
+}

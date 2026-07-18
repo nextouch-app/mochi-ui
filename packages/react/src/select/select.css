@@ -1,0 +1,226 @@
+/* Mochi Select — pill trigger + parchment dropdown */
+
+@keyframes mochi-select-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mochi-select {
+  position: relative;
+  display: inline-block;
+  min-width: 180px;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  vertical-align: middle;
+}
+
+.mochi-select__trigger {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 2.5px solid #c4b89e;
+  border-radius: 50px;
+  box-shadow: 0 3px 0 0 #d4c9b4;
+  padding: 0 14px 0 18px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  color: #725d42;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
+}
+
+.mochi-select--sm .mochi-select__trigger {
+  height: 36px;
+  font-size: 13px;
+  box-shadow: 0 2px 0 0 #d4c9b4;
+  padding: 0 12px 0 14px;
+}
+
+.mochi-select--lg .mochi-select__trigger {
+  height: 56px;
+  font-size: 16px;
+  box-shadow: 0 4px 0 0 #d4c9b4;
+}
+
+.mochi-select__trigger:hover:not(:disabled) {
+  border-color: #a89878;
+  transform: translateY(-1px);
+}
+
+.mochi-select.is-open .mochi-select__trigger {
+  border-color: #e0b800;
+  box-shadow:
+    0 3px 0 0 #d4c9b4,
+    0 0 0 4px rgba(255, 204, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+.mochi-select.is-error .mochi-select__trigger {
+  border-color: #e05a5a;
+  box-shadow: 0 3px 0 0 #c94444, 0 0 0 4px rgba(224, 90, 90, 0.2);
+}
+
+.mochi-select.is-warning .mochi-select__trigger {
+  border-color: #d4a017;
+  box-shadow: 0 3px 0 0 #b8860b, 0 0 0 4px rgba(212, 160, 23, 0.2);
+}
+
+.mochi-select__value {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.mochi-select__value.is-placeholder {
+  color: #b8a88c;
+  font-weight: 500;
+}
+
+.mochi-select__suffix {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.mochi-select__arrow {
+  color: #6cb4ee;
+  font-size: 12px;
+  transition: transform 160ms ease;
+}
+
+.mochi-select.is-open .mochi-select__arrow {
+  transform: rotate(180deg);
+}
+
+.mochi-select__clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #efe6d2;
+  color: #725d42;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.mochi-select__clear:hover {
+  background: #e05a5a;
+  color: #fff;
+}
+
+.mochi-select__spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #d4c9b4;
+  border-top-color: #6cb4ee;
+  border-radius: 50%;
+  animation: mochi-select-spin 0.7s linear infinite;
+}
+
+.mochi-select__dropdown {
+  position: absolute;
+  z-index: var(--mochi-z-dropdown, 1050);
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #fff8e7;
+  border: 2.5px solid #c4b89e;
+  border-radius: 18px;
+  box-shadow: 0 6px 0 0 #d4c9b4;
+  overflow: auto;
+  animation: mochi-select-in 0.25s cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+
+@keyframes mochi-select-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.mochi-select__search {
+  padding: 10px 10px 6px;
+  border-bottom: 2px dashed #e0d6c0;
+}
+
+.mochi-select__search-input {
+  width: 100%;
+  height: 34px;
+  border: 2px solid #c4b89e;
+  border-radius: 999px;
+  padding: 0 12px;
+  font: inherit;
+  font-weight: 600;
+  color: #725d42;
+  background: #fff;
+  outline: none;
+}
+
+.mochi-select__search-input:focus {
+  border-color: #e0b800;
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.3);
+}
+
+.mochi-select__empty {
+  padding: 16px;
+  text-align: center;
+  font-weight: 600;
+  color: #a89878;
+  font-size: 13px;
+}
+
+.mochi-select__option {
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 12px 14px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  color: #725d42;
+}
+
+.mochi-select__option:hover,
+.mochi-select__option.is-active {
+  background: rgba(108, 180, 238, 0.22);
+}
+
+.mochi-select__option.is-active {
+  color: #3d7eb0;
+  font-weight: 800;
+}
+
+.mochi-select__option.is-disabled,
+.mochi-select__option:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mochi-select.is-disabled .mochi-select__trigger,
+.mochi-select__trigger:disabled {
+  background: #f7f3df;
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

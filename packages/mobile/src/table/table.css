@@ -1,0 +1,49 @@
+.mochi-table-wrap {
+  width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #fff8e7;
+  border-radius: 18px;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  color: #725d42;
+}
+
+.mochi-table-wrap.is-bordered {
+  border: 2.5px solid #c4b89e;
+  box-shadow: 0 5px 0 0 #d4c9b4;
+}
+
+.mochi-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 360px;
+  font-size: 14px;
+}
+
+.mochi-table th,
+.mochi-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 2px dashed #e0d6c0;
+}
+
+.mochi-table th {
+  font-weight: 800;
+  background: rgba(108, 180, 238, 0.18);
+  color: #5a4632;
+  white-space: nowrap;
+}
+
+
+
+.mochi-table-wrap--sm th,
+.mochi-table-wrap--sm td {
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.mochi-table-wrap--lg th,
+.mochi-table-wrap--lg td {
+  padding: 16px 18px;
+  font-size: 16px;
+}

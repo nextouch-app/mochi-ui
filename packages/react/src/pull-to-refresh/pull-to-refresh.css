@@ -1,0 +1,35 @@
+.mochi-pull {
+  position: relative;
+  overflow: hidden;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  color: #725d42;
+}
+
+.mochi-pull__indicator {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  font-weight: 800;
+  font-size: 13px;
+  color: #6cb4ee;
+  transition: height 120ms ease;
+}
+
+.mochi-pull__content {
+  transition: transform 120ms ease;
+}
+
+.mochi-pull.is-refreshing .mochi-pull__indicator span {
+  animation: mochi-pull-bounce 0.8s ease-in-out infinite;
+}
+
+@keyframes mochi-pull-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}

@@ -1,0 +1,77 @@
+.mochi-swiper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 2.5px solid #c4b89e;
+  background: #fff8e7;
+  box-shadow: 0 5px 0 0 #d4c9b4;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.mochi-swiper__track {
+  display: flex;
+  transition: transform 280ms cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+
+.mochi-swiper__slide {
+  flex: 0 0 100%;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-weight: 800;
+  color: #5a4632;
+  box-sizing: border-box;
+}
+
+.mochi-swiper__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border: 2.5px solid #c4b89e;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  color: #725d42;
+  cursor: pointer;
+  box-shadow: 0 3px 0 0 #bdaea0;
+}
+
+.mochi-swiper__nav--prev {
+  left: 10px;
+}
+.mochi-swiper__nav--next {
+  right: 10px;
+}
+
+.mochi-swiper__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.mochi-swiper__dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #c4b89e;
+  border-radius: 50%;
+  background: #fff;
+  padding: 0;
+  cursor: pointer;
+}
+
+.mochi-swiper__dot.is-active {
+  background: #6cb4ee;
+  border-color: #3d9ad4;
+}

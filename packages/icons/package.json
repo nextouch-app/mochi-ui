@@ -1,0 +1,35 @@
+{
+  "name": "@mochi-ui/icons",
+  "version": "0.1.0",
+  "description": "Original SVG icons for Mochi UI",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./svg/*": "./src/svg/*"
+  },
+  "files": ["dist", "src/svg"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --external react --clean && node ../../scripts/copy-icon-svgs.js",
+    "clean": "rimraf dist"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "react": "^18.3.1",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

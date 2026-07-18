@@ -1,0 +1,109 @@
+:root {
+  /* —— Mochi identity: sky blue + warm parchment (NOT animal teal) —— */
+  --mochi-color-primary: #6cb4ee;
+  --mochi-color-primary-hover: #85c4f4;
+  --mochi-color-primary-dark: #3d9ad4;
+  --mochi-color-primary-light: #e8f5fc;
+
+  --mochi-color-bg: #f7f3df;
+  --mochi-color-surface: #f8f8f0;
+  --mochi-color-surface-warm: #f7f3df;
+  --mochi-color-surface-muted: #efe9d4;
+
+  --mochi-color-text: #725d42;
+  --mochi-color-text-strong: #794f27;
+  --mochi-color-text-secondary: #9f927d;
+  --mochi-color-text-disabled: #c4b89e;
+
+  --mochi-color-border: #9f927d;
+  --mochi-color-border-soft: #c4b89e;
+  --mochi-color-shadow: #bdaea0;
+  --mochi-color-shadow-input: #d4c9b4;
+
+  --mochi-color-focus: #ffcc00;
+  --mochi-color-focus-dark: #e0b800;
+
+  --mochi-color-pink: #f7b6c8;
+  --mochi-color-mint: #9ee0c8;
+  --mochi-color-lavender: #c8b8e8;
+  --mochi-color-peach: #f5c9a8;
+  --mochi-color-sky: #a8d4f0;
+  --mochi-color-butter: #ffe08a;
+
+  --mochi-color-success: #6fba2c;
+  --mochi-color-warning: #f5c31c;
+  --mochi-color-error: #e05a5a;
+  --mochi-color-switch-on: #86d67a;
+
+  /* Shape — game UI */
+  --mochi-radius-pill: 50px;
+  --mochi-radius-card: 20px;
+  --mochi-radius-panel: 18px;
+  --mochi-radius-organic: 40px 35px 45px 38px / 38px 45px 35px 40px;
+  --mochi-radius-sm: 12px;
+  --mochi-radius-md: 20px;
+  --mochi-radius-lg: 28px;
+  --mochi-border-width: 2.5px;
+
+  /* 3D game press — bottom stack only */
+  --mochi-shadow-btn: 0 5px 0 0 var(--mochi-color-shadow);
+  --mochi-shadow-btn-hover: 0 6px 0 0 var(--mochi-color-shadow);
+  --mochi-shadow-btn-pressed: 0 1px 0 0 var(--mochi-color-shadow);
+  --mochi-shadow-primary: 0 5px 0 0 var(--mochi-color-primary-dark);
+  --mochi-shadow-primary-hover: 0 6px 0 0 var(--mochi-color-primary-dark);
+  --mochi-shadow-primary-pressed: 0 1px 0 0 var(--mochi-color-primary-dark);
+  --mochi-shadow-input: 0 3px 0 0 var(--mochi-color-shadow-input);
+  --mochi-shadow-sm: 0 3px 0 0 var(--mochi-color-shadow);
+  --mochi-shadow-md: 0 5px 0 0 var(--mochi-color-shadow);
+  --mochi-shadow-lg: 0 8px 0 0 var(--mochi-color-shadow);
+  --mochi-shadow-pressed: 0 1px 0 0 var(--mochi-color-shadow);
+  --mochi-shadow-success: 0 5px 0 0 #5a9e1e;
+  --mochi-shadow-error: 0 5px 0 0 #c94444;
+
+  /* Font — round friendly stack */
+  --mochi-font-family:
+    'Nunito',
+    'Noto Sans SC',
+    system-ui,
+    -apple-system,
+    'PingFang SC',
+    'Microsoft YaHei',
+    sans-serif;
+  --mochi-font-weight-normal: 500;
+  --mochi-font-weight-medium: 600;
+  --mochi-font-weight-semibold: 700;
+  --mochi-font-weight-bold: 800;
+  --mochi-font-size-sm: 13px;
+  --mochi-font-size-md: 15px;
+  --mochi-font-size-lg: 16px;
+  --mochi-font-size-xl: 20px;
+  --mochi-font-size-2xl: 26px;
+  --mochi-line-height: 1.5;
+  --mochi-letter-spacing: 0.02em;
+
+  /* Motion */
+  --mochi-duration-fast: 120ms;
+  --mochi-duration-normal: 220ms;
+  --mochi-easing-bounce: cubic-bezier(0.34, 1.45, 0.64, 1);
+  --mochi-easing-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --mochi-easing-ease: ease;
+
+  /* Spacing */
+  --mochi-space-xs: 4px;
+  --mochi-space-sm: 8px;
+  --mochi-space-md: 12px;
+  --mochi-space-lg: 16px;
+  --mochi-space-xl: 24px;
+  --mochi-space-2xl: 32px;
+
+  --mochi-z-dropdown: 1000;
+  --mochi-z-modal: 1100;
+  --mochi-z-toast: 1200;
+  --mochi-z-tooltip: 1300;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

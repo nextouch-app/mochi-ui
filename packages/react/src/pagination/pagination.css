@@ -1,0 +1,56 @@
+.mochi-pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  color: #725d42;
+}
+
+.mochi-pagination__total {
+  margin-right: 6px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.mochi-pagination__btn {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 10px;
+  border: 2.5px solid #c4b89e;
+  border-radius: 999px;
+  background: #fff;
+  color: #725d42;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 3px 0 0 #bdaea0;
+}
+
+.mochi-pagination__btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.mochi-pagination__btn.is-active {
+  background: #6cb4ee;
+  border-color: #3d9ad4;
+  color: #fff;
+  box-shadow: 0 3px 0 0 #3d9ad4;
+}
+
+.mochi-pagination__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.mochi-pagination__ellipsis {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.mochi-pagination.is-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}

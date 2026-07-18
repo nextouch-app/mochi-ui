@@ -1,0 +1,82 @@
+.mochi-calendar {
+  width: 300px;
+  padding: 14px;
+  background: #fff8e7;
+  border: 2.5px solid #c4b89e;
+  border-radius: 18px;
+  box-shadow: 0 5px 0 0 #d4c9b4;
+  font-family: var(--mochi-font-family, 'Nunito', 'Noto Sans SC', system-ui, sans-serif);
+  color: #725d42;
+}
+
+.mochi-calendar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.mochi-calendar__title {
+  font-weight: 900;
+  color: #5a4632;
+}
+
+.mochi-calendar__nav {
+  width: 32px;
+  height: 32px;
+  border: 2.5px solid #c4b89e;
+  border-radius: 50%;
+  background: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 0 0 #bdaea0;
+}
+
+.mochi-calendar__week,
+.mochi-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.mochi-calendar__week {
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #a89878;
+}
+
+.mochi-calendar__cell {
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: inherit;
+}
+
+.mochi-calendar__cell:hover:not(:disabled):not(.is-selected) {
+  background: rgba(108, 180, 238, 0.2);
+}
+
+.mochi-calendar__cell.is-outside {
+  opacity: 0.35;
+}
+
+.mochi-calendar__cell.is-today {
+  box-shadow: inset 0 0 0 2px #6cb4ee;
+}
+
+.mochi-calendar__cell.is-selected {
+  background: #6cb4ee;
+  color: #fff;
+  box-shadow: 0 2px 0 0 #3d9ad4;
+}
+
+.mochi-calendar__cell:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

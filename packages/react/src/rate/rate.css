@@ -1,0 +1,31 @@
+.mochi-rate {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.mochi-rate__star {
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 26px;
+  line-height: 1;
+  color: #d4c9b4;
+  cursor: pointer;
+  transition: transform 120ms ease, color 120ms ease;
+}
+
+.mochi-rate__star:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.08);
+}
+
+.mochi-rate__star.is-full,
+.mochi-rate__star.is-half {
+  color: #ffcc00;
+  text-shadow: 0 2px 0 #d4a017;
+}
+
+.mochi-rate.is-disabled .mochi-rate__star {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
