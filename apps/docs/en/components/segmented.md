@@ -18,7 +18,7 @@ Toggle among a few options.
 | onChange | Change handler | `(value) => void` | — |
 
 ```tsx
-import { Segmented } from '@mochi-ui/react'
+import { Segmented } from '@nextouch-app/mochi-react'
 
 <Segmented options={['Day', 'Week', 'Month']} defaultValue="Day" />
 ```

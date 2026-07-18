@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { cn, type WatermarkProps } from '@mochi-ui/core'
+import { cn, type WatermarkProps } from '@nextouch-app/mochi-core'
 import './watermark.css'
 
 function toLines(content?: string | string[]) {

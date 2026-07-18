@@ -1,4 +1,4 @@
-import { Loading, Space } from '@mochi-ui/react'
+import { Loading, Space } from '@nextouch-app/mochi-react'
 import type { DemoItem } from '../../types'
 
 function BasicDemo() {

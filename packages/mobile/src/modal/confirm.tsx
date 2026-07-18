@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createRoot, type Root } from 'react-dom/client'
-import { cn, type ModalFuncProps } from '@mochi-ui/core'
+import { cn, type ModalFuncProps } from '@nextouch-app/mochi-core'
 import { ModalBase } from './Modal'
 import { Button } from '../button/Button'
 

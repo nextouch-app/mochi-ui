@@ -35,7 +35,7 @@ Multi-level selection with side-by-side columns.
 Multi-column panel below the trigger.
 
 ```tsx
-import { Cascader } from '@mochi-ui/react'
+import { Cascader } from '@nextouch-app/mochi-react'
 
 <Cascader
   options={[
@@ -53,7 +53,7 @@ import { Cascader } from '@mochi-ui/react'
 Bottom sheet with horizontally scrollable columns.
 
 ```tsx
-import { Cascader } from '@mochi-ui/mobile'
+import { Cascader } from '@nextouch-app/mochi-mobile'
 
 <Cascader options={[{ value: 'a', label: 'Option A', children: [{ value: 'a1', label: 'Child' }] }]} />
 ```

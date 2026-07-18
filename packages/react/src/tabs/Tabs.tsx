@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, type TabsProps } from '@mochi-ui/core'
+import { cn, type TabsProps } from '@nextouch-app/mochi-core'
 
 export function Tabs({
   activeKey,

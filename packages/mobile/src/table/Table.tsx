@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
-import { cn, normalizeSize, type TableColumn, type TableProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type TableColumn, type TableProps } from '@nextouch-app/mochi-core'
 import { Empty } from '../empty/Empty'
 import { Pagination } from '../pagination/Pagination'
 import { Skeleton } from '../skeleton/Skeleton'

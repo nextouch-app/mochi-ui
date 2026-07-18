@@ -22,7 +22,7 @@
 | onClick | 点击 | `(e) => void` |
 
 ```tsx
-import { Breadcrumb } from '@mochi-ui/react'
+import { Breadcrumb } from '@nextouch-app/mochi-react'
 
 <Breadcrumb
   items={[

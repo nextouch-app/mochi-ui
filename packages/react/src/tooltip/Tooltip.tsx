@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, type TooltipProps } from '@mochi-ui/core'
+import { cn, type TooltipProps } from '@nextouch-app/mochi-core'
 
 export function Tooltip({
   title,

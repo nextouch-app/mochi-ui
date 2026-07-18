@@ -31,7 +31,7 @@
 | originFileObj | Original File | `File` |
 
 ```tsx
-import { Upload } from '@mochi-ui/react'
+import { Upload } from '@nextouch-app/mochi-react'
 
 <Upload multiple maxCount={5} listType="picture-card" onChange={({ fileList }) => console.log(fileList)} />
 ```

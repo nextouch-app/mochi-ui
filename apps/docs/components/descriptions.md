@@ -18,7 +18,7 @@
 | size | 尺寸 | `SizeAlias` | — |
 
 ```tsx
-import { Descriptions } from '@mochi-ui/react'
+import { Descriptions } from '@nextouch-app/mochi-react'
 
 <Descriptions
   title="订单"

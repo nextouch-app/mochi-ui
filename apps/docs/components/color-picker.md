@@ -18,7 +18,7 @@
 | onChange / onChangeComplete | 回调 | `(color) => void` | — |
 
 ```tsx
-import { ColorPicker } from '@mochi-ui/react'
+import { ColorPicker } from '@nextouch-app/mochi-react'
 
 <ColorPicker defaultValue="#6cb4ee" showText />
 ```

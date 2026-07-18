@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { cn, normalizeSize, type CascaderOption, type CascaderProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type CascaderOption, type CascaderProps } from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import './cascader.css'
 

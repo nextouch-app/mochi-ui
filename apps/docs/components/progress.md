@@ -20,7 +20,7 @@
 | format | 文案格式化 | `(percent?) => ReactNode` | — |
 
 ```tsx
-import { Progress } from '@mochi-ui/react'
+import { Progress } from '@nextouch-app/mochi-react'
 
 <Progress percent={70} />
 <Progress type="circle" percent={75} />

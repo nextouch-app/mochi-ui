@@ -26,7 +26,7 @@
 ## Web
 
 ```tsx
-import { Transfer } from '@mochi-ui/react'
+import { Transfer } from '@nextouch-app/mochi-react'
 
 <Transfer
   showSearch

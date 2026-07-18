@@ -1,4 +1,4 @@
-import { cn, type ListProps, type ListItemProps } from '@mochi-ui/core'
+import { cn, type ListProps, type ListItemProps } from '@nextouch-app/mochi-core'
 
 export function List({ header, className, style, children }: ListProps) {
   return (

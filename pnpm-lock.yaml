@@ -10,10 +10,10 @@ importers:
 
   apps/demo-mobile:
     dependencies:
-      '@mochi-ui/mobile':
+      '@nextouch-app/mochi-mobile':
         specifier: workspace:*
         version: link:../../packages/mobile
-      '@mochi-ui/tokens':
+      '@nextouch-app/mochi-tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
       react:
@@ -41,10 +41,10 @@ importers:
 
   apps/demo-web:
     dependencies:
-      '@mochi-ui/react':
+      '@nextouch-app/mochi-react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@mochi-ui/tokens':
+      '@nextouch-app/mochi-tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
       react:
@@ -72,10 +72,10 @@ importers:
 
   apps/docs:
     dependencies:
-      '@mochi-ui/react':
+      '@nextouch-app/mochi-react':
         specifier: workspace:*
         version: link:../../packages/react
-      '@mochi-ui/tokens':
+      '@nextouch-app/mochi-tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
       react:
@@ -136,13 +136,13 @@ importers:
 
   packages/mobile:
     dependencies:
-      '@mochi-ui/core':
+      '@nextouch-app/mochi-core':
         specifier: workspace:*
         version: link:../core
-      '@mochi-ui/icons':
+      '@nextouch-app/mochi-icons':
         specifier: workspace:*
         version: link:../icons
-      '@mochi-ui/tokens':
+      '@nextouch-app/mochi-tokens':
         specifier: workspace:*
         version: link:../tokens
       qrcode:
@@ -179,13 +179,13 @@ importers:
 
   packages/react:
     dependencies:
-      '@mochi-ui/core':
+      '@nextouch-app/mochi-core':
         specifier: workspace:*
         version: link:../core
-      '@mochi-ui/icons':
+      '@nextouch-app/mochi-icons':
         specifier: workspace:*
         version: link:../icons
-      '@mochi-ui/tokens':
+      '@nextouch-app/mochi-tokens':
         specifier: workspace:*
         version: link:../tokens
       qrcode:

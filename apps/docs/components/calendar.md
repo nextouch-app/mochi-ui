@@ -6,7 +6,7 @@
 <mochi-demos name="Calendar"></mochi-demos>
 
 ```tsx
-import { Calendar } from '@mochi-ui/react'
+import { Calendar } from '@nextouch-app/mochi-react'
 
 <Calendar onChange={(d) => console.log(d)} />
 ```

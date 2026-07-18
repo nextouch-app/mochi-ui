@@ -1,4 +1,4 @@
-import { cn, type ActionSheetProps } from '@mochi-ui/core'
+import { cn, type ActionSheetProps } from '@nextouch-app/mochi-core'
 
 export function ActionSheet({
   open = false,

@@ -18,7 +18,7 @@ Display statistic numbers with prefix, suffix, and precision.
 | valueStyle | Value style | `CSSProperties` | — |
 
 ```tsx
-import { Statistic } from '@mochi-ui/react'
+import { Statistic } from '@nextouch-app/mochi-react'
 
 <Statistic title="Sales" value={1128} suffix="cups" />
 ```

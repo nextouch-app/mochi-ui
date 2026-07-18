@@ -29,7 +29,7 @@ Capsule game button with a solid 3D block shadow, press sink, and striped loadin
 ## Web
 
 ```tsx
-import { Button, Icon } from '@mochi-ui/react'
+import { Button, Icon } from '@nextouch-app/mochi-react'
 
 <Button type="primary" icon={<Icon name="star" />} loading>
   Start
@@ -41,6 +41,6 @@ import { Button, Icon } from '@mochi-ui/react'
 ## Mobile
 
 ```tsx
-import { Button } from '@mochi-ui/mobile'
+import { Button } from '@nextouch-app/mochi-mobile'
 ;<Button type="primary" block>Start</Button>
 ```

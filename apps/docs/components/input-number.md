@@ -19,7 +19,7 @@
 | onChange / onStep | 回调 | — | — |
 
 ```tsx
-import { InputNumber } from '@mochi-ui/react'
+import { InputNumber } from '@nextouch-app/mochi-react'
 
 <InputNumber defaultValue={3} min={0} max={99} />
 ```

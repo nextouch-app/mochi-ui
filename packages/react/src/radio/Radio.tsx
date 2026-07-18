@@ -1,5 +1,5 @@
 import { useState, createContext, useContext } from 'react'
-import { cn, type RadioProps } from '@mochi-ui/core'
+import { cn, type RadioProps } from '@nextouch-app/mochi-core'
 
 interface RadioGroupCtx {
   value?: string | number

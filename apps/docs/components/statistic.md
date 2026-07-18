@@ -18,7 +18,7 @@
 | valueStyle | 数值样式 | `CSSProperties` | — |
 
 ```tsx
-import { Statistic } from '@mochi-ui/react'
+import { Statistic } from '@nextouch-app/mochi-react'
 
 <Statistic title="销量" value={1128} suffix="杯" />
 ```

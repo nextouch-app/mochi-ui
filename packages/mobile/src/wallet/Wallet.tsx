@@ -1,4 +1,4 @@
-import { cn, type WalletProps } from '@mochi-ui/core'
+import { cn, type WalletProps } from '@nextouch-app/mochi-core'
 import './wallet.css'
 
 export function Wallet({

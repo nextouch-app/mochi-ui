@@ -18,7 +18,7 @@
 | onChange | 切换步骤 | `(current) => void` | — |
 
 ```tsx
-import { Steps } from '@mochi-ui/react'
+import { Steps } from '@nextouch-app/mochi-react'
 
 <Steps
   current={1}

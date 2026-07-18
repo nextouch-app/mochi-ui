@@ -26,7 +26,7 @@
 | preview | 预览控制 | `boolean \| { visible?, current?, onChange?, onVisibleChange? }` | `true` |
 
 ```tsx
-import { Image } from '@mochi-ui/react'
+import { Image } from '@nextouch-app/mochi-react'
 
 <Image.PreviewGroup>
   <Image width={120} src="https://picsum.photos/seed/a/240/160" />

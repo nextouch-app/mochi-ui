@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { cn, normalizeSize, type RangePickerProps, type RangeValue } from '@mochi-ui/core'
+import { cn, normalizeSize, type RangePickerProps, type RangeValue } from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import { Calendar } from '../calendar/Calendar'
 import { Button } from '../button/Button'

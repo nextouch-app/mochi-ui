@@ -12,7 +12,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', 'react-dom/client', /^@mochi-ui\//],
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'react-dom/client', /^@nextouch-app\/mochi-/],
       output: {
         assetFileNames: 'index.[ext]',
       },

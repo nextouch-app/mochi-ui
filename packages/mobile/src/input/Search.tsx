@@ -5,7 +5,7 @@ import {
   useRef,
   type KeyboardEvent,
 } from 'react'
-import type { InputSearchProps } from '@mochi-ui/core'
+import type { InputSearchProps } from '@nextouch-app/mochi-core'
 import { Button } from '../button/Button'
 import { InternalInput } from './Input'
 

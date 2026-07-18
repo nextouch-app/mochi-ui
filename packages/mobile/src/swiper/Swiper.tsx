@@ -1,5 +1,5 @@
 import { Children, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
-import { cn, type SwiperProps } from '@mochi-ui/core'
+import { cn, type SwiperProps } from '@nextouch-app/mochi-core'
 import './swiper.css'
 
 export function Swiper({

@@ -46,11 +46,11 @@ async function checkPkg(name, relativeDir) {
   console.log(`[check-exports] OK — ${name} (${REQUIRED.length} symbols)`)
 }
 
-await checkPkg('@mochi-ui/react', 'packages/react')
-await checkPkg('@mochi-ui/mobile', 'packages/mobile')
+await checkPkg('@nextouch-app/mochi-react', 'packages/react')
+await checkPkg('@nextouch-app/mochi-mobile', 'packages/mobile')
 
 const tokensCss = join(root, 'packages/tokens/src/tokens.css')
 if (!existsSync(tokensCss)) {
   throw new Error('[check-exports] missing tokens.css')
 }
-console.log('[check-exports] OK — @mochi-ui/tokens/tokens.css')
+console.log('[check-exports] OK — @nextouch-app/mochi-tokens/tokens.css')

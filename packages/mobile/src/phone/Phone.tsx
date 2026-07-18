@@ -1,4 +1,4 @@
-import { cn, type PhoneProps } from '@mochi-ui/core'
+import { cn, type PhoneProps } from '@nextouch-app/mochi-core'
 import './phone.css'
 
 export function Phone({

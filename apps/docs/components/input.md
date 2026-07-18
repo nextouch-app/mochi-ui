@@ -44,7 +44,7 @@
 ## 示例
 
 ```tsx
-import { Input, Icon } from '@mochi-ui/react'
+import { Input, Icon } from '@nextouch-app/mochi-react'
 
 <Input
   placeholder="请输入"

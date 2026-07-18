@@ -36,7 +36,7 @@ Returns: `() => void` close function.
 - `Message.destroyAll()` — destroy all
 
 ```tsx
-import { Message, Button } from '@mochi-ui/react'
+import { Message, Button } from '@nextouch-app/mochi-react'
 
 <Button onClick={() => Message.success('Saved')}>Toast</Button>
 <Button onClick={() => Message.destroy('save')}>Close</Button>

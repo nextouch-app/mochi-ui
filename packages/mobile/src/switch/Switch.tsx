@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from 'react'
-import { cn, normalizeSize, type SwitchProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type SwitchProps } from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import './switch.css'
 

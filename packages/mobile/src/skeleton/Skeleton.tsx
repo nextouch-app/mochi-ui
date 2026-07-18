@@ -1,4 +1,4 @@
-import { cn, type SkeletonProps } from '@mochi-ui/core'
+import { cn, type SkeletonProps } from '@nextouch-app/mochi-core'
 import './skeleton.css'
 
 export function Skeleton({

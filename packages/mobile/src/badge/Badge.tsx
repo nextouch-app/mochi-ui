@@ -1,4 +1,4 @@
-import { cn, type BadgeProps } from '@mochi-ui/core'
+import { cn, type BadgeProps } from '@nextouch-app/mochi-core'
 
 export function Badge({
   count,

@@ -22,7 +22,7 @@
 ## Web
 
 ```tsx
-import { AutoComplete } from '@mochi-ui/react'
+import { AutoComplete } from '@nextouch-app/mochi-react'
 
 <AutoComplete
   allowClear

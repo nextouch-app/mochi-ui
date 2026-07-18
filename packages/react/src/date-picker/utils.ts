@@ -1,4 +1,4 @@
-import type { RangeValue } from '@mochi-ui/core'
+import type { RangeValue } from '@nextouch-app/mochi-core'
 
 export const defaultFormatPattern = 'YYYY-MM-DD'
 

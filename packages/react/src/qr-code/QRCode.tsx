@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import QR from 'qrcode'
-import { cn, type QRCodeProps } from '@mochi-ui/core'
+import { cn, type QRCodeProps } from '@nextouch-app/mochi-core'
 import './qr-code.css'
 
 const ECC: Record<NonNullable<QRCodeProps['errorLevel']>, 'L' | 'M' | 'Q' | 'H'> = {

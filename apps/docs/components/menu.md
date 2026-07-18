@@ -17,7 +17,7 @@
 | onClick / onSelect / onOpenChange | 回调 | — | — |
 
 ```tsx
-import { Menu } from '@mochi-ui/react'
+import { Menu } from '@nextouch-app/mochi-react'
 
 <Menu
   defaultSelectedKeys={['home']}

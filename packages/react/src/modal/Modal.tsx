@@ -1,6 +1,6 @@
 import { useEffect, useRef, type CSSProperties } from 'react'
 import { createPortal } from 'react-dom'
-import { cn, type ModalProps } from '@mochi-ui/core'
+import { cn, type ModalProps } from '@nextouch-app/mochi-core'
 import { Button } from '../button/Button'
 import './modal.css'
 

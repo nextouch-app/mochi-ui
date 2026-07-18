@@ -4,7 +4,7 @@ import {
   type ConfigProviderProps,
   type SizeType,
   type ThemeConfig,
-} from '@mochi-ui/core'
+} from '@nextouch-app/mochi-core'
 
 export interface ConfigContextValue {
   size: SizeType

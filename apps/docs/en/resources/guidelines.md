@@ -5,12 +5,12 @@
 Load design tokens first, then component styles:
 
 ```tsx
-import '@mochi-ui/tokens/tokens.css'
-import { Button, ConfigProvider } from '@mochi-ui/react'
-import '@mochi-ui/react/style.css'
+import '@nextouch-app/mochi-tokens/tokens.css'
+import { Button, ConfigProvider } from '@nextouch-app/mochi-react'
+import '@nextouch-app/mochi-react/style.css'
 ```
 
-For Mobile, swap `@mochi-ui/react` for `@mochi-ui/mobile`.
+For Mobile, swap `@nextouch-app/mochi-react` for `@nextouch-app/mochi-mobile`.
 
 ## Visual conventions
 
@@ -23,7 +23,7 @@ Full language: [DESIGN.md](https://github.com/nextouch-app/mochi-ui/blob/main/DE
 
 ## Mobile notes
 
-`@mochi-ui/mobile` targets constrained CSS runtimes. Avoid `:hover` and sibling combinator `~` in Mobile styles; interaction state is driven by component classes such as `.is-pressed` and `.is-checked`.
+`@nextouch-app/mochi-mobile` targets constrained CSS runtimes. Avoid `:hover` and sibling combinator `~` in Mobile styles; interaction state is driven by component classes such as `.is-pressed` and `.is-checked`.
 
 ## Assets & license
 

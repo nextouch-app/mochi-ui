@@ -1,5 +1,5 @@
-import { Icon, Space, Tag } from '@mochi-ui/react'
-import { ICON_LIST } from '@mochi-ui/icons'
+import { Icon, Space, Tag } from '@nextouch-app/mochi-react'
+import { ICON_LIST } from '@nextouch-app/mochi-icons'
 import type { DemoItem } from '../../types'
 
 function BasicDemo() {

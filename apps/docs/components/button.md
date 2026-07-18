@@ -29,7 +29,7 @@
 ## Web
 
 ```tsx
-import { Button, Icon } from '@mochi-ui/react'
+import { Button, Icon } from '@nextouch-app/mochi-react'
 
 <Button type="primary" icon={<Icon name="star" />} loading>
   开始
@@ -41,6 +41,6 @@ import { Button, Icon } from '@mochi-ui/react'
 ## Mobile
 
 ```tsx
-import { Button } from '@mochi-ui/mobile'
+import { Button } from '@nextouch-app/mochi-mobile'
 ;<Button type="primary" block>开始</Button>
 ```

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, type SearchBarProps } from '@mochi-ui/core'
+import { cn, type SearchBarProps } from '@nextouch-app/mochi-core'
 
 export function SearchBar({
   value,

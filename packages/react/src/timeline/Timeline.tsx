@@ -1,4 +1,4 @@
-import { cn, type TimelineProps } from '@mochi-ui/core'
+import { cn, type TimelineProps } from '@nextouch-app/mochi-core'
 import './timeline.css'
 
 export function Timeline({

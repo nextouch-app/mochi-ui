@@ -75,7 +75,7 @@ import {
   Time,
   Cursor,
   Title,
-} from '@mochi-ui/react'
+} from '@nextouch-app/mochi-react'
 import type { DemoItem } from './types'
 
 function CardLike({ children }: { children: ReactNode }) {
@@ -861,7 +861,7 @@ export const extraRegistry = [
             <Typography.Title level={3}>麻薯菜单</Typography.Title>
             <Typography.Paragraph>
               软糯圆润的组件库，主色天空蓝。
-              <Typography.Text code>@mochi-ui/react</Typography.Text>
+              <Typography.Text code>@nextouch-app/mochi-react</Typography.Text>
             </Typography.Paragraph>
             <Typography.Link href="https://github.com/nextouch-app/mochi-ui" target="_blank">
               GitHub
@@ -1123,7 +1123,7 @@ export const extraRegistry = [
         component: () => (
           <CodeBlock
             language="tsx"
-            code={`import { Button } from '@mochi-ui/react'\n\n<Button type="primary">麻薯</Button>`}
+            code={`import { Button } from '@nextouch-app/mochi-react'\n\n<Button type="primary">麻薯</Button>`}
           />
         ),
       },

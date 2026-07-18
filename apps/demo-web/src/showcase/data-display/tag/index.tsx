@@ -1,4 +1,4 @@
-import { Space, Tag } from '@mochi-ui/react'
+import { Space, Tag } from '@nextouch-app/mochi-react'
 import type { DemoItem } from '../../types'
 
 function BasicDemo() {

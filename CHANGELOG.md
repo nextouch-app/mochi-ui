@@ -29,7 +29,8 @@
 
 ### Packaging
 
-- 全部 `@mochi-ui/*` 包版本对齐 **0.2.0**
+- npm scope 调整为组织 `nextouch-app`：`@nextouch-app/mochi-tokens` / `mochi-icons` / `mochi-core` / `mochi-react` / `mochi-mobile`
+- 全部包版本对齐 **0.2.0**
 - 补充 `repository` / `homepage` / `bugs` 字段
 - 根脚本：`pnpm check:exports`、`pnpm release:check`（build + mobile 样式 + 导出冒烟 + docs）
 
@@ -37,7 +38,7 @@
 
 ### Added
 
-- Packages: `@mochi-ui/tokens`, `core`, `icons`, `react`, `mobile`
+- Packages: tokens / core / icons / react / mobile（现发布名为 `@nextouch-app/mochi-*`）
 - Design tokens and `DESIGN.md`
 - Original SVG icon set
 - Core components across general, form, navigation, display, and feedback categories

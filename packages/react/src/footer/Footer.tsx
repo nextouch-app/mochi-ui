@@ -1,4 +1,4 @@
-import { cn, type FooterProps } from '@mochi-ui/core'
+import { cn, type FooterProps } from '@nextouch-app/mochi-core'
 import './footer.css'
 
 export function Footer({

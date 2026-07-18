@@ -18,7 +18,7 @@ Encode a URL or text into a scannable QR code.
 | onRefresh | Refresh when expired | `() => void` | — |
 
 ```tsx
-import { QRCode } from '@mochi-ui/react'
+import { QRCode } from '@nextouch-app/mochi-react'
 
 <QRCode value="https://github.com/nextouch-app/mochi-ui" />
 ```

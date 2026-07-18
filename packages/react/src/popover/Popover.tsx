@@ -7,7 +7,7 @@ import {
   type MouseEvent as ReactMouseEvent,
   type ReactElement,
 } from 'react'
-import { cn, type PopoverProps } from '@mochi-ui/core'
+import { cn, type PopoverProps } from '@nextouch-app/mochi-core'
 import './popover.css'
 
 export function Popover({

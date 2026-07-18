@@ -1,4 +1,4 @@
-import { cn, type TextAreaProps } from '@mochi-ui/core'
+import { cn, type TextAreaProps } from '@nextouch-app/mochi-core'
 
 export function TextArea({
   className,

@@ -5,7 +5,7 @@ import {
   type TypographyParagraphProps,
   type TypographyTextProps,
   type TypographyTitleProps,
-} from '@mochi-ui/core'
+} from '@nextouch-app/mochi-core'
 import './typography.css'
 
 function typoClass(

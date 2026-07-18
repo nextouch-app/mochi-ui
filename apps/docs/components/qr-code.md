@@ -20,7 +20,7 @@
 | onRefresh | 过期刷新 | `() => void` | — |
 
 ```tsx
-import { QRCode } from '@mochi-ui/react'
+import { QRCode } from '@nextouch-app/mochi-react'
 
 <QRCode value="https://github.com/nextouch-app/mochi-ui" />
 ```

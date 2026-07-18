@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react'
-import { cn, type LayoutProps, type LayoutSiderProps } from '@mochi-ui/core'
+import { cn, type LayoutProps, type LayoutSiderProps } from '@nextouch-app/mochi-core'
 import './layout.css'
 
 function LayoutRoot({ hasSider, className, style, children }: LayoutProps) {

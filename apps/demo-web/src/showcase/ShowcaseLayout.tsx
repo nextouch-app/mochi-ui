@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Card, ConfigProvider, Title } from '@mochi-ui/react'
+import { Card, ConfigProvider, Title } from '@nextouch-app/mochi-react'
 import type { ShowcaseEntry } from './types'
 import './showcase.css'
 

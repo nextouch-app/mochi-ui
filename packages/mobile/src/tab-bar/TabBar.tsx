@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, type TabBarProps } from '@mochi-ui/core'
+import { cn, type TabBarProps } from '@nextouch-app/mochi-core'
 
 export function TabBar({
   activeKey,

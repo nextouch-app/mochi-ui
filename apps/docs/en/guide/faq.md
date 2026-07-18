@@ -1,7 +1,7 @@
 # FAQ
 
 **Q: Do Web and Mobile need two packages?**  
-A: Yes. Dual-target apps should install both `@mochi-ui/react` and `@mochi-ui/mobile`. Props stay aligned; only the import path differs.
+A: Yes. Dual-target apps should install both `@nextouch-app/mochi-react` and `@nextouch-app/mochi-mobile`. Props stay aligned; only the import path differs.
 
 **Q: Can I customize the theme?**  
 A: Yes. Override CSS variables via `ConfigProvider` `theme` (for example primary color), or set `--mochi-*` yourself.

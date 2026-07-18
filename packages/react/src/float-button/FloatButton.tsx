@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react'
-import { cn, type FloatButtonGroupProps, type FloatButtonProps } from '@mochi-ui/core'
+import { cn, type FloatButtonGroupProps, type FloatButtonProps } from '@nextouch-app/mochi-core'
 import './float-button.css'
 
 function FloatButtonInner({

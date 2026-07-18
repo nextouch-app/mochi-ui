@@ -20,7 +20,7 @@
 | onHoverChange | Hover change | `(value) => void` | — |
 
 ```tsx
-import { Rate } from '@mochi-ui/react'
+import { Rate } from '@nextouch-app/mochi-react'
 
 <Rate defaultValue={3} allowHalf tooltips={['Bad', 'OK', 'Good', 'Great', 'Excellent']} />
 ```

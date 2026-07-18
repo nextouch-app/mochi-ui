@@ -29,7 +29,7 @@ Page-level floating action button with optional group.
 | onOpenChange | Open change | `(open) => void` | — |
 
 ```tsx
-import { FloatButton } from '@mochi-ui/react'
+import { FloatButton } from '@nextouch-app/mochi-react'
 
 <FloatButton type="primary" icon="↑" />
 ```

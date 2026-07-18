@@ -6,7 +6,7 @@
   "description": "Mochi UI — soft cartoon React component library by Nextouch",
   "license": "MIT",
   "scripts": {
-    "build": "pnpm -r --filter \"@mochi-ui/*\" run build",
+    "build": "pnpm -r --filter \"@nextouch-app/mochi-*\" run build",
     "build:apps": "pnpm --filter demo-web build && pnpm --filter demo-mobile build",
     "dev": "pnpm --filter demo-web dev",
     "dev:mobile": "pnpm --filter demo-mobile dev",

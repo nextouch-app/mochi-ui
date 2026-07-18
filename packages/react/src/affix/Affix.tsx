@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
-import { cn, type AffixProps } from '@mochi-ui/core'
+import { cn, type AffixProps } from '@nextouch-app/mochi-core'
 import './affix.css'
 
 export function Affix({

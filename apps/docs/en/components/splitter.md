@@ -24,7 +24,7 @@ Resizable multi-pane layout.
 | resizable | Resizable | `boolean` | `true` |
 
 ```tsx
-import { Splitter } from '@mochi-ui/react'
+import { Splitter } from '@nextouch-app/mochi-react'
 
 <Splitter>
   <Splitter.Panel defaultSize={200}>Left</Splitter.Panel>

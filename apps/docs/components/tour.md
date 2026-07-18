@@ -19,7 +19,7 @@
 `TourStep.target` 返回要高亮的 DOM 节点。
 
 ```tsx
-import { Tour, Button } from '@mochi-ui/react'
+import { Tour, Button } from '@nextouch-app/mochi-react'
 
 <Tour
   open={open}

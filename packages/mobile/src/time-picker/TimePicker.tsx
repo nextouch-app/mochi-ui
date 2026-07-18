@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { cn, normalizeSize, type TimePickerProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type TimePickerProps } from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import './time-picker.css'
 

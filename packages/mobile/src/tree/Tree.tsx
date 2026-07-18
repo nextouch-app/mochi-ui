@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, type TreeDataNode, type TreeProps } from '@mochi-ui/core'
+import { cn, type TreeDataNode, type TreeProps } from '@nextouch-app/mochi-core'
 import './tree.css'
 
 function collectKeys(nodes: TreeDataNode[], all = false): string[] {

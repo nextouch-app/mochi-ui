@@ -1,4 +1,4 @@
-import { cn, type StatisticProps } from '@mochi-ui/core'
+import { cn, type StatisticProps } from '@nextouch-app/mochi-core'
 import './statistic.css'
 
 function formatValue(value: string | number | undefined, precision?: number) {

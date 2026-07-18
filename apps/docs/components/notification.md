@@ -38,7 +38,7 @@
 - `Notification.destroyAll()` — 销毁全部
 
 ```tsx
-import { Notification, Button } from '@mochi-ui/react'
+import { Notification, Button } from '@nextouch-app/mochi-react'
 
 <Button
   onClick={() =>

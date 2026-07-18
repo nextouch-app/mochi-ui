@@ -44,7 +44,7 @@ Inherits `Input` props.
 ## Example
 
 ```tsx
-import { Input, Icon } from '@mochi-ui/react'
+import { Input, Icon } from '@nextouch-app/mochi-react'
 
 <Input
   placeholder="Type here"

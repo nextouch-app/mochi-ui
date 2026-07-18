@@ -1,4 +1,4 @@
-import { Switch, Space } from '@mochi-ui/react'
+import { Switch, Space } from '@nextouch-app/mochi-react'
 import type { DemoItem } from '../../types'
 
 function BasicDemo() {

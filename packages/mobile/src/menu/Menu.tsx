@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, type MenuItemType, type MenuProps } from '@mochi-ui/core'
+import { cn, type MenuItemType, type MenuProps } from '@nextouch-app/mochi-core'
 import './menu.css'
 
 function Item({

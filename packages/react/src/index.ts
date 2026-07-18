@@ -5,8 +5,8 @@ export { Card } from './card/Card'
 export { Icon } from './icon/Icon'
 export type { IconProps } from './icon/Icon'
 // re-export icon catalogue for apps
-export { ICON_LIST, icons, iconUrls } from '@mochi-ui/icons'
-export type { IconName } from '@mochi-ui/icons'
+export { ICON_LIST, icons, iconUrls } from '@nextouch-app/mochi-icons'
+export type { IconName } from '@nextouch-app/mochi-icons'
 export { Loading } from './loading/Loading'
 export { Tag } from './tag/Tag'
 export { Divider } from './divider/Divider'
@@ -177,6 +177,6 @@ export type {
   WalletProps,
   TimeProps,
   CursorProps,
-} from '@mochi-ui/core'
+} from '@nextouch-app/mochi-core'
 
 import './styles/index.css'

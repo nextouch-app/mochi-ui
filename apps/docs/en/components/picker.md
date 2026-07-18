@@ -8,7 +8,7 @@
 <mochi-demos name="Picker"></mochi-demos>
 
 ```tsx
-import { Picker, Button } from '@mochi-ui/react'
+import { Picker, Button } from '@nextouch-app/mochi-react'
 
 const [open, setOpen] = useState(false)
 

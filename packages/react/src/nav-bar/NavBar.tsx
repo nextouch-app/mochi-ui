@@ -1,4 +1,4 @@
-import { cn, type NavBarProps } from '@mochi-ui/core'
+import { cn, type NavBarProps } from '@nextouch-app/mochi-core'
 
 export function NavBar({ title, back, onBack, right, className, style, children }: NavBarProps) {
   return (

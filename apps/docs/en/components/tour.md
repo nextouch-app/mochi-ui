@@ -17,7 +17,7 @@ Step-by-step spotlight guide.
 | onClose / onFinish / onChange | Callbacks | — | — |
 
 ```tsx
-import { Tour } from '@mochi-ui/react'
+import { Tour } from '@nextouch-app/mochi-react'
 
 <Tour open={open} steps={[{ title: 'Start', target: () => el }]} />
 ```

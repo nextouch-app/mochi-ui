@@ -9,19 +9,19 @@ Peer 依赖：`react`、`react-dom` ≥ 18。
 ::: code-group
 
 ```bash [npm]
-npm install @mochi-ui/react @mochi-ui/tokens
+npm install @nextouch-app/mochi-react @nextouch-app/mochi-tokens
 ```
 
 ```bash [yarn]
-yarn add @mochi-ui/react @mochi-ui/tokens
+yarn add @nextouch-app/mochi-react @nextouch-app/mochi-tokens
 ```
 
 ```bash [pnpm]
-pnpm add @mochi-ui/react @mochi-ui/tokens
+pnpm add @nextouch-app/mochi-react @nextouch-app/mochi-tokens
 ```
 
 ```bash [bun]
-bun add @mochi-ui/react @mochi-ui/tokens
+bun add @nextouch-app/mochi-react @nextouch-app/mochi-tokens
 ```
 
 :::
@@ -31,19 +31,19 @@ bun add @mochi-ui/react @mochi-ui/tokens
 ::: code-group
 
 ```bash [npm]
-npm install @mochi-ui/mobile @mochi-ui/tokens
+npm install @nextouch-app/mochi-mobile @nextouch-app/mochi-tokens
 ```
 
 ```bash [yarn]
-yarn add @mochi-ui/mobile @mochi-ui/tokens
+yarn add @nextouch-app/mochi-mobile @nextouch-app/mochi-tokens
 ```
 
 ```bash [pnpm]
-pnpm add @mochi-ui/mobile @mochi-ui/tokens
+pnpm add @nextouch-app/mochi-mobile @nextouch-app/mochi-tokens
 ```
 
 ```bash [bun]
-bun add @mochi-ui/mobile @mochi-ui/tokens
+bun add @nextouch-app/mochi-mobile @nextouch-app/mochi-tokens
 ```
 
 :::

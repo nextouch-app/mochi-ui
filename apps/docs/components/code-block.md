@@ -16,7 +16,7 @@
 | showCopy | 显示复制 | `boolean` | `true` |
 
 ```tsx
-import { CodeBlock } from '@mochi-ui/react'
+import { CodeBlock } from '@nextouch-app/mochi-react'
 
-<CodeBlock language="tsx" code={`import { Button } from '@mochi-ui/react'`} />
+<CodeBlock language="tsx" code={`import { Button } from '@nextouch-app/mochi-react'`} />
 ```

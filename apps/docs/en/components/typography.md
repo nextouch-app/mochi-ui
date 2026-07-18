@@ -28,7 +28,7 @@ Supports `type`, `strong`, `italic`, `underline`, `delete`, `code`, `mark`, `cop
 | disabled | Disabled | `boolean` | — |
 
 ```tsx
-import { Typography } from '@mochi-ui/react'
+import { Typography } from '@nextouch-app/mochi-react'
 
 <Typography.Title level={3}>Mochi Menu</Typography.Title>
 ```

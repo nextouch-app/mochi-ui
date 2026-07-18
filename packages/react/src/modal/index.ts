@@ -10,4 +10,4 @@ export const Modal = Object.assign(ModalBase, {
   destroyAll,
 })
 
-export type { ModalProps, ModalFuncProps } from '@mochi-ui/core'
+export type { ModalProps, ModalFuncProps } from '@nextouch-app/mochi-core'

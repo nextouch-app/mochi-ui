@@ -25,7 +25,7 @@
 | offset | Offset | `number` | `0` |
 
 ```tsx
-import { Row, Col } from '@mochi-ui/react'
+import { Row, Col } from '@nextouch-app/mochi-react'
 
 <Row gutter={12}>
   <Col span={12}>A</Col>

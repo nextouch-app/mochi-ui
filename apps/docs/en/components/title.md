@@ -7,7 +7,7 @@ Swallowtail ribbon title for game-menu style headers.
 <mochi-demos name="Title"></mochi-demos>
 
 ```tsx
-import { Title } from '@mochi-ui/react'
+import { Title } from '@nextouch-app/mochi-react'
 
 <Title>Mochi Menu</Title>
 ```

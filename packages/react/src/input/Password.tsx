@@ -1,5 +1,5 @@
 import { forwardRef, useState } from 'react'
-import type { InputPasswordProps } from '@mochi-ui/core'
+import type { InputPasswordProps } from '@nextouch-app/mochi-core'
 import { InternalInput } from './Input'
 
 export const Password = forwardRef<HTMLInputElement, InputPasswordProps>(function Password(

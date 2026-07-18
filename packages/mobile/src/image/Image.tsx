@@ -5,7 +5,7 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import { cn, type ImagePreviewGroupProps, type ImageProps } from '@mochi-ui/core'
+import { cn, type ImagePreviewGroupProps, type ImageProps } from '@nextouch-app/mochi-core'
 import './image.css'
 
 interface PreviewGroupCtx {

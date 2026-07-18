@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
-import { cn, normalizeSize, type TreeDataNode, type TreeSelectProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type TreeDataNode, type TreeSelectProps } from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import { Tree } from '../tree/Tree'
 import './tree-select.css'

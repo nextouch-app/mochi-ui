@@ -36,7 +36,7 @@
 - `Message.destroyAll()` — 销毁全部
 
 ```tsx
-import { Message, Button } from '@mochi-ui/react'
+import { Message, Button } from '@nextouch-app/mochi-react'
 
 <Button onClick={() => Message.success('保存成功')}>提示</Button>
 <Button onClick={() => Message.destroy('save')}>关闭</Button>

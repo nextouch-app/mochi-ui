@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, type CodeBlockProps } from '@mochi-ui/core'
+import { cn, type CodeBlockProps } from '@nextouch-app/mochi-core'
 import './code-block.css'
 
 export function CodeBlock({

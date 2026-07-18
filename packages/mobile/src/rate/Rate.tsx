@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, type RateProps } from '@mochi-ui/core'
+import { cn, type RateProps } from '@nextouch-app/mochi-core'
 import './rate.css'
 
 export function Rate({

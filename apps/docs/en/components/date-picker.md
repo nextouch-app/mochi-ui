@@ -40,7 +40,7 @@
 Calendar panel below the trigger. With `showTime`, hour/minute selects and a confirm button stay in the panel.
 
 ```tsx
-import { DatePicker } from '@mochi-ui/react'
+import { DatePicker } from '@nextouch-app/mochi-react'
 
 <DatePicker showTime format="YYYY-MM-DD HH:mm" onChange={(d) => console.log(d)} />
 
@@ -52,7 +52,7 @@ import { DatePicker } from '@mochi-ui/react'
 Bottom sheet with embedded Calendar. RangePicker uses the same drawer pattern.
 
 ```tsx
-import { DatePicker } from '@mochi-ui/mobile'
+import { DatePicker } from '@nextouch-app/mochi-mobile'
 
 <DatePicker picker="month" onChange={(d) => console.log(d)} />
 

@@ -4,4 +4,4 @@ import { RangePicker } from './RangePicker'
 export const DatePicker = Object.assign(DatePickerBase, { RangePicker })
 
 export { RangePicker }
-export type { RangePickerProps, RangeValue } from '@mochi-ui/core'
+export type { RangePickerProps, RangeValue } from '@nextouch-app/mochi-core'

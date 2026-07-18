@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Icon, Space } from '@mochi-ui/react'
+import { Button, Icon, Space } from '@nextouch-app/mochi-react'
 import type { DemoItem } from '../../types'
 
 function BasicDemo() {

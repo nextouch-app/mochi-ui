@@ -6,7 +6,7 @@
 <mochi-demos name="Skeleton"></mochi-demos>
 
 ```tsx
-import { Skeleton } from '@mochi-ui/react'
+import { Skeleton } from '@nextouch-app/mochi-react'
 
 <Skeleton avatar paragraph={{ rows: 3 }} />
 ```

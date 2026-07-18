@@ -1,4 +1,4 @@
-import { cn, type ColProps, type RowProps } from '@mochi-ui/core'
+import { cn, type ColProps, type RowProps } from '@nextouch-app/mochi-core'
 import './grid.css'
 
 const alignMap = {

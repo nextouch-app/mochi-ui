@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { cn, type CollapseProps } from '@mochi-ui/core'
+import { cn, type CollapseProps } from '@nextouch-app/mochi-core'
 
 function toArray(v?: string | string[]) {
   if (v == null) return [] as string[]

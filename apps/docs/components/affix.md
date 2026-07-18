@@ -16,7 +16,7 @@
 | onChange | 固定状态变化 | `(affixed) => void` | — |
 
 ```tsx
-import { Affix, Button } from '@mochi-ui/react'
+import { Affix, Button } from '@nextouch-app/mochi-react'
 
 <Affix offsetTop={16}>
   <Button type="primary">固定在顶部</Button>

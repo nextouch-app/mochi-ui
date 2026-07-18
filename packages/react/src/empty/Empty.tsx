@@ -1,4 +1,4 @@
-import { cn, type EmptyProps } from '@mochi-ui/core'
+import { cn, type EmptyProps } from '@nextouch-app/mochi-core'
 import { Icon } from '../icon/Icon'
 
 export function Empty({ description = '暂无数据', className, style, children }: EmptyProps) {

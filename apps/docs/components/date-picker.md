@@ -42,7 +42,7 @@
 触发器下方弹出 Calendar；`showTime` 时面板底部出现时分选择与确定按钮。
 
 ```tsx
-import { DatePicker } from '@mochi-ui/react'
+import { DatePicker } from '@nextouch-app/mochi-react'
 
 <DatePicker showTime format="YYYY-MM-DD HH:mm" onChange={(d) => console.log(d)} />
 
@@ -54,7 +54,7 @@ import { DatePicker } from '@mochi-ui/react'
 底部抽屉内嵌 Calendar（触控更合适），RangePicker 同样以抽屉呈现。
 
 ```tsx
-import { DatePicker } from '@mochi-ui/mobile'
+import { DatePicker } from '@nextouch-app/mochi-mobile'
 
 <DatePicker picker="month" onChange={(d) => console.log(d)} />
 

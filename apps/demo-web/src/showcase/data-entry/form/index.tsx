@@ -1,4 +1,4 @@
-import { Form, FormItem, Input, Switch, Button, Toast, Select, Space } from '@mochi-ui/react'
+import { Form, FormItem, Input, Switch, Button, Toast, Select, Space } from '@nextouch-app/mochi-react'
 import type { DemoItem } from '../../types'
 
 function BasicDemo() {

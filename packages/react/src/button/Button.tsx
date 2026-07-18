@@ -5,7 +5,7 @@ import {
   type ButtonHTMLAttributes,
   type MouseEvent as ReactMouseEvent,
 } from 'react'
-import { cn, normalizeSize, type ButtonProps } from '@mochi-ui/core'
+import { cn, normalizeSize, type ButtonProps } from '@nextouch-app/mochi-core'
 import { useConfig } from '../config-provider/ConfigProvider'
 import './button.css'
 

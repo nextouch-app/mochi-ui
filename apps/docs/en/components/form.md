@@ -79,7 +79,7 @@ Inside `Form.List`, `Form.Item` names are joined to the list path, e.g. `name={[
 ## Web
 
 ```tsx
-import { Form, Input, Button } from '@mochi-ui/react'
+import { Form, Input, Button } from '@nextouch-app/mochi-react'
 
 const [form] = Form.useForm()
 

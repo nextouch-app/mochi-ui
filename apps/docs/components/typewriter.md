@@ -18,7 +18,7 @@
 | onComplete | 完成回调 | `() => void` | — |
 
 ```tsx
-import { Typewriter } from '@mochi-ui/react'
+import { Typewriter } from '@nextouch-app/mochi-react'
 
 <Typewriter text={['软糯圆润', 'Mochi UI']} loop />
 ```

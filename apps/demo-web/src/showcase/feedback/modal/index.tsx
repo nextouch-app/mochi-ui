@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Modal, Button, Space, Toast } from '@mochi-ui/react'
+import { Modal, Button, Space, Toast } from '@nextouch-app/mochi-react'
 import type { DemoItem } from '../../types'
 
 function BasicDemo() {

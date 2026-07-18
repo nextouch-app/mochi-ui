@@ -1,4 +1,4 @@
-import { Input, Icon, Space, Button } from '@mochi-ui/react'
+import { Input, Icon, Space, Button } from '@nextouch-app/mochi-react'
 import type { DemoItem } from '../../types'
 
 function BasicDemo() {

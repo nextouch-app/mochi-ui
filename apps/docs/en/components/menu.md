@@ -17,7 +17,7 @@ Navigation menu for sider or header.
 | onClick / onSelect / onOpenChange | Callbacks | — | — |
 
 ```tsx
-import { Menu } from '@mochi-ui/react'
+import { Menu } from '@nextouch-app/mochi-react'
 
 <Menu defaultSelectedKeys={['home']} items={[{ key: 'home', label: 'Home' }]} />
 ```

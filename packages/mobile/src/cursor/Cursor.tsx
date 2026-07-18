@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { cn, type CursorProps } from '@mochi-ui/core'
+import { cn, type CursorProps } from '@nextouch-app/mochi-core'
 import './cursor.css'
 
 export function Cursor({
